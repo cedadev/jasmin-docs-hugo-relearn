@@ -12,3 +12,11 @@ home = [ "HTML", "RSS", "SEARCH"]
 # Settings for relearn theme
 [params]
 themeVariant = "jasmin"
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-tags'></i> Tags"
+url = "/tags"
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-list'></i> Categories"
+url = "/categories"
