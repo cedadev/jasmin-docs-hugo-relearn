@@ -5,10 +5,10 @@ draft: false
 weight: 20
 ---
 
-## Second content page
+# Second content page
 
 This is some text to see how this is working.
 
-### Another heading
+## Another heading
 
 And here is some more.
