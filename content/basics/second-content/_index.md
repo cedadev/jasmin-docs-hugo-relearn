@@ -12,3 +12,9 @@ This is some text to see how this is working.
 ## Another heading
 
 And here is some more.
+
+Here's some code
+
+{{% command %}}
+mkdir -p some/very/long/directory/path
+{{% /command %}}

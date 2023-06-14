@@ -11,3 +11,4 @@ home = [ "HTML", "RSS", "SEARCH"]
 
 # Settings for relearn theme
 [params]
+themeVariant = "jasmin"
