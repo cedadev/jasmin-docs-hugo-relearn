@@ -1,11 +1,10 @@
 /* jasmin branded theme - in progress */
 :root {
-  --MAIN-LINK-color: rgba( 89, 154, 62, 1 ); /* link color of content */
-  --MAIN-LINK-HOVER-color: rgba( 63, 109, 44, 1 ); /* hoverd link color of content */
+  --SECONDARY-color: rgba( 62, 134, 62, 1 ); /* brand secondary color */
+  --ACCENT-color: rgba( 240, 137, 0, 1 ); /* brand accent color, used for search highlights */
+  --MAIN-LINK-HOVER-color: rgba( 50, 107, 50, 1 ); /* hoverd link color of content */
   --MAIN-BG-color: rgba( 255, 255, 255, 1 ); /* background color of content */
-  --MAIN-TEXT-color: rgba( 50, 50, 50, 1 ); /* text color of content and h1 titles */
-  --MAIN-TITLES-TEXT-color: rgba( 94, 94, 94, 1 ); /* text color of h2-h6 titles and transparent box titles */
-  --MAIN-TITLES-H1-color: rgba( 34, 34, 34, 1 ); /* text color of h1 titles */
+  --MAIN-TEXT-color: rgba( 46, 45, 98, 1 ); /* text color of content and h1 titles */
   --MAIN-font: BoosterNextFY-Regular; /* text font of content and h1 titles */
   --CODE-BLOCK-color: rgba( 226, 228, 229, 1 ); /* fallback text color of block code; should be adjusted to your selected chroma style */
   --CODE-BLOCK-BG-color: rgba( 40, 42, 54, 1 ); /* fallback background color of block code; should be adjusted to your selected chroma style */
@@ -30,7 +29,11 @@
   --MENU-VISITED-color: rgba( 89, 154, 62, 1 ); /* icon color of visited menu topics if configured */
   --BOX-CAPTION-color: rgba( 255, 255, 255, 1 ); /* text color of colored box titles */
   --BOX-BG-color: rgba( 255, 255, 255, .833 ); /* background color of colored boxes */
-  --BOX-TEXT-color: rgba( 16, 16, 16, 1 ); /* text color of colored box content */
+  --BOX-BLUE-color: rgba( 30, 93, 248, 1 ); /* background color of blue boxes */
+  --BOX-GREEN-color: rgba( 103, 192, 77, 1 ); /* background color of green boxes */
+  --BOX-GREY-color: rgba( 180, 188, 194, 1 ); /* background color of grey boxes */
+  --BOX-ORANGE-color: rgba( 240, 137, 0, 1 ); /* background color of orange boxes */
+  --BOX-RED-color: rgba( 169, 27, 46, 1 ); /* background color of red boxes */
 }
 
 /* prompt */
