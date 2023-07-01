@@ -59,8 +59,8 @@
         */
 
         -->
-    <link rel="stylesheet" type="text/css" href="{{(printf "css/MyFontsWebfontsKit.css" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}">
-    <link rel="stylesheet" type="text/css" href="{{(printf "css/webfonts.css" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}">
+    <link rel="stylesheet" type="text/css" href="{{"css/MyFontsWebfontsKit.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}">
+    <link rel="stylesheet" type="text/css" href="{{"css/webfonts.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}">
     <link href="{{(printf "css/theme-%s.css" .) | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet" id="variant-style">
     {{- end }}
     <link href="{{"css/variant.css" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}" rel="stylesheet">
