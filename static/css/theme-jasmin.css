@@ -1,7 +1,6 @@
 /* jasmin branded theme - in progress */
 :root {
   --SECONDARY-color: rgba(103, 192, 77, 1); /* brand secondary color */
-  /*--INTERNAL-MENU-HEADER-BG-color: rgba(103, 192, 77, 1) */
   --ACCENT-color: rgba( 240, 137, 0, 1 ); /* brand accent color, used for search highlights */
   --MAIN-LINK-HOVER-color: rgba( 50, 107, 50, 1 ); /* hoverd link color of content */
   --MAIN-BG-color: rgba( 255, 255, 255, 1 ); /* background color of content */
@@ -43,4 +42,14 @@
 }
 .command code, .command code > span {
   display: inline !important; 
+}
+
+/* Style tweaks */
+#sidebar .nav-title {
+  text-transform: inherit;
+}
+h1 {
+  font-size: 2.75rem;
+  text-align: inherit;
+  text-transform: inherit;
 }
