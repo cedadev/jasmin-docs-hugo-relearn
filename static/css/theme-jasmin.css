@@ -1,6 +1,7 @@
 /* jasmin branded theme - in progress */
 :root {
-  --SECONDARY-color: rgba( 62, 134, 62, 1 ); /* brand secondary color */
+  --SECONDARY-color: rgba(103, 192, 77, 1); /* brand secondary color */
+  /*--INTERNAL-MENU-HEADER-BG-color: rgba(103, 192, 77, 1) */
   --ACCENT-color: rgba( 240, 137, 0, 1 ); /* brand accent color, used for search highlights */
   --MAIN-LINK-HOVER-color: rgba( 50, 107, 50, 1 ); /* hoverd link color of content */
   --MAIN-BG-color: rgba( 255, 255, 255, 1 ); /* background color of content */
@@ -12,7 +13,7 @@
   --CODE-INLINE-color: rgba( 94, 94, 94, 1 ); /* text color of inline code */
   --CODE-INLINE-BG-color: rgba( 255, 250, 233, 1 ); /* background color of inline code */
   --CODE-INLINE-BORDER-color: rgba( 248, 232, 200, 1 ); /* border color of inline code */
-  --MENU-HEADER-BG-color: rgba( 116, 181, 89, 1 ); /* background color of menu header */
+  --MENU-HEADER-BG-color: rgba(103, 192, 77, 1); /* background color of menu header */
   --MENU-HEADER-BORDER-color: rgba( 156, 212, 132, 1 ); /* separator color of menu header */
   --MENU-HOME-LINK-color: rgba( 46, 59, 46, 1 ); /* home button color if configured */
   --MENU-HOME-LINK-HOVER-color: rgba( 0, 0, 0, 1 ); /* hoverd home button color if configured */
