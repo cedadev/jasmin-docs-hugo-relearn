@@ -76,9 +76,9 @@ server).
 An alternative option is to using X11 Forwarding on your SSH connection:
 
     
-    
-    $ ssh -AY <user>@sciX.jasmin.ac.uk firefox
-    
+```console
+ssh -AY <user>@sciX.jasmin.ac.uk firefox
+```    
 
 Once you have Firefox open, navigate to `http://my-os-
 tenancy-o.s3.jc.rl.ac.uk:81/_admin/portal` (where "my-os-tenancy-o" needs to
@@ -121,8 +121,8 @@ Although the data is exactly the same in both cases, a slightly different URL
 must be used depending on whether you are accessing the object store from the
 JASMIN managed cloud servers or from the JASMIN External Cloud.
 
-From inside JASMIN, including LOTUS and the Scientific Analysis servers, `my-
-os-tenancy-o.s3.jc.rl.ac.uk` should be used.
+From inside JASMIN, including LOTUS and the Scientific Analysis servers, 
+`my-os-tenancy-o.s3.jc.rl.ac.uk` should be used.
 
 From the JASMIN External Cloud, `my-os-tenancy-o.s3-ext.jc.rl.ac.uk` should be
 used - note the additional `-ext`.
@@ -131,8 +131,10 @@ used - note the additional `-ext`.
 
 Currently, the Object Store cannot be accessed from outside of JASMIN itself.
 
+{{% notice tip %}}
 Please note that the URL for accessing the object store internally needs to be
-[http://,](http://,/) and externally needs to be https://.
+`http://` and externally needs to be `https://`.
+{{% /notice %}}
 
 ## Using s3cmd
 
@@ -147,59 +149,52 @@ edit a `~/.s3cfg` file. To access the `my-os-tenancy-o` tenancy (where "my-os-
 tenancy-o" needs to be replaced with your tenancy name), the following should
 be in the `~/.s3cfg `file:
 
-    
-    
-    access_key = <access key generated above>
-    host_base = my-os-tenancy-o.s3.jc.rl.ac.uk
-    host_bucket = my-os-tenancy-o.s3.jc.rl.ac.uk
-    secret_key = <secret key generated above>
-    use_https = False
-    signature_v2 = False
-    
+```
+access_key = <access key generated above>
+host_base = my-os-tenancy-o.s3.jc.rl.ac.uk
+host_bucket = my-os-tenancy-o.s3.jc.rl.ac.uk
+secret_key = <secret key generated above>
+use_https = False
+signature_v2 = False
+``` 
 
 To see which commands can be used with s3cmd, type:
 
-    
-    
-    s3cmd -h
-    
+```console
+s3cmd -h
+```
 
 To list a tenancy's buckets:
 
-    
-    
-    s3cmd ls
-    
+```console
+s3cmd ls
+```    
 
 To list the contents of a bucket:
 
-    
-    
-    s3cmd ls s3://<bucket_name>
-    
+```console
+s3cmd ls s3://<bucket_name>
+```    
 
 Make a new bucket:
 
-    
-    
-    s3cmd mb s3://<bucket_name>
-    
+```console
+s3cmd mb s3://<bucket_name>
+```
 
 `s3cmd` uses PUT and GET nomenclature for copying files to and from the object
 store.  
 To copy a file to a bucket in the object store:
 
-    
-    
-    s3cmd put <file name> s3://<bucket_name>
-    
+```console
+s3cmd put <file name> s3://<bucket_name>
+```
 
 To copy a file from a bucket in the object store to the file system:
 
-    
-    
-    s3cmd get s3://<bucket_name>/<object_name> <file_name>
-    
+```console
+s3cmd get s3://<bucket_name>/<object_name> <file_name>
+```
 
 For more commands and ways of using `s3cmd`, see the [s3tools
 website](https://s3tools.org/s3cmd).
@@ -223,47 +218,42 @@ to their own user space, following the instructions for "64-bit Intel" (linux-
 amd64) in the MinIO quickstart guide. Below is an example to install it into
 the `bin` directory in your user space
 
-    
-    
-    mkdir ~/bin
-    wget https://dl.min.io/client/mc/release/linux-amd64/mc ~/bin
-    chmod u+x ~/bin/mc
-    
+```console
+mkdir ~/bin
+wget https://dl.min.io/client/mc/release/linux-amd64/mc ~/bin
+chmod u+x ~/bin/mc
+```
 
 You can then add the `~/bin` directory to the PATH environment variable in
 your `~/.bashrc` file to allow `mc` to be accessed from anywhere on JASMIN.
 
-    
-    
-    # User specific aliases and functions
-    PATH=$PATH:$HOME/bin
-    
+```console
+# User specific aliases and functions
+PATH=$PATH:$HOME/bin
+```
 
 To configure the client with the JASMIN object store, create an access key and
 secret as documented above and insert them into the command:
 
-    
-    
-    mc config host add [ALIAS] [S3-ENDPOINT] [TOKEN] [S3 SECRET KEY]
-    
+```console
+mc config host add [ALIAS] [S3-ENDPOINT] [TOKEN] [S3 SECRET KEY]
+```
 
 The ALIAS is the name you'll reference the object store when using the client.
 To demonstrate, if the alias was set to "jasmin-store", displaying a specific
 bucket in the object store would be done in the following way:
 
-    
-    
-    mc ls jasmin-store/my-bucket
-    
+```console
+mc ls jasmin-store/my-bucket
+```
 
 The commands available in the client are documented in the quickstart guide
 (linked above). Copying an object from one place to another is very similar to
 a UNIX filesystem:
 
-    
-    
-    mc cp jasmin-store/my-bucket/object-1 jasmin-store/different-bucket/
-    
+```console
+mc cp jasmin-store/my-bucket/object-1 jasmin-store/different-bucket/
+```
 
 ## From Python
 
@@ -283,41 +273,44 @@ file. This object can be used for lots of the operations which can be done
 MinIO:
 
     
-    
-    with open('jasmin_object_store_credentials.json') as f:
-        jasmin_store_credentials = json.load(f)
-    
-    jasmin_s3 = s3fs.S3FileSystem(anon=False, secret=jasmin_store_credentials['secret'],
-                                   key=jasmin_store_credentials['token'],
-                                   client_kwargs={'endpoint_url': jasmin_store_credentials['endpoint_url']})
-    
-    my_object_size = jasmin_s3.du('my-bucket/object-1')
-    
+```python
+with open('jasmin_object_store_credentials.json') as f:
+    jasmin_store_credentials = json.load(f)
 
-Please note in the example above, the jasmin_object_store_credentials.json
+    jasmin_s3 = s3fs.S3FileSystem(
+        anon=False, secret=jasmin_store_credentials['secret'],
+        key=jasmin_store_credentials['token'],
+        client_kwargs={'endpoint_url': jasmin_store_credentials['endpoint_url']}
+    )
+
+    my_object_size = jasmin_s3.du('my-bucket/object-1')
+```
+
+Please note in the example above, the `jasmin_object_store_credentials.json`
 file would look along the lines of:
 
     
-    
-    {<br>  "token": "<access key generated above>",<br>  "secret": "<secret key generated above>",<br>  "endpoint_url": "my-os-tenancy-o.s3.jc.rl.ac.uk"
-    }
-    
+```json
+{
+    "token": "<access key generated above>",
+    "secret": "<secret key generated above>",
+    "endpoint_url": "http://my-os-tenancy-o.s3.jc.rl.ac.uk"
+}
+```
 
-  
 S3File is used for dealing with individual files on the object store within
 Python. These objects can read and written to and from the store:
 
-    
-    
-    file_object = s3fs.S3File(jasmin_s3, 'my-bucket/object-1', mode='rb')
-    # refresh can be set to True to disable metadata caching
-    file_metadata = file_object.metadata(refresh=False)
-    
-    # Writing data to variable in Python
-    file_object.write(data)
-    # Data will only be written to the object store if flush() is used. This can be executed in S3FS source code if the buffer >= the blocksize
-    file_object.flush()
-    
+```python
+file_object = s3fs.S3File(jasmin_s3, 'my-bucket/object-1', mode='rb')
+# refresh can be set to True to disable metadata caching
+file_metadata = file_object.metadata(refresh=False)
+
+# Writing data to variable in Python
+file_object.write(data)
+# Data will only be written to the object store if flush() is used. This can be executed in S3FS source code if the buffer >= the blocksize
+file_object.flush()
+```
 
 S3Map is very useful when using [xarray](http://xarray.pydata.org/en/stable/)
 to open a number of data files (netCDF4 for example), and turn them into the
@@ -326,13 +319,13 @@ can store a `.zarr` file in a POSIX filesystem, or can be streamed directly to
 an object store. These datasets can then be opened back into Python:
 
     
-    
-    xarray.open_mfdataset(filepath_list, engine=netcdf4)
-    s3_store = s3fs.S3Map('my-bucket/zarr-data', s3=jasmin_s3)
-    dataset.to_zarr(store=s3_store, mode='w')
-    
-    # Reopening the dataset from object store using xarray
-    xarray.open_zarr(s3_store, consolidated=True)
-    
+```python
+xarray.open_mfdataset(filepath_list, engine=netcdf4)
+s3_store = s3fs.S3Map('my-bucket/zarr-data', s3=jasmin_s3)
+dataset.to_zarr(store=s3_store, mode='w')
+
+# Reopening the dataset from object store using xarray
+xarray.open_zarr(s3_store, consolidated=True)
+```
 
 
