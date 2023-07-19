@@ -81,8 +81,8 @@ The **public** key file is the part that you need to share in order to access
 JASMIN. The **private** key file should be protected and not shared with
 others.
 
-{{% notice style="warning" icon="exclamation" title="Important" %}}
-You should not store your JASMIN private key, or the private key used for any other multi-user system such as ARCHER2, anywhere on JASMIN. Keep this private on your local machine (laptop/desktop).
+{{% notice style="warning" %}}
+You should not store your JASMIN private key, or a private key used for any other multi-user system such as ARCHER2, anywhere on JASMIN. Keep keys private on your local machine (laptop/desktop), protect each with a strong, randomised passphrase and store passphrases in an encrypted password manager so that you don't have to remember them.
 {{% /notice %}}
 
 ## Converting a PuTTYGen SSH private key for use with MobaXterm (Windows only)
