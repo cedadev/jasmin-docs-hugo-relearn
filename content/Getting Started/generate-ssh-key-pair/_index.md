@@ -18,13 +18,14 @@ It covers:
 
 You can also use this procedure to update an existing SSH key pair for JASMIN.
 However, if you are experiencing problems logging in to JASMIN you are advised
-to first check [Login problems](login-problems) and then contact [JASMIN
-support](https://www.jasmin.ac.uk/help/contact/) before changing your key.
-Once you have created your SSH key pair it will need to be uploaded to the
-JASMIN accounts portal. If this is the first time you have created a key pair
-then this will be done when you create an account on the portal (Step 2 of
-[Get Started with JASMIN](get-started-with-jasmin)). If you are updating your
-key for an existing account then you will need to update it in your [JASMIN
+to first check [Login problems]({{< ref "login-problems" >}}) and then contact
+[JASMIN support](https://www.jasmin.ac.uk/help/contact/) before changing your
+key. Once you have created your SSH key pair it will need to be uploaded to
+the JASMIN accounts portal. If this is the first time you have created a key
+pair then this will be done when you create an account on the portal (Step 2
+of [Get Started with JASMIN]({{< ref "get-started-with-jasmin" >}})). If you
+are updating your key for an existing account then you will need to update it
+in your [JASMIN
 profile](https://accounts.jasmin.ac.uk/account/login/?next=/account/profile/).
 
 ## The shell terminal
@@ -32,9 +33,9 @@ profile](https://accounts.jasmin.ac.uk/account/login/?next=/account/profile/).
 Generating an SSH key pair requires an SSH client and a Shell terminal. Linux
 and Mac users can use a standard terminal which is very likely to have SSH
 installed. Windows users are advised to [install the MobaXterm
-application](mobaxterm) which provides a linux-style terminal with all the
-relevant utilities included. Figures 1 and 2 show example terminal windows on
-a Mac and Windows (using MobaXterm).
+application]({{< ref "mobaxterm" >}}) which provides a linux-style terminal
+with all the relevant utilities included. Figures 1 and 2 show example
+terminal windows on a Mac and Windows (using MobaXterm).
 
 ![Mac terminal ](file-QrkL51B5fW.png)
 
@@ -49,7 +50,7 @@ Windows.
 
 The Linux command `ssh-keygen` should be used to generate your SSH key pair.
 Open a terminal and generate your public and private key, as follows (replace
-the e-mail address with your own:
+the e-mail address with your own):
 
 ```console
 ssh-keygen -t rsa -b 2048 -C "me@somewhere.ac.uk" -f ~/.ssh/id_rsa_jasmin
@@ -81,15 +82,17 @@ The **public** key file is the part that you need to share in order to access
 JASMIN. The **private** key file should be protected and not shared with
 others.
 
-{{% notice style="warning" %}}
-You should not store your JASMIN private key, or a private key used for any other multi-user system such as ARCHER2, anywhere on JASMIN. Keep keys private on your local machine (laptop/desktop), protect each with a strong, randomised passphrase and store passphrases in an encrypted password manager so that you don't have to remember them.
-{{% /notice %}}
-
 ## Converting a PuTTYGen SSH private key for use with MobaXterm (Windows only)
 
 If you have previously used the
 [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/) utilities to
-login to JASMIN and you wish to move over to using [MobaXterm](mobaxterm) then
-please see these [instructions to convert your SSH private key from the
-PuTTYGen format to the OpenSSH format](https://docs.oseems.com/general/application/putty/convert-ppk-to-ssh-key) (as used by Linux/Mac). Please save your resulting OpenSSH key as
+login to JASMIN and you wish to move over to using [MobaXterm]({{< ref
+"mobaxterm" >}}) then please see these [instructions to convert your SSH
+private key from the PuTTYGen format to the OpenSSH
+format](https://docs.oseems.com/general/application/putty/convert-ppk-to-ssh-
+key) (as used by Linux/Mac). Please save your resulting OpenSSH key as
 `id_rsa_jasmin` in your `$HOME/.ssh/` directory.
+
+####
+
+
