@@ -9,7 +9,7 @@ slug: get-started-with-jasmin
 title: Get Started with JASMIN
 ---
 
-This article explains the steps involved for most scientific end-users to gain
+This article explains the steps involved for most users to gain
 access to the JASMIN environment.
 
 The [JASMIN](http://www.jasmin.ac.uk/) scientific data analysis environment is
@@ -36,58 +36,14 @@ each step.
 
 Step  |  Details  |  Comments  
 ---|---|---  
-1  |  [Generate an SSH key](generate-ssh-key-pair) |  Create this locally,
-ready to upload it to your JASMIN Account profile (see Step 2)  
-2  |  [Get a JASMIN portal account](get-a-jasmin-account-portal) |  Access to
-JASMIN services is controlled by the [JASMIN Accounts
-Portal](https://accounts.jasmin.ac.uk/) \- you must register for an account.
-Using the JASMIN Accounts portal, you will then need to make a request to
-access JASMIN services and privileges you require (as described in the steps
-below). Some of these services will require manual approval by individuals
-external to the CEDA/JASMIN team.  
-  
-Please note that registering on the JASMIN accounts portal does not by itself
-provide you with any access to JASMIN machines or services. You must complete
-all the steps below to gain full access.  
-  
-For further information [See Getting started with JASMIN Webinar - section
-2](https://www.ceda.ac.uk/events/getting-started-with-jasmin-webinar/)  
-  
-3  |  [Check network details](check-network-details) |  In order to maintain a
-secure and reliable scientific infrastructure for its users, JASMIN restricts
-login access by maintaining an "allow list" of network domains. Check details
-of your network connection to JASMIN to ensure you are able to connect.  
-4  |  [Request ssh login access to JASMIN](get-login-account) |  Your account
-so far is just a profile on the accounts portal but has no privileges. If you
-intend to use JASMIN computing resources you need to apply for the "jasmin-
-login" service, which will allow you to connect to JASMIN machines using ssh.
-[See Getting started with JASMIN Webinar - section
-2](https://www.ceda.ac.uk/events/getting-started-with-jasmin-webinar/)  
-5  |  Apply for access to additional services on JASMIN  |  JASMIN has a vast
-number of additional services, access to these is all managed in the Accounts
-Portal. Search and apply for any services you require in the portal. In most
-cases, users will "belong" to a particular scientific project which may
-already have a presence on JASMIN, often in the form of a [Group
-Workspace](short-term-project-storage). See here how to [Apply for access to a
-Group Workspace](apply-for-access-to-a-gws-new).  
-  
-For further information [see Getting started with JASMIN Webinar- section
-4](https://www.ceda.ac.uk/events/getting-started-with-jasmin-webinar/)  
-  
-6  |  [How to login](login) |  The 'how to login' document explains all the
-basic steps about logging in to JASMIN via ssh, but we also have several other
-tutorials that may be useful - see [Exercises 1-3
-here](https://github.com/cedadev/jasmin-workshop).  
-  
-7  |  [Get a CEDA account](ceda-archive) |  The CEDA Archive provides access
-to thousands of atmospheric, climate change, and earth observation datasets.
-This is directly accessible as a file system from the shared science machines
-on JASMIN. Some datasets on the CEDA Archive require specific agreements, to
-apply for access to these, you will need a CEDA account.  
-8  |  [Link your JASMIN and CEDA accounts](update-a-jasmin-account)  
-|  The final step is to link your CEDA account to your JASMIN account. This
-allows you filesystem access to data on CEDA Archive. This is a step that you
-will be guided through in the JASMIN account portal.  
+1  |  [Generate an SSH key](generate-ssh-key-pair) |  Create this locally, ready to upload it to your JASMIN Account profile (see Step 2)  
+2  |  [Get a JASMIN portal account](get-a-jasmin-account-portal) |  Access to JASMIN services is controlled by the [JASMIN Accounts Portal](https://accounts.jasmin.ac.uk/) \- you must register for an account. Using the JASMIN Accounts portal, you will then need to make a request to access JASMIN services and privileges you require (as described in the steps below). Some of these services will require manual approval by individuals external to the CEDA/JASMIN team. Please note that registering on the JASMIN accounts portal does not by itself provide you with any access to JASMIN machines or services. You must complete all the steps below to gain full access. For further information [See Getting started with JASMIN Webinar - section 2](https://www.ceda.ac.uk/events/getting-started-with-jasmin-webinar/)  
+  3  |  [Check network details](check-network-details) |  In order to maintain a secure and reliable scientific infrastructure for its users, JASMIN restricts login access by maintaining an "allow list" of network domains. Check details of your network connection to JASMIN to ensure you are able to connect.  
+  4  |  [Request ssh login access to JASMIN](get-login-account) |  Your account so far is just a profile on the accounts portal but has no privileges. If you intend to use JASMIN computing resources you need to apply for the "jasmin-login" service, which will allow you to connect to JASMIN machines using ssh. [See Getting started with JASMIN Webinar - section 2](https://www.ceda.ac.uk/events/getting-started-with-jasmin-webinar/)  
+  5  |  Apply for access to additional services on JASMIN  |  JASMIN has a vast number of additional services, access to these is all managed in the Accounts Portal. Search and apply for any services you require in the portal. In most cases, users will "belong" to a particular scientific project which may already have a presence on JASMIN, often in the form of a [Group Workspace](short-term-project-storage). See here how to [Apply for access to a Group Workspace](apply-for-access-to-a-gws-new).  For further information [see Getting started with JASMIN Webinar- section 4](https://www.ceda.ac.uk/events/getting-started-with-jasmin-webinar/)  
+  6  |  [How to login](login) |  The 'how to login' document explains all the basic steps about logging in to JASMIN via ssh, but we also have several other tutorials that may be useful - see [Exercises 1-3 here](https://github.com/cedadev/jasmin-workshop).  
+  7  |  [Get a CEDA account](ceda-archive) |  The CEDA Archive provides access to thousands of atmospheric, climate change, and earth observation datasets. This is directly accessible as a file system from the shared science machines on JASMIN. Some datasets on the CEDA Archive require specific agreements, to apply for access to these, you will need a CEDA account.  
+  8  |  [Link your JASMIN and CEDA accounts](update-a-jasmin-account)  |  The final step is to link your CEDA account to your JASMIN account. This allows you filesystem access to data on CEDA Archive. This is a step that you will be guided through in the JASMIN account portal.  
   
 The table above describes the initial steps to get you started on JASMIN -
 however, there are a variety of ways that users can get the most out of
