@@ -80,7 +80,7 @@ server. Specifically:
 # How to use the login servers
 
 For full details of how to log in, including making onward connections to
-other machines, please see the article ["How to login"]({{< ref "login" >}})
+other machines, please see the article ["How to login"]({{< ref path="Getting Started/login" >}})
 
 **Note:** Users are **not permitted to execute commands which require
 administrative privileges**. This applies to all hosts in the managed part of
