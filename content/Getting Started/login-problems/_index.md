@@ -14,8 +14,8 @@ title: Login problems?
 ---
 
 Having problems connecting to a host on JASMIN? Details of how to login to
-JASMIN can be found [here](login), but this article may help to diagnose login
-problems. It provides information for the following issues:
+JASMIN can be found [here]({{< ref path="Getting Started/login" >}}), but this article may help to
+diagnose login problems. It provides information for the following issues:
 
   * Unable to login to a login server e.g. `login1.jasmin.ac.uk`
   * Can login to login server but can't login to a subsequent server
@@ -55,8 +55,8 @@ Depending on your system, this will either provide output to the terminal (via
 stdout) or on some systems this might save the output in the file
 "reverse_dns_check". You may need to look in that file for the result.
 
-See [check network details](check-network-details) for further information on
-how to interpret the result from this.
+See [check network details]({{< ref "check-network-details" >}}) for further
+information on how to interpret the result from this.
 
 Most institutional networks for UK universities and partner organisations are
 on our allow list, which is updated on request. However if you are trying to
@@ -78,10 +78,10 @@ the outward SSH connection to JASMIN from there. In this case, you need to
 have your JASMIN SSH key loaded on your local machine first, and remember to
 include the -A flag for "agent forwarding" for ALL the intermediate steps.
 
-If all else fails, you can use the ["contingency route"](login-servers)
-provide by login2.jasmin.ac.uk (see article for further details), but you will
-be limited in what you can do / connect to within JASMIN as a result. We
-prefer all users to connect from their institutional network.
+If all else fails, you can use the ["contingency route"]({{< ref "login-servers" >}}) provide by login2.jasmin.ac.uk (see article for further
+details), but you will be limited in what you can do / connect to within
+JASMIN as a result. We prefer all users to connect from their institutional
+network.
 
 **2) "Permission denied"**
 
@@ -97,7 +97,7 @@ number of reasons:
     * Try waiting a few minutes before trying again.
   * **You don't have your key loaded in your local authentication agent (e.g. ssh-agent).**
     * Check that you are following the method suitable for your operating system 
-      * The article "[How to login](login)" has instructions for linux, mac and windows.  
+      * The article "[How to login]({{< ref path="Getting Started/login" >}})" has instructions for linux, mac and windows.  
 
     * Note that connections using NoMachine NX don't require an authentication agent: this can be a good alternative if you're having problems.
   * **You have not yet been granted jasmin-login access or your access has expired.**
@@ -195,11 +195,11 @@ other machines. To check, run the following command on the login server:
 
 This should display something that looks similar to (but not identical to)
 "/tmp/ssh-RNjiHr2844/agent.2844". If nothing is displayed then it indicates
-that agent forwarding is not working. Please read [how to login](login) and
-make sure you are running ssh-agent (or similar), have loaded your private key
-and are using the -A option on your ssh command for the connection to jasmin-
-login1. NX users should make sure that the "agent forwarding" option is ticked
-when setting up a connection profile.
+that agent forwarding is not working. Please read [how to login]({{< ref
+path="Getting Started/login" >}}) and make sure you are running ssh-agent (or similar), have loaded
+your private key and are using the -A option on your ssh command for the
+connection to the login server. NX users should make sure that the "agent
+forwarding" option is ticked when setting up a connection profile.
 
 **2) Some hosts within JASMIN are restricted to particular (groups of)
 users.**
@@ -259,8 +259,8 @@ key.
 
 ### Errors when connecting with Mobaxterm
 
-Please follow the [instructions for MobaXterm](mobaxterm) (which include a
-screen video to show how to load your key into MobAgent).
+Please follow the [instructions for MobaXterm]({{< ref "mobaxterm" >}}) (which
+include a screen video to show how to load your key into MobAgent).
 
 These instructions have changed with more recent versions of MobaXterm, and
 replace the need to use the ssh-add command, so please make sure that both the

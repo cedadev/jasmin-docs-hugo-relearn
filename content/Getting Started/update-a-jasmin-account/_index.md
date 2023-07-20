@@ -19,10 +19,10 @@ accounts portal:
 
 ## Update your SSH public key
 
-First, you need to generate a new SSH key pair as described here: [Generate an
-SSH key pair](generate-ssh-key-pair). This should be done on your local
-machine (e.g. Windows / Linux / Mac). You MUST protect your key with a strong
-passphrase. Then follow step 1 to step 5 to update your SSH public key
+First, you need to generate a new SSH key pair as described here: [Generate an SSH key pair]({{< ref "generate-ssh-key-pair" >}}). This should be done on
+your local machine (e.g. Windows / Linux / Mac). You MUST protect your key
+with a strong passphrase. Then follow step 1 to step 5 to update your SSH
+public key
 
 **Step 1** : You need to login to your JASMIN accounts portal
 <https://accounts.jasmin.ac.uk> and then click on your username (at the top
@@ -74,10 +74,9 @@ JASMIN services, please [contact us](http://www.jasmin.ac.uk/contact/) to
 update these fields.
 
 **Note:** If your profile contains a red button "Confirm now" next to the
-email field, you need to [re-confirm your email address](reconfirm-email-
-address) (this is a process which you will be asked to repeat on an annual
-basis). If you have successfully completed this process, you should see a
-green "confirmed" label as shown above.
+email field, you need to [re-confirm your email address]({{< ref "reconfirm-email-address" >}}) (this is a process which you will be asked to repeat on an
+annual basis). If you have successfully completed this process, you should see
+a green "confirmed" label as shown above.
 
 ![](file-Q1fSbTtw5P.png)
 
@@ -107,8 +106,8 @@ confirmation. Then click "Change password"
 
 Linking your CEDA account to your JASMIN account allows you filesystem access
 to data on CEDA Archive. If you need to access data on the CEDA Archive and
-you do not have an account, you will need to apply for a [CEDA account](get-
-ceda-account).
+you do not have an account, you will need to apply for a [CEDA account]({{<
+ref "ceda-archive#register" >}}).
 
 **Step 1** : On the profile page, select "Link now" which is opposite to the
 field "Linked CEDA Account". This will take you to the CEDA accounts portal

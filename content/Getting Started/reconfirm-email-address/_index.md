@@ -42,8 +42,8 @@ Please also contact the helpdesk if:
   * You need to change your email address
 
 You cannot update the email address yourself, since a change of institution
-may affect your eligibility to some JASMIN services. See [here](update-a-
-jasmin-account) for details of how to update other aspects of your JASMIN
-account.
+may affect your eligibility to some JASMIN services. See [here]({{< ref
+"update-a-jasmin-account" >}}) for details of how to update other aspects of
+your JASMIN account.
 
 

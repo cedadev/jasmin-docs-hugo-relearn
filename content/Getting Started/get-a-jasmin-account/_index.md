@@ -16,7 +16,7 @@ machines or services.
 
 If you wish to migrate an existing CEDA account please see:
 
-  * [How to migrate an existing CEDA account using the JASMIN account portal](migrate-jasmin-account-from-ceda)
+  * [How to migrate an existing CEDA account using the JASMIN account portal]({{< ref "migrate-jasmin-account-from-ceda" >}})
 
 There is a video **tutorial** for the material covered in this article at
 [Getting a new JASMIN

@@ -45,7 +45,7 @@ Setting up SSH keys involves the following steps:
   1. Create a pair of SSH keys (public and private **with associated passphrase** ).
   2. Provide the **public** key to remote machines/services that you wish to login to.
 
-See [instructions for setting this up on JASMIN](generate-ssh-key-pair).
+See [instructions for setting this up on JASMIN]({{< ref "generate-ssh-key-pair" >}}).
 
 ## Login with your SSH key pair
 
@@ -55,7 +55,7 @@ machine the process is as follows:
   1. Load the **private** key into an "authentication agent" (such as `ssh-agent`) on your local machine.
   2. Use an SSH client (such as the `ssh` command) to login to the remote server. 
 
-See [instructions for setting this up on JASMIN](login).
+See [instructions for setting this up on JASMIN]({{< ref path="Getting Started/login" >}}).
 
 ## Logging in from multiple machines
 

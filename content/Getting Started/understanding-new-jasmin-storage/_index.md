@@ -80,7 +80,8 @@ are expecting to see is not listed at the top level ( /gws/nopw/j04/) you
 should ls the full path of the workspace, and after a very short delay, the
 workspace should appear.
 
-See also [here](storage) to see where these are mounted throughout JASMIN.
+See also [here]({{< ref path="Getting Started/storage" >}}) to see where these are mounted
+throughout JASMIN.
 
 #### The BIG issue: why you need to be careful about parallel file access
 (even if you don’t think you are doing it):
@@ -115,6 +116,6 @@ performance.
 #### FAQs, issues and solutions
 
 Please read our collection of FAQs and known issues (and solutions!) which
-we've put together [HERE](faqs-storage).
+we've put together [HERE]({{< ref "faqs-storage" >}}).
 
 

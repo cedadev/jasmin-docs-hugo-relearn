@@ -18,7 +18,7 @@ There is a video **tutorial** available on [Access login server
 
 ## Get a login account
 
-A user with a `  jasmin -login` account is allocated a HOME directory of
+A user with a `jasmin -login` account is allocated a HOME directory of
 **100GB** and can access the shared JASMIN servers (Scientific servers, data
 transfer servers,  and  LOTUS). Sign in into your [JASMIN accounts
 portal](https://accounts.jasmin.ac.uk/) where you can apply for a JASMIN login
@@ -54,6 +54,6 @@ Under 'My Services' you can view all the services that you currently have
 access to or have requested access for. Note: Every time a notification is
 acknowledged the counter is reset or decremented.
 
-Now you can proceed to [How to login](login)
+Now you can proceed to [How to login]({{< ref path="Getting Started/login" >}})
 
 

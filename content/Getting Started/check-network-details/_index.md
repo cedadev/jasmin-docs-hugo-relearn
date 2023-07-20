@@ -89,8 +89,8 @@ of JASMIN you will need to have an IP address that resolves to the domain of
 your institution. For access to graphical desktops, equivalent servers `nx-
 login2.jasmin.ac.uk` and `nx-login3.jasmin.ac.uk` have been provided and for
 transfer tasks, an additional transfer server `xfer3.jasmin.ac.uk` is
-available. See [login servers](login-servers) and [transfer servers](transfer-
-servers), but note the additional access role required in the case of the
-transfer server.
+available. See [login servers]({{< ref "login-servers" >}}) and [transfer
+servers]({{< ref "transfer-servers" >}}), but note the additional access role
+required in the case of the transfer server.
 
 
