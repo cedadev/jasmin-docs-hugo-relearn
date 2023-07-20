@@ -68,7 +68,7 @@ outside of JASMIN - you will need to use a graphical session on JASMIN to
 access a Firefox browser running on a JASMIN system.
 
 **The recommended way to do this is using the** [NX Graphical Desktop
-service](graphical-linux-desktop-access-using-nx). You can start Firefox from
+service]({{< ref "graphical-linux-desktop-access-using-nx" >}}). You can start Firefox from
 the "Activities" menu once you have logged in to your graphical desktop on one
 of the `nx-login*` servers (so no need to make an onward connection to a `sci`
 server).
@@ -80,9 +80,15 @@ An alternative option is to using X11 Forwarding on your SSH connection:
 ssh -AY <user>@sciX.jasmin.ac.uk firefox
 ```    
 
-Once you have Firefox open, navigate to `http://my-os-
-tenancy-o.s3.jc.rl.ac.uk:81/_admin/portal` (where "my-os-tenancy-o" needs to
-be replaced with your tenancy name). You will see a login screen where you
+Once you have Firefox open, navigate to
+
+```console
+http://my-os-tenancy-o.s3.jc.rl.ac.uk:81/_admin/portal
+```
+
+but replace `my-os-tenancy-o` with your tenancy name.
+
+You will see a login screen where you
 should enter your JASMIN username and password:
 
 ![](file-4dszwvVbge.png)
@@ -122,19 +128,12 @@ must be used depending on whether you are accessing the object store from the
 JASMIN managed cloud servers or from the JASMIN External Cloud.
 
 From inside JASMIN, including LOTUS and the Scientific Analysis servers, 
-`my-os-tenancy-o.s3.jc.rl.ac.uk` should be used.
+`my-os-tenancy-o.s3.jc.rl.ac.uk` should be used, with the `http://`` prefix.
 
-From the JASMIN External Cloud, `my-os-tenancy-o.s3-ext.jc.rl.ac.uk` should be
-used - note the additional `-ext`.
+From the JASMIN External Cloud, and from locations external to JASMIN, `my-os-tenancy-o.s3-ext.jc.rl.ac.uk` should be
+used - note the `https://` prefix and additional `-ext`.
 
-(Where "my-os-tenancy-o" needs to be replaced with your tenancy name)
-
-Currently, the Object Store cannot be accessed from outside of JASMIN itself.
-
-{{% notice tip %}}
-Please note that the URL for accessing the object store internally needs to be
-`http://` and externally needs to be `https://`.
-{{% /notice %}}
+(Where `my-os-tenancy-o` needs to be replaced with your tenancy name)
 
 ## Using s3cmd
 
@@ -155,6 +154,17 @@ host_base = my-os-tenancy-o.s3.jc.rl.ac.uk
 host_bucket = my-os-tenancy-o.s3.jc.rl.ac.uk
 secret_key = <secret key generated above>
 use_https = False
+signature_v2 = False
+``` 
+
+or, from an external tenancy or locations outside of JASMIN:
+
+```
+access_key = <access key generated above>
+host_base = my-os-tenancy-o.s3-ext.jc.rl.ac.uk
+host_bucket = my-os-tenancy-o.s3-ext.jc.rl.ac.uk
+secret_key = <secret key generated above>
+use_https = True
 signature_v2 = False
 ``` 
 
@@ -295,6 +305,16 @@ file would look along the lines of:
     "token": "<access key generated above>",
     "secret": "<secret key generated above>",
     "endpoint_url": "http://my-os-tenancy-o.s3.jc.rl.ac.uk"
+}
+```
+
+or, from an external tenancy or locations outside of JASMIN:
+
+```json
+{
+    "token": "<access key generated above>",
+    "secret": "<secret key generated above>",
+    "endpoint_url": "https://my-os-tenancy-o.s3-ext.jc.rl.ac.uk"
 }
 ```
 
