@@ -36,7 +36,7 @@ notebooks' shell **not on the JASMIN sci machines**
 
 To get started, head to <https://notebooks.jasmin.ac.uk> and click the
 terminal button.
-![197159573-c2533643-529e-4685-af97-a90f73c78f47.png#floatright](197159573-c2533643-529e-4685-af97-a90f73c78f47.png)
+![197159573-c2533643-529e-4685-af97-a90f73c78f47.png](197159573-c2533643-529e-4685-af97-a90f73c78f47.png)
 
 Then, type these commands at the bash shell which appears.
 
