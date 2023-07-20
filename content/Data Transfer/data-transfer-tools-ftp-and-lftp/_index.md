@@ -31,14 +31,16 @@ FTP can only be used as a client on JASMIN, to pull data from external FTP
 servers to local storage on JASMIN, for example a Group Workspace or your home
 directory. **There is no FTP server within JASMIN providing the ability to
 upload files to these locations.** Please use an alternative, more secure
-method instead. See other [Data Transfer Tools](data-transfer-tools) such as
-[scp/rsync/sftp](data-transfer-tools-rsync-scp-sftp), [bbcp](data-transfer-
-tools-bbcp) or GridFTP ([over SSH](data-transfer-tools-gridftp-ssh-auth),
-[certificate-based](data-transfer-tools-gridftp-cert-based-auth) or using
-[Globus Online](data-transfer-tools-gridftp-using-globus-online))
+method instead. See other [Data Transfer Tools]({{< ref "data-transfer-tools"
+>}}) such as [scp/rsync/sftp]({{< ref "data-transfer-tools-rsync-scp-sftp"
+>}}), [bbcp]({{< ref "data-transfer-tools-bbcp" >}}) or GridFTP ([over
+SSH]({{< ref "data-transfer-tools-gridftp-ssh-auth" >}}), [certificate-
+based]({{< ref "data-transfer-tools-gridftp-cert-based-auth" >}}) or using
+[Globus Online]({{< ref "data-transfer-tools-using-the-globus-web-interface"
+>}}))
 
-On the [transfer servers](transfer-servers), you can use one of the installed
-FTP clients to download data from elsewhere. These are:
+On the [transfer servers]({{< ref "transfer-servers" >}}), you can use one of
+the installed FTP clients to download data from elsewhere. These are:
 
   * `ftp`
     * basic ftp client. Usage details

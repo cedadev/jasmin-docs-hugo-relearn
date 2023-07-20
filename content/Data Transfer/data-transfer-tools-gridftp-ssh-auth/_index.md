@@ -36,8 +36,8 @@ and can do verification and sync operations as part of the transfer.
 
 See also:
 
-  * [Transfer Servers](transfer-servers) for details on which servers within JASMIN have GridFTP available.
-  * [Transfers from ARCHER2](transfers-from-archer2) for details of different routes affecting your choice of server (since this is the one of the most likely places to which JASMIN users will want to transfer data to/from)
+  * [Transfer Servers]({{< ref "transfer-servers" >}}) for details on which servers within JASMIN have GridFTP available.
+  * [Transfers from ARCHER2]({{< ref "transfers-from-archer2" >}}) for details of different routes affecting your choice of server (since this is the one of the most likely places to which JASMIN users will want to transfer data to/from)
 
 ## Establishing a connection
 
@@ -51,8 +51,8 @@ option enabled, to enable agent forwarding:
     
 
 Note that in order to use `hpxfer[12].jasmin.ac.uk` you will need to have
-[high-performance data transfer access](data-transfer-hpxfer) on your JASMIN
-account. An alternative to try out beforehand, is to use `jasmin-
+[high-performance data transfer access]({{< ref "data-transfer-hpxfer" >}}) on
+your JASMIN account. An alternative to try out beforehand, is to use `jasmin-
 xfer1.ceda.ac.uk`.
 
 Use the `globus-url-copy` command to list the contents of your home directory
@@ -145,9 +145,9 @@ gridftp.remotesite.ac.uk to jasmin-xfer2.ceda.ac.uk.
 Note the transfer rate achieved in Megabytes/second (MB/sec), although for
 various reasons this is not to be relied upon as an accurate expectation of
 speed for real transfers. However, **you are unlikely to achieve even half of
-this data rate via`scp`, `rsync` or `sftp` over the same route**. [Bbcp](data-
-transfer-tools-bbcp) may achieve similar rates, however, and this is
-considered by some as easier to use.
+this data rate via`scp`, `rsync` or `sftp` over the same route**. [Bbcp]({{<
+ref "data-transfer-tools-bbcp" >}}) may achieve similar rates, however, and
+this is considered by some as easier to use.
 
 4\. Recursively download the contents of a directory on a remote location to a
 local destination.
@@ -184,11 +184,11 @@ So far the examples have used a server within JASMIN as the client in the
 GridFTP transfer. The transfer can be reversed so that the client is elsewhere
 and the JASMIN host is the server specified in the destination URI. The
 following command should work connecting to one of the following transfer
-servers: (see also [Transfer Servers](transfer-servers))
+servers: (see also [Transfer Servers]({{< ref "transfer-servers" >}}))
 
   * `xfer[12].jasmin.ac.uk`
   * `xfer3.jasmin.ac.uk` ([additional access role](https://accounts.jasmin.ac.uk/services/additional_services/xfer-sp) required)
-  * `hpxfer[12].jasmin.ac.uk` ([high-performance data transfer access](data-transfer-hpxfer) required)
+  * `hpxfer[12].jasmin.ac.uk` ([high-performance data transfer access]({{< ref "data-transfer-hpxfer" >}}) required)
 
 Push data to JASMIN from a remote server:
 

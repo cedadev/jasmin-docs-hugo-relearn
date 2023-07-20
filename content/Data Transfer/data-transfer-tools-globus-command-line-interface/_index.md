@@ -55,7 +55,7 @@ retry automatically until some pre-set deadline.
   * Python environment for that platform, with ability to create virtual environments (to enable installation of additional packages)
   * For use of the JASMIN Globus endpoint: 
     * An active JASMIN user account, with “jasmin-login” and “hpxfer” privileges.
-  * You may also wish to [set up your own Globus endpoint using Globus Connect Personal](data-transfer-tools-globus-connect-personal), though this is not needed for these examples.
+  * You may also wish to [set up your own Globus endpoint using Globus Connect Personal]({{< ref "data-transfer-tools-globus-connect-personal" >}}), though this is not needed for these examples.
 
 ## Note on access requirements
 
@@ -64,14 +64,14 @@ want to transfer data to/from data using Globus)
 
 Access to the Globus endpoint provided by JASMIN (called the "JASMIN Globus
 endpoint (jasmin credentials") is controlled by the [JASMIN “hpxfer” access
-role](data-transfer-hpxfer): this is the same role which we use to control
-access to the servers hpxfer[12].jasmin.ac.uk. The process of registering asks
-for a specific IP address. However, if you are just using Globus (rather than
-logging in via SSH to hpxfer[12].jasmin.ac.uk), this address is not required,
-because the IP addresses of the Globus servers are already registered. In this
-case, a dummy value should be specified: please use that of host
-`xfer1.jasmin.ac.uk` whose IP address is `130.246.130.166`. This will be
-accepted by the registration process.
+role]({{< ref "data-transfer-hpxfer" >}}): this is the same role which we use
+to control access to the servers hpxfer[12].jasmin.ac.uk. The process of
+registering asks for a specific IP address. However, if you are just using
+Globus (rather than logging in via SSH to hpxfer[12].jasmin.ac.uk), this
+address is not required, because the IP addresses of the Globus servers are
+already registered. In this case, a dummy value should be specified: please
+use that of host `xfer1.jasmin.ac.uk` whose IP address is `130.246.130.166`.
+This will be accepted by the registration process.
 
 Please note that if you subsequently need to access `hpxfer[1,2].jasmin.ac.uk`
 for SSH-based transfers (but on these higher-performance machines), you may

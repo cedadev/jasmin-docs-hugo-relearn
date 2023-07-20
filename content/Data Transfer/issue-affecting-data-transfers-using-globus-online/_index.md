@@ -42,7 +42,7 @@ JASMIN.
 Transfers using methods which can specify single-stream can proceed
 unaffected:
 
-  * with `globus-url-copy`, you must omit the `-p N -fast` options which are used to enable parallel-stream transfers (do not simply set N to 1). The `-cc N` (concurrency) option is still safe to use, as this initiates N single-stream transfers, one for each file (as opposed to multiple streams to transfer a single file, which is problematic). Please see [transfers from ARCHER2](transfers-from-archer2) for an example of how to do this, for single and multiple files at once.
+  * with `globus-url-copy`, you must omit the `-p N -fast` options which are used to enable parallel-stream transfers (do not simply set N to 1). The `-cc N` (concurrency) option is still safe to use, as this initiates N single-stream transfers, one for each file (as opposed to multiple streams to transfer a single file, which is problematic). Please see [transfers from ARCHER2]({{< ref "transfers-from-archer2" >}}) for an example of how to do this, for single and multiple files at once.
   * with `bbcp`, the default number of streams is 4, so you must actively set this to 1 with the `-s` option.
 
 Unfortunately Globus Online does not enable users to specify single-stream-

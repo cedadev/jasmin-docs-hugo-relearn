@@ -136,7 +136,7 @@ line tool, but often through a graphical user interface instead.
 While convenient and familiar to many users, the tools described above do not
 make efficient use of available bandwidth for transferring large quantities of
 data via high-speed networks over long distances. Please consult [Data
-Transfer Tools](data-transfer-tools) to learn more about which might be the
-most appropriate tool to use in different contexts.
+Transfer Tools]({{< ref "data-transfer-tools" >}}) to learn more about which
+might be the most appropriate tool to use in different contexts.
 
 

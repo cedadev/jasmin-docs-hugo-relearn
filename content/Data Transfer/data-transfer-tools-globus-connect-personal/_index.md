@@ -77,9 +77,9 @@ the web interface.
 The setup process will have prompted you for a name for your endpoint. It is
 assigned a unique ID, too.
 
-**If you have the Globus Command-Line Interface installed** ([see here](data-
-transfer-tools-globus-command-line-interface)), you can find the ID of your
-own endpoint with the CLI command:
+**If you have the Globus Command-Line Interface installed** ([see here]({{<
+ref "data-transfer-tools-globus-command-line-interface" >}})), you can find
+the ID of your own endpoint with the CLI command:
 
     
     
