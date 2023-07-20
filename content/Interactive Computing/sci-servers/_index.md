@@ -99,7 +99,7 @@ servers:
 Each analysis server has the following features:
 
   * Default Redhat Enterprise Linux development environment.
-  * The software packages that make up the [JASMIN Analysis Platform]({{< ref "software-on-jasmin#common-software" >}}) are all installed - providing commonly-used open-source analysis tools. These packages include NCO, CDO, Python2.7 (with netCDF4, matplotlib, numpy etc.,) and R.
+  * The software packages that make up the [JASMIN Analysis Platform]({{< ref path="Software on JASMIN/software-on-jasmin#common-software" >}}) are all installed - providing commonly-used open-source analysis tools. These packages include NCO, CDO, Python2.7 (with netCDF4, matplotlib, numpy etc.,) and R.
   * Access to proprietary tools, e.g. IDL and Intel Fortran, through the Module System.
   * Ability to run X11/X-Windows applications (use the [NX graphical desktop service]({{< ref "graphical-linux-desktop-access-using-nx" >}}) to view X11 graphics output efficiently on your remote machine).
 
