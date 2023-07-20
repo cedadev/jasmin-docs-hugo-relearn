@@ -34,9 +34,8 @@ services are also not available. Highly-available (HA) configurations may be
 available in the future.
 
 All externally-exposed services, including the Kubernetes API, are
-authenticated using the [Identity Manager](cluster-as-a-service-identity-
-manager), meaning that FreeIPA groups can be used to control access to the
-cluster.
+authenticated using the [Identity Manager]({{< ref "cluster-as-a-service-identity-manager" >}}), meaning that FreeIPA groups can be used to control
+access to the cluster.
 
 The following services are also configured by CaaS (described in more detail
 later):
@@ -126,10 +125,10 @@ will not create a DNS entry for you.
 ## Accessing the cluster
 
 Kubernetes is configured to use the OpenID Connect support of the [Identity
-Manager](cluster-as-a-service-identity-manager) for authentication and
-authorisation. This means that all interactions with the cluster are
-authenticated and authorised against the users in FreeIPA, via the Keycloak
-integration.
+Manager]({{< ref "cluster-as-a-service-identity-manager" >}}) for
+authentication and authorisation. This means that all interactions with the
+cluster are authenticated and authorised against the users in FreeIPA, via the
+Keycloak integration.
 
 ### Using the dashboard
 
@@ -163,9 +162,9 @@ Connect authentication for kubectl.
 In order to configure OpenID Connect, you need to know the client ID and
 secret of the OpenID Connect client for your Kubernetes cluster in Keycloak.
 If you are an admin, you can [find this information in the Keycloak admin
-console](cluster-as-a-service-identity-manager) \- the client will be named
-after the cluster. If you are **not** an admin, your admin should provide you
-with this information.
+console]({{< ref "cluster-as-a-service-identity-manager" >}}) \- the client
+will be named after the cluster. If you are **not** an admin, your admin
+should provide you with this information.
 
 Use the following commands to configure kubectl to connect to your Kubernetes
 cluster using your Identity Manager, replacing the variables with the correct
@@ -230,8 +229,7 @@ Kubernetes includes a powerful [Role-Based Access Control (RBAC)
 system](https://kubernetes.io/docs/reference/access-authn-authz/rbac/). A full
 discussion of the RBAC system is beyond the scope of this documentation, but
 this section gives some examples of how RBAC in Kubernetes can be used in
-combination with [FreeIPA groups](cluster-as-a-service-identity-manager) to
-allow fine-grained access to the cluster.
+combination with [FreeIPA groups]({{< ref "cluster-as-a-service-identity-manager" >}}) to allow fine-grained access to the cluster.
 
 For every Kubernetes cluster that is deployed, CaaS automatically creates a
 group in FreeIPA called `<clustername>_users`. This group, along with the
@@ -248,8 +246,7 @@ restrictive permissions to them.
 
 For example, suppose you have some auditors who require read-only access to
 the entire cluster in order to know what workloads are running. The first
-thing to do is [create a group in FreeIPA](cluster-as-a-service-identity-
-manager) \- in this case, you might create a group called
+thing to do is [create a group in FreeIPA]({{< ref "cluster-as-a-service-identity-manager" >}}) \- in this case, you might create a group called
 `kubernetes_auditors`. Once the group is created, you can reference it in
 Kubernetes by using the prefix `oidc:` \- in this case the group would be
 referenced in Kubernetes as `oidc:kubernetes_auditors`. To grant read-only

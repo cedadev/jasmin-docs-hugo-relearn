@@ -44,19 +44,19 @@ CaaS system are subject to the usual constraints:
 
 ###  Available cluster types
 
-[Identity Manager](cluster-as-a-service-identity-manager)  
+[Identity Manager]({{< ref "cluster-as-a-service-identity-manager" >}})  
 |  Manages identity and permissions for other clusters using a combination of
 [FreeIPA](https://www.freeipa.org/page/Main_Page) and
 [Keycloak](https://www.keycloak.org/).  
 ---|---  
-[NFS](cluster-as-a-service-shared-storage)  
+[NFS]({{< ref "cluster-as-a-service-shared-storage" >}})  
 |  Shared storage for other clusters using a simple NFS server.  
-[Kubernetes](cluster-as-a-service-kubernetes)  
+[Kubernetes]({{< ref "cluster-as-a-service-kubernetes" >}})  
 |  A Kubernetes cluster deployed using [Rancher Kubernetes
 Engine](https://rancher.com/docs/rke/latest/en/).  
-[Pangeo](cluster-as-a-service-pangeo)  
+[Pangeo]({{< ref "cluster-as-a-service-pangeo" >}})  
 |  The [Pangeo](https://pangeo.io/) stack deployed on Kubernetes.  
-[Slurm](cluster-as-a-service-slurm) (currently disabled)  
+[Slurm]({{< ref "cluster-as-a-service-slurm" >}}) (currently disabled)  
 |  A batch cluster running the [Slurm workload
 manager](https://slurm.schedmd.com/).  
   

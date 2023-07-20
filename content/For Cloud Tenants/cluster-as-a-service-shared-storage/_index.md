@@ -19,9 +19,9 @@ provide common storage across all those nodes.
 
 These storage clusters are not intended to be directly consumed by users, but
 are taken as cluster configuration options by other clusters. In particular,
-[Slurm clusters](cluster-as-a-service-slurm) take a shared storage cluster as
-a configuration option - the shared storage is mounted on each cluster node
-for user home directories.
+[Slurm clusters]({{< ref "cluster-as-a-service-slurm" >}}) take a shared
+storage cluster as a configuration option - the shared storage is mounted on
+each cluster node for user home directories.
 
 ## NFS
 
