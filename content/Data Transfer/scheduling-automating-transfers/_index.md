@@ -25,16 +25,16 @@ periodic analysis.
 
 ## Scheduling download tasks using cron and LOTUS
 
-While the [cron server](using-cron) is provided for scheduling tasks, **it
-should not be used for the work of executing those tasks itself.** So we need
-a way for a task to be invoked from cron but executed where there is lots of
-processing resource (i.e. LOTUS).
+While the [cron server]({{< ref "using-cron" >}}) is provided for scheduling
+tasks, **it should not be used for the work of executing those tasks itself.**
+So we need a way for a task to be invoked from cron but executed where there
+is lots of processing resource (i.e. LOTUS).
 
 In the examples below, we use the `test` queue (or partition, as queues are
 known in SLURM). You can use this for testing, but once you know roughly how
 long your download(s) should take, you should [choose an appropriate
-queue](lotus-queues) so that the jobs can be scheduled in a fair way alongside
-other users' jobs.
+queue]({{< ref "lotus-queues" >}}) so that the jobs can be scheduled in a fair
+way alongside other users' jobs.
 
 ### 1\. Single download script
 
@@ -62,12 +62,12 @@ use of (for example) the `requests` library.
 **A note about transfer tools:** since we are delegating the actual download
 task to a LOTUS node, we are restricted to transfer tools already installed on
 those nodes or available in the user's path at a location cross-mounted with
-nodes in the LOTUS cluster (see Table 1 in [Access to Storage](storage)), such
-as $HOME or a group workspace. It is not possible for the JASMIN team to
-install specialist data transfer tools across the whole cluster, so you may be
-limited to downloading via HTTP(S), FTP, or via tools available via libraries
-in the Python environment such (which you do have access to and can easily
-customise to install additional libraries using virtual environments).
+nodes in the LOTUS cluster (see Table 1 in [Access to Storage]({{< ref path="Getting Started/storage" >}})), such as $HOME or a group workspace. It is not possible for
+the JASMIN team to install specialist data transfer tools across the whole
+cluster, so you may be limited to downloading via HTTP(S), FTP, or via tools
+available via libraries in the Python environment such (which you do have
+access to and can easily customise to install additional libraries using
+virtual environments).
 
 Download tools installed on LOTUS nodes include:
 
@@ -92,7 +92,7 @@ This could be invoked on a regular basis by adding a crontab entry like this
 
 However it would be safer to wrap this in a `crontamer` command like this to
 ensure one instance of the task had finished before the next started: (see
-[Using cron](using-cron) for details)
+[Using cron]({{< ref "using-cron" >}}) for details)
 
     
     

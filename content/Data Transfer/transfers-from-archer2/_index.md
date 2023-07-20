@@ -17,8 +17,9 @@ covers:
 
 ##  Choice of available Tools/Routes
 
-See [JASMIN external connections](jasmin-external-connections) and [Data
-Transfer Tools](data-transfer-tools) for general details.
+See [JASMIN external connections]({{< ref "jasmin-external-connections" >}})
+and [Data Transfer Tools]({{< ref "data-transfer-tools" >}}) for general
+details.
 
 Users transferring data between ARCHER2 and JASMIN are often transferring
 relatively large sets of data, so it is important to choose the most
@@ -46,7 +47,7 @@ between RDF and JASMIN.
 
 Note that (until
 
-[scp/rsync/sftp](data-transfer-tools-rsync-scp-sftp)  
+[scp/rsync/sftp]({{< ref "data-transfer-tools-rsync-scp-sftp" >}})  
 |  Simple transfer using easy method to general purpose xfer nodes.
 Convenient.  
 ---|---  
@@ -54,7 +55,7 @@ _source_ |  _dest_ |  _notes_
 `login.archer2.ac.uk` |  `xfer1.jasmin.ac.uk` |  over 10G JANET, but to
 virtual machine at JASMIN end  
 `login.archer2.ac.uk` |  `xfer2.jasmin.ac.uk` |  same  
-[GridFTP over SSH](data-transfer-tools-gridftp-ssh-auth)
+[GridFTP over SSH]({{< ref "data-transfer-tools-gridftp-ssh-auth" >}})
 
 2nd choice method
 
@@ -64,7 +65,7 @@ on local machine where you have your JASMIN key.
 `login.archer2.ac.uk` |  `hpxfer2.jasmin.ac.uk` |  over 10G JANET  
 hpxfer2 is configured for longer distances but can be useful if hpxfer1 is
 busy  
-[GridFTP using certificate auth](data-transfer-tools-gridftp-cert-based-auth)  
+[GridFTP using certificate auth]({{< ref "data-transfer-tools-gridftp-cert-based-auth" >}})  
 (now working again!)
 
 1st choice method
@@ -100,7 +101,7 @@ This method **does not** require you to use your JASMIN SSH key. It involves:
 
 A fuller explanation of the process is given in this document:
 
-  * [Data Transfer Tools: GridFTP (certificate-based authentication)](data-transfer-tools-gridftp-cert-based-auth)
+  * [Data Transfer Tools: GridFTP (certificate-based authentication)]({{< ref "data-transfer-tools-gridftp-cert-based-auth" >}})
 
 Once you have done these steps, you should be able to obtain a short-term
 credential as follows (do this command at the ARCHER2 end, after having

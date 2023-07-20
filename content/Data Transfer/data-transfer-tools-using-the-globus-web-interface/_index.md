@@ -51,8 +51,7 @@ tasks and when they complete. You can check on the progress of tasks with the
 associated with the identity you used to log in to Globus.
 
 Once you have mastered using the web interface, move on to our guide on [Using
-the Globus Command Line Interface](data-transfer-tools-globus-command-line-
-interface), which also points to help on how to set up your own Globus
-endpoint on your own computer using Globus Connect Personal.
+the Globus Command Line Interface]({{< ref "data-transfer-tools-globus-command-line-interface" >}}), which also points to help on how to set up your
+own Globus endpoint on your own computer using Globus Connect Personal.
 
 

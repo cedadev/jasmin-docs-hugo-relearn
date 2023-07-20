@@ -22,11 +22,10 @@ particular:
 
 [bbcp](http://www.slac.stanford.edu/~abh/bbcp/) is a simple command-line tool
 which can use your SSH connection to transfer data in and out of JASMIN
-efficiently. It works in a similar way to [GridFTP over SSH](data-transfer-
-tools-gridftp-ssh-auth) in that it connects to the transfer server using your
-usual SSH credentials but then can set up parallel data streams for
-transferring data. One advantage of `bbcp` that it is provided as a single
-binary executable which is easy to download and use.
+efficiently. It works in a similar way to [GridFTP over SSH]({{< ref "data-transfer-tools-gridftp-ssh-auth" >}}) in that it connects to the transfer
+server using your usual SSH credentials but then can set up parallel data
+streams for transferring data. One advantage of `bbcp` that it is provided as
+a single binary executable which is easy to download and use.
 
 ## Using bbcp on JASMIN
 

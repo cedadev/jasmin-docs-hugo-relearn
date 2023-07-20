@@ -17,8 +17,8 @@ It covers:
 
 ## Applying for access
 
-Some data transfer services are hosted in the [JASMIN Data Transfer
-Zone](jasmin-external-connections) for increased performance. However, to
+Some data transfer services are hosted in the [JASMIN Data Transfer Zone]({{<
+ref "jasmin-external-connections" >}}) for increased performance. However, to
 maintain security in this zone, access is controlled via an additional access
 group "hpxfer". If you have a login account already, you can apply here for
 this additional role:
