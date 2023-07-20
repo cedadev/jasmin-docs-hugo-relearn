@@ -28,8 +28,8 @@ This article provides information about JASMIN storage. It covers:
   * Tape access
   * Advice on inter-volume symlinks in JASMIN storage
 
-**IMPORTANT:** Please see also [Understanding new JASMIN
-storage](understanding-new-jasmin-storage) which explains more about the
+**IMPORTANT:** Please see also [Understanding new JASMIN storage]({{< ref
+"understanding-new-jasmin-storage" >}}) which explains more about the
 different types of storage as of Phase 4.
 
 ## Home directory
@@ -183,14 +183,17 @@ no
 /apps/contrib  |  No  |  RO  |  No  |  RO  |  n/a  |  n/a  
 /badc, /neodc (archives)  |  No  |  RO  |  RO  |  RO  |  n/a  |  n/a  
   
-login = [login servers](login-servers): login[1-4].jasmin.ac.uk  
-sci = [scientific analysis servers](sci-servers): sci[1-6,8].jasmin.ac.uk  
-transfer = [data transfer servers](transfer-servers): xfer[1-2].jasmin.ac.uk  
-LOTUS = [LOTUS batch processing cluster](slurm) (all cluster nodes)  
+login = [login servers]({{< ref "login-servers" >}}): login[1-4].jasmin.ac.uk  
+sci = [scientific analysis servers]({{< ref "sci-servers" >}}):
+sci[1-6,8].jasmin.ac.uk  
+transfer = [data transfer servers]({{< ref "transfer-servers" >}}):
+xfer[1-2].jasmin.ac.uk  
+LOTUS = [LOTUS batch processing cluster]({{< ref "slurm" >}}) (all cluster
+nodes)  
 Disks are mounted read/write (" **R/W** ") or read-only (" **RO** ").
 
 **Note 1:** Please refer to issues related to writing small files and NetCDF3
-to SOF storage [here](faqs-storage)
+to SOF storage [here]({{< ref "faqs-storage" >}})
 
 ## Where to write data
 
@@ -199,11 +202,11 @@ written. Please follow these general principles when deciding where to write
 your data:
 
   1. HOME directories (`/home/users`) are relatively small (100GB as of Phase 4) and **should NOT be used for storing large data volumes**.
-  2. Group Workspaces (`/group_workspaces/*/<project>` and `/gws/nopw/*/<project`) are **usually the correct place to write your data**. Please refer to the [Group Workspace](short-term-project-storage) documentation for details. But please note that Group Workspaces are **NOT backed up**. 
+  2. Group Workspaces (`/group_workspaces/*/<project>` and `/gws/nopw/*/<project`) are **usually the correct place to write your data**. Please refer to the [Group Workspace]({{< ref "short-term-project-storage" >}}) documentation for details. But please note that Group Workspaces are **NOT backed up**. 
     1. `/group_workspaces/jasmin2` volumes are parallel-write-capable storage from Phases 2 and 3 of JASMIN. Some of this storage is due for retirement by the end of 2018 with data to be migrated to new volumes on `/gws/nopw/j04`
     2. `/gws/pw/j05` volumes are parallel-write-capable storage from Phase 5 of JASMIN
     3. `/gws/nopw/j04` volumes are "Scale out Filesystem" (SOF) storage which is not parallel-write-capable. This new naming convention will be used for all new volumes and whenever existing volumes are migrated to SOF storage from now on.
-  3. The "scratch" areas (`/work/scratch-pw2`, `/work/scratch-pw3 ` and `/work/scratch-nopw`) are available as a temporary file space for jobs running on [LOTUS](slurm) (see next section below).
+  3. The "scratch" areas (`/work/scratch-pw2`, `/work/scratch-pw3 ` and `/work/scratch-nopw`) are available as a temporary file space for jobs running on [LOTUS]({{< ref "slurm" >}}) (see next section below).
   4. The (`/tmp`) directory is **not an appropriate location to write your data (see next section below).**
 
 ## How to use the temporary disk space
@@ -281,8 +284,8 @@ from the CEDA archive.**
 ## Tape access
 
 Group workspace managers also have [access to a tape library (Elastic Tape
-service)](secondary-copy-using-elastic-tape) for making secondary copies and
-managing storage between online and near-line storage.
+service)]({{< ref "secondary-copy-using-elastic-tape" >}}) for making
+secondary copies and managing storage between online and near-line storage.
 
 ## Number of files in a single directory
 

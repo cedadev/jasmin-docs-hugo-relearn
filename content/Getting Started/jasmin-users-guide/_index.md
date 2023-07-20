@@ -19,9 +19,9 @@ encountered by the JASMIN team.
 
 ### "Sci" machines usage guidelines
 
-  1. Check the current load and number of users on the sci machines, as shown by the login servers, to select a less-used sci machine. [The available Sci machines and their specifications are listed in the table of this help page](sci-servers)
+  1. Check the current load and number of users on the sci machines, as shown by the login servers, to select a less-used sci machine. [The available Sci machines and their specifications are listed in the table of this help page]({{< ref "sci-servers" >}})
   2. The sci machines are not for running large, long-running tasks, or scripts that spawn multiple child processes. The batch processing cluster LOTUS is available for heavier processing. The sci machines are for development, testing, and light interactive use. Overloading these with processing seriously impairs performance for interactive use by others.
-  3. Do not write to the temporary partition ` /tmp`on sci machines. [Use your home directory, a scratch volume or a Group Workspace ](storage). Any temporary data files can reside in a subdirectory of your group workspace instead of /tmp. To do this, please add the following lines (or similar) to your $HOME/.bashrc file: 
+  3. Do not write to the temporary partition ` /tmp`on sci machines. [Use your home directory, a scratch volume or a Group Workspace ]({{< ref path="Getting Started/storage" >}}). Any temporary data files can reside in a subdirectory of your group workspace instead of /tmp. To do this, please add the following lines (or similar) to your $HOME/.bashrc file: 
     
         export TMPDIR=/group_workspaces/jasmin/<your_project>/<your_username>/tmp
     	
@@ -31,12 +31,12 @@ encountered by the JASMIN team.
 [ -d $TMPDIR ] || mkdir -p $TMPDIR
 
   4. If a process hangs, do not simply close the terminal window. Please contact the helpdesk and alert the team so that the process can be shut down. Otherwise hung processes build up and contribute to machine overloading.
-  5. Do not “hog” IDL development licenses. A limited number of these are available for _development_ and compilation of IDL code which should then be run on LOTUS [using IDL runtime licenses](idl-and-midl), of which there are many more.
-  6. Do not use sci machines for data transfer: [xfer hosts are provided for this purpose](transfer-servers).
+  5. Do not “hog” IDL development licenses. A limited number of these are available for _development_ and compilation of IDL code which should then be run on LOTUS [using IDL runtime licenses]({{< ref "idl-and-midl" >}}), of which there are many more.
+  6. Do not use sci machines for data transfer: [xfer hosts are provided for this purpose]({{< ref "transfer-servers" >}}).
 
 ### LOTUS usage guidelines
 
-  1. Do not use [IDL development licences](idl-and-midl) on LOTUS. There are many _runtime_ licenses available, but the _development_ licenses are for interactive use on the sci machines, where IDL code can be compiled, then run on LOTUS using a _runtime_ license.
+  1. Do not use [IDL development licences]({{< ref "idl-and-midl" >}}) on LOTUS. There are many _runtime_ licenses available, but the _development_ licenses are for interactive use on the sci machines, where IDL code can be compiled, then run on LOTUS using a _runtime_ license.
   2. Beware of inadvertently filling up /tmp on LOTUS nodes. This can take nodes out of action (perhaps for other users who still have jobs running on the same node) if /tmp fills up. Design your code to clean up as it goes along, and use environment variables to control where your applications write temporary data, ideally to storage which is not specific to a LOTUS node. If your job crashes, check which nodes were involved and clean up after yourself.
   3. Do not store data in scratch areas for long periods of time. Move data away to group workspaces once your processing has finished.
 

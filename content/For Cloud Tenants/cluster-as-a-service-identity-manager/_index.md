@@ -56,8 +56,7 @@ gateway/proxy host. This host is also configured to allow SSH access for all
 active users, which means it can be used with [SSH agent
 forwarding](https://www.ssh.com/ssh/agent#sec-SSH-Agent-Forwarding) as a [jump
 host](https://en.wikipedia.org/wiki/Jump_server) for SSH access to clusters
-without an external IP (similar to the way that the [jasmin-login servers
-work](login)).
+without an external IP (similar to the way that the [jasmin-login servers]({{< ref "login-servers" >}}) work.)
 
 The Identity Manager does not have self-service user registration or password
 reset - these operations must be performed by an admin on behalf of the user.

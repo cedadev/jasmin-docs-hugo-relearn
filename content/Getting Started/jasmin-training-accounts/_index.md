@@ -109,7 +109,7 @@ Please ensure you have given the following information to attendees:
   3. You may need access to the JASMIN Notebook Service and Accounts Portal. Your event organiser will let you know whether this is needed for your particular event. If you do need it, you will need to follow the steps in the section below. 
     1. For the JASMIN Beginners workshop: you do not need this. 
     2. For the JASMIN Advanced workshop: you do need this. Please follow the steps in the section below. 
-  4. Before the event, familiarise yourself with the [JASMIN help documentation site](/). This should answer most questions you may have. 
+  4. Before the event, familiarise yourself with the [JASMIN help documentation site]({{< ref "/" >}}). This should answer most questions you may have. 
 
 If you are attending a non-JASMIN led event, we suggest taking a look at the
 [other JASMIN workshop training materials](https://github.com/cedadev/jasmin-

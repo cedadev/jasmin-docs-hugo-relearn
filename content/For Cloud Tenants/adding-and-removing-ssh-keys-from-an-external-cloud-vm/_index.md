@@ -36,12 +36,12 @@ being locked out of those machines.
 The allowed SSH keys for a user can be found in `$HOME/.ssh/authorized_keys`
 for the user. For `root`, this is `/root/.ssh/authorized_keys`.
 
-To grant access to a user, they must first [generate an SSH keypair](generate-
-ssh-key-pair). Once they have done this, they should give you their **public**
-key. **The private key should never leave the user's machine.** Once you have
-added this public key as a new line to the `authorized_keys` file for the
-target user on your External Cloud VM, the user will be able to SSH to the
-machine.
+To grant access to a user, they must first [generate an SSH keypair]({{< ref
+"generate-ssh-key-pair" >}}). Once they have done this, they should give you
+their **public** key. **The private key should never leave the user's
+machine.** Once you have added this public key as a new line to the
+`authorized_keys` file for the target user on your External Cloud VM, the user
+will be able to SSH to the machine.
 
 Similarly, to disable access for a user, just remove their public key from the
 `authorized_keys` file on the machine.

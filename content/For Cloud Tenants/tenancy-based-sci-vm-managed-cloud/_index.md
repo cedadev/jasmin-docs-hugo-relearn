@@ -3,7 +3,7 @@ aliases: /article/4581-tenancy-based-sci-vm-managed-cloud
 categories:
 - For Cloud Tenants
 collection: jasmin-documentation
-date: 2023-05-23 09:34:57
+date: 2023-07-05 10:02:59
 description: Provisioning a Sci VM in a Managed Cloud Tenancy
 slug: tenancy-based-sci-vm-managed-cloud
 title: Provisioning a Sci VM in a Managed Cloud Tenancy
@@ -29,17 +29,16 @@ portal
 ## Apply for access to the Sci tenancy
 
 A managed cloud Sci tenancy is accessible via the [JASMIN cloud
-portal](https://cloud-beta.jasmin.ac.uk/) and this access is controlled by the
-"Sci Analysis VMs" service via the[ JASMIN accounts
-portal](https://accounts.jasmin.ac.uk). See [here](tenancy-based-sci-analysis-
-vms) for instructions about requesting access to the USER and ADMIN roles via
-the Sci Analysis VMs service on the JASMIN accounts portal.
+portal](https://cloud.jasmin.ac.uk/) and this access is controlled by the "Sci
+Analysis VMs" service via the[ JASMIN accounts
+portal](https://accounts.jasmin.ac.uk). See [here]({{< ref "tenancy-sci-analysis-vms" >}}) for instructions about requesting access to the USER and
+ADMIN roles via the Sci Analysis VMs service on the JASMIN accounts portal.
 
 ## 1\. Access the tenancy
 
-With an ADMIN role, you can log in to the [JASMIN cloud portal](https://cloud-
-beta.jasmin.ac.uk/) using the same credentials for signing onto the JASMIN
-accounts portal.
+With an ADMIN role, you can log in to the [JASMIN cloud
+portal](https://cloud.jasmin.ac.uk/) using the same credentials for signing
+onto the JASMIN accounts portal.
 
 You will be presented with the "Dashboard" page -below- showing the tenancies
 you have access to. On the dashboard, select the organization representing the
@@ -109,7 +108,7 @@ From login1.jasmin.ac.uk, login to the machine using the External IP address.
 In the same way, as you login to a JASMIN scientific server via login1. Your
 initial connection to JASMIN from your local machine needs to have your SSH
 key loaded in your SSH authentication agent, and you must have SSH Agent
-Forwarding enabled "-A", see also how [ to login](login).
+Forwarding enabled "-A", see also how [ to login]({{< ref path="Getting Started/login" >}}).
 
 ![](file-OCr9XwHyWz.png)
 

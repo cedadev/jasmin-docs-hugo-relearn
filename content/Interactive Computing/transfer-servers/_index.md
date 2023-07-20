@@ -20,43 +20,20 @@ JASMIN provides specific servers for managing data transfers. These are:
 
 Server  |  Purpose  |  Access requirements  |  Further information  
 ---|---|---|---  
-`xfer1.jasmin.ac.uk` |  Virtual machine for general purpose data transfers.  |
-`jasmin-login` |  Visible on optical network connections from `k9.leeds.ac.uk`
-and some Met Office hosts.  
-`xfer2.jasmin.ac.uk` |  Virtual machine for general purpose data transfers.  |
-`jasmin-login` |  
+`xfer1.jasmin.ac.uk` |  Virtual machine for general purpose data transfers.  |`jasmin-login` |  Visible on optical network connections from `k9.leeds.ac.uk` and some Met Office hosts.
+`xfer2.jasmin.ac.uk` |  Virtual machine for general purpose data transfers.  |`jasmin-login` |  
+`xfer3.jasmin.ac.uk` |  As per `xfer[12]`, but with config like `login2`for enabling access from IP addresses without fwd/rev DNS lookup.  |  `jasmin-login` AND `xfer-sp` |  Apply for additional access role access [here](https://accounts.jasmin.ac.uk/services/additional_services/xfer-sp).  See below for further specifics.  
+`hpxfer1.jasmin.ac.uk` |  Physical machine for high-performance data transfers.  |  `jasmin-login` AND `hpxfer`  IP address of client  |  Tuned for UK & European network paths. Apply for additional access role access[here](https://accounts.jasmin.ac.uk/services/additional_services/hpxfer)  
+`hpxfer2.jasmin.ac.uk` |  Physical machine for high-performance data transfers.  |  `jasmin-login` AND `hpxfer`. IP address of client  |  Tuned for long (intercontinental) network paths (e.g. UK - Australia). Apply for additional access role access [here](https://accounts.jasmin.ac.uk/services/additional_services/hpxfer)
+`gridftp1.jasmin.ac.uk` |  Physical machine for high-performance GridFTP transfers.  |  `jasmin-login` AND `hpxfer`  IP address of client  |  No SSH login access. Apply for additional access role access [here](https://accounts.jasmin.ac.uk/services/additional_services/hpxfer) Acts as Globus Online endpoint " [JASMIN GridFTP Server](https://www.globus.org/app/endpoints/4cc8c764-0bc1-11e6-a740-22000bf2d559/overview)"  
   
-`xfer3.jasmin.ac.uk` |  As per `xfer[12]`, but with config like `login2`for
-enabling access from IP addresses without fwd/rev DNS lookup.  |  `jasmin-
-login` AND `xfer-sp` |  Apply for additional access role access
-[here](https://accounts.jasmin.ac.uk/services/additional_services/xfer-sp).  
-See below for further specifics.  
-`hpxfer1.jasmin.ac.uk` |  Physical machine for high-performance data
-transfers.  |  `jasmin-login` AND `hpxfer`  
-IP address of client  |  Tuned for UK & European network paths. Apply for
-additional access role access
-[here](https://accounts.jasmin.ac.uk/services/additional_services/hpxfer)  
-`hpxfer2.jasmin.ac.uk` |  Physical machine for high-performance data
-transfers.  |  `jasmin-login` AND `hpxfer`  
-IP address of client  |  Tuned for long (intercontinental) network paths (e.g.
-UK - Australia). Apply for additional access role access
-[here](https://accounts.jasmin.ac.uk/services/additional_services/hpxfer)  
-`gridftp1.jasmin.ac.uk` |  Physical machine for high-performance GridFTP
-transfers.  |  `jasmin-login` AND `hpxfer`  
-IP address of client  
-|  No SSH login access. Apply for additional access role access
-[here](https://accounts.jasmin.ac.uk/services/additional_services/hpxfer)  
-Acts as Globus Online endpoint " [JASMIN GridFTP
-Server](https://www.globus.org/app/endpoints/4cc8c764-0bc1-11e6-a740-22000bf2d559/overview)"  
-  
-Please see further articles in the [Data Transfer category](data-transfer) for
-details on managing your data transfers.
+Please see further articles in the [Data Transfer category]({{< ref "data-transfer" >}}) for details on managing your data transfers.
 
 The standard transfer servers provide a basic and functional service for
 moving small amounts of data over relatively short distances. However, the
 high-performance data transfer servers shown above are also available for
 those with particular requirements. Users with login accounts can [apply for
-access to use the high-performance servers](data-transfer-hpxfer).
+access to use the high-performance servers]({{< ref "data-transfer-hpxfer" >}}).
 
 PLEASE MAKE SURE YOU USE THE DEDICATED TRANSFER SERVERS AND NOT SCIENTIFIC
 ANALYSIS OR LOGIN SERVERS FOR ANY SIGNIFICANT DATA TRANSFERS. TRANSFER SERVERS

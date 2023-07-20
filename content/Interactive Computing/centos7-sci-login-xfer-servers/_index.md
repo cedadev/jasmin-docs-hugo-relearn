@@ -34,8 +34,8 @@ Login server name
 `login3.jasmin.ac.uk` |  |  
 `login4.jasmin.ac.uk` |  
   
-See also NX login servers which are part of the [graphical linux
-desktop](graphical-linux-desktop-access-using-nx) service.
+See also NX login servers which are part of the [graphical linux desktop]({{<
+ref "graphical-linux-desktop-access-using-nx" >}}) service.
 
 The above servers are functionally the same as their  predecessors `jasmin-
 login1.ceda.ac.uk` ,  `cems-login1.cems.rl.ac.uk` which have now been retired.
@@ -45,7 +45,7 @@ As before, these login servers provide a table displayed at login showing the
 list of available sci servers and their current load and number of logged-in
 users. Please make use of these to select the most appropriate sci server.
 
-[Further details of the login servers can be found here.](login-servers)
+[Further details of the login servers can be found here.]({{< ref "login-servers" >}})
 
 # Scientific analysis servers
 
@@ -70,7 +70,7 @@ Server name
 `sci6.jasmin.ac.uk`  
 `sci8.jasmin.ac.uk`  
   
-[Further details of the sci servers can be found here.](sci-servers)
+[Further details of the sci servers can be found here.]({{< ref "sci-servers" >}})
 
 # Transfer servers
 
@@ -90,6 +90,6 @@ additional access role, apply
 `hpxfer[12].jasmin.ac.uk` (physical, high-performance transfer servers,
 require `hpxfer` access role)  
   
-[Further details of the xfer servers can be found here.](transfer-servers)
+[Further details of the xfer servers can be found here.]({{< ref "transfer-servers" >}})
 
 
