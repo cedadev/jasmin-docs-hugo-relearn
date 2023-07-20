@@ -54,6 +54,6 @@ to check that a suitable resource does not already exist.
 
 ## See also
 
-  * [scientific analysis servers](sci-servers)
+  * [scientific analysis servers]({{< ref "sci-servers" >}})
 
 

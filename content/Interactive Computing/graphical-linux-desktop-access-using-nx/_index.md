@@ -59,13 +59,13 @@ The following "special" login servers have the NX service available and can be
 used as described below:
 
   * `nx-login1.jasmin.ac.uk`
-  * `nx-login2.jasmin.ac.uk` ([Contingency config](login-servers) similar to `login2.jasmin.ac.uk`, to make it available from clients without reverse DNS lookup to a domain in the JASMIN allow-list. Use this option if you need to connect from home and do not have an institutional VPN available)
-  * `nx-login3.jasmin.ac.uk` ([Contingency config](login-servers) as above) 
+  * `nx-login2.jasmin.ac.uk` ([Contingency config]({{< ref "login-servers" >}}) similar to `login2.jasmin.ac.uk`, to make it available from clients without reverse DNS lookup to a domain in the JASMIN allow-list. Use this option if you need to connect from home and do not have an institutional VPN available)
+  * `nx-login3.jasmin.ac.uk` ([Contingency config]({{< ref "login-servers" >}}) as above) 
   * `nx-login4.jasmin.ac.uk` ([Contingency config](https://secure.helpscout.net/docs/56d57ee09033601bde8bae50/article/191-login-servers#contingency) as above, but also supports users with usernames > 8 characters)
 
 **Notes:**
 
-  * In all other respects these are the same as the standard [login servers](login-servers), but should only be used by users connecting with the NX enterprise client as described below. Please do not use them for standard terminal-based SSH connections as this preserves system resources for their intended purpose.
+  * In all other respects these are the same as the standard [login servers]({{< ref "login-servers" >}}), but should only be used by users connecting with the NX enterprise client as described below. Please do not use them for standard terminal-based SSH connections as this preserves system resources for their intended purpose.
   * Although the graphical desktop session which you create with this service should persist when you close the client (unless you specifically log out), you should not rely on this feature (so please don't report this as a problem: occasionally machines run out of resources and sessions get killed). Keeping sessions open consumes resources on the server even when you're not using the session, which may mean that other users can't use the service.
   * nx-login4 has been introduced to help cater for users whose usernames exceed 8 characters length. This works around a known limitation in the NX server software but may not solve the problem for users with very long names (created before we introduced a limit to prevent this happening: if this still affects you and you cannot make onward connections to other machines in NX, please contact the helpdesk)
 

@@ -45,11 +45,10 @@ Login server name  |
   
   
 If you require more detailed instructions on how to log in from different
-types of computer refer to [the getting started category](getting-started)
+types of computer refer to [the getting started category]({{< ref "getting-started" >}})
 
-See also [NoMachine NX service](graphical-linux-desktop-access-using-nx) which
-provides login to a graphical Linux desktop, rather than a single terminal
-window.
+See also [NoMachine NX service]({{< ref "graphical-linux-desktop-access-using-nx" >}}) which provides login to a graphical Linux desktop, rather than a
+single terminal window.
 
 #  **Features of login servers**
 
@@ -62,11 +61,12 @@ Login servers have minimal resources and software installed. They provide:
 
 # "Contingency" login servers
 
-There are [requirements on your local network](check-network-details) which
-apply to accessing the login servers **and** the [transfer servers](transfer-
-servers) via SSH. If you cannot meet these requirements, even after discussion
-with your local network admin team, a contingency route is provided in the
-form of login server `login2.jasmin.ac.uk`
+There are [requirements on your local network]({{< ref "check-network-details"
+>}}) which apply to accessing the login servers **and** the [transfer
+servers]({{< ref "transfer-servers" >}}) via SSH. If you cannot meet these
+requirements, even after discussion with your local network admin team, a
+contingency route is provided in the form of login server
+`login2.jasmin.ac.uk`
 
 However, you will be limited in what you can access within JASMIN from this
 server. Specifically:
@@ -74,13 +74,13 @@ server. Specifically:
   * You will not be able to access the transfer servers `xfer[1,2].jasmin.ac.uk` via SSH directly from an external host.  
 
     * You can access these using a "hop" from `login2`, but can then only initiate an inward pull of data from an external SSH server, if available at your institution. You cannot push data directly to `xfer[1,2].jasmin.ac.uk` via SSH from outside in this case.
-    * Instead, an alternative transfer server `xfer3.jasmin.ac.uk` is provided with equivalent configuration to `login2`. This should provide what you need for direct SSH transfers from outside, but you will need the additional `"xfer-sp"` access role in in this case: see [here for further details](transfer-servers).
+    * Instead, an alternative transfer server `xfer3.jasmin.ac.uk` is provided with equivalent configuration to `login2`. This should provide what you need for direct SSH transfers from outside, but you will need the additional `"xfer-sp"` access role in in this case: see [here for further details]({{< ref "transfer-servers" >}}).
   * You cannot set up SSH tunnelling to other hosts within JASMIN.
 
 # How to use the login servers
 
 For full details of how to log in, including making onward connections to
-other machines, please see the article ["How to login"](login)
+other machines, please see the article ["How to login"]({{< ref "login" >}})
 
 **Note:** Users are **not permitted to execute commands which require
 administrative privileges**. This applies to all hosts in the managed part of

@@ -36,10 +36,10 @@ the open-source Jupyter Notebook server application.
 Jupyter has support for many languages including Python, R, Scala and Julia,
 which are implemented by plugins known as "kernels". The JASMIN Notebook
 Service currently provides one kernel - Python 3.8 with the latest [Jaspy
-software environment](jaspy-envs) installed. This environment is active by
-default, so there is no need for the `module` commands described in the linked
-article. You can also install and use your own Python environments as
-explained below.
+software environment]({{< ref "jaspy-envs" >}}) installed. This environment is
+active by default, so there is no need for the `module` commands described in
+the linked article. You can also install and use your own Python environments
+as explained below.
 
 Whilst it has been possible to use Jupyter Notebooks on JASMIN before now,
 doing so has never been officially supported. The JASMIN Notebook Service uses
@@ -53,8 +53,8 @@ server.
 ## Getting access to the JASMIN Notebook Service
 
 In order to access the JASMIN Notebook service, first, follow the steps in
-[Getting started with JASMIN](get-started-with-jasmin) to get a JASMIN account
-and the `jasmin-login` service.
+[Getting started with JASMIN]({{< ref "get-started-with-jasmin" >}}) to get a
+JASMIN account and the `jasmin-login` service.
 
 **Important:** From 16/6/2021, access to the JASMIN Jupyter Notebook service
 is controlled simply by having a valid `jasmin-login` grant. [2-step
@@ -117,29 +117,28 @@ The service is primarily intended for interactively producing visualisations
 of existing data, not for processing vast amounts of data. As such, the
 resources made available to each notebook server are limited, and Group
 Workspaces are only mounted in read-only mode. For heavy processing, users
-should still use the [LOTUS batch processing system](slurm) before using the
-notebook service to visualise the data.
+should still use the [LOTUS batch processing system]({{< ref "slurm" >}})
+before using the notebook service to visualise the data.
 
 ### Common issues and questions
 
 #### I get "403 forbidden" when I try to access the JASMIN Notebook Service
 
 This error occurs when you do not have the correct permissions to access the
-JASMIN Notebook service. Please ensure you have been granted the `jasmin-
-login` and allow some time for the changes to propagate through the system.
+JASMIN Notebook service. Please ensure you have been granted the `jasmin-login` and allow some time for the changes to propagate through the system.
 
 #### Which software environment is used by the Notebook Service?
 
 The JASMIN Notebook Service currently uses the **default Jaspy environment**
-listed on the [Jaspy page](jaspy-envs).
+listed on the [Jaspy page]({{< ref "jaspy-envs" >}}).
 
 #### Can I install additional packages?
 
 The recommended way to do this is to [create your own virtual environment in
-the notebooks service and install additional packages into that.](creating-a-
-virtual-environment-in-the-jasmin-notebooks-service) You can make that virtual
-environment persist as a kernel to use again next time you use the Notebooks
-service.
+the notebooks service and install additional packages into that.]({{< ref
+"creating-a-virtual-environment-in-the-jasmin-notebooks-service" >}}) You can
+make that virtual environment persist as a kernel to use again next time you
+use the Notebooks service.
 
 If you believe that the package is more widely applicable, you can request an
 update to Jaspy.
