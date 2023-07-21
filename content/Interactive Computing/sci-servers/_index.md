@@ -103,6 +103,17 @@ Each analysis server has the following features:
   * Access to proprietary tools, e.g. IDL and Intel Fortran, through the Module System.
   * Ability to run X11/X-Windows applications (use the [NX graphical desktop service]({{< ref "graphical-linux-desktop-access-using-nx" >}}) to view X11 graphics output efficiently on your remote machine).
 
+{{% notice style="warning" %}}
+Users are **not permitted to execute commands which require
+administrative privileges.** This applies to all hosts in the managed part of
+JASMIN where users have SSH login access (for example `login`, `nx-login`,
+`sci`, `xfer` and `hpxfer` machines). In other words, the **use of`su` or
+`sudo` is not permitted**. Please be careful when typing commands,
+particularly if you have multiple terminal windows open on your own computer,
+that you do not accidentally attempt `sudo`on a JASMIN machine: expect some
+follow-up from the JASMIN team if you do!
+{{% /notice %}}
+
 # Access to storage
 
 Each analysis server has:

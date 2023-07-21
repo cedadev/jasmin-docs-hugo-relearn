@@ -35,11 +35,10 @@ high-performance data transfer servers shown above are also available for
 those with particular requirements. Users with login accounts can [apply for
 access to use the high-performance servers]({{< ref "data-transfer-hpxfer" >}}).
 
-PLEASE MAKE SURE YOU USE THE DEDICATED TRANSFER SERVERS AND NOT SCIENTIFIC
-ANALYSIS OR LOGIN SERVERS FOR ANY SIGNIFICANT DATA TRANSFERS. TRANSFER SERVERS
-HAVE BEEN CONFIGURED TO ACHIEVE THE BEST TRANSFER RATES AND WILL PERFORM
-SIGNIFICANTLY BETTER THAN OTHER SERVERS ON JASMIN, WHILE MAINTAINING THE
-PERFORMANCE OF ANALYSIS SERVERS FOR OTHER USERS.
+{{% notice style="note" %}}
+Please make sure you use the dedicated transfer servers and not the scientific
+analysis or login servers for any significant data transfers. The transfer servers have been configured to achieve the best transfer rates and will perform significantly better than other servers on jasmin, while maintaining the performance of analysis servers for interactive use by other users.
+{{% /notice %}}
 
 ### Special transfer machine `xfer3.jasmin.ac.uk`
 
@@ -55,7 +54,8 @@ ensuring that the users accessing this machine know to be aware of this issue
 and can have their access to this machine denied if found to be causing a
 problem for the machine's operation for other users.
 
-**Note:** Users are **not permitted to execute commands which require
+{{% notice style="warning" %}}
+Users are **not permitted to execute commands which require
 administrative privileges.** This applies to all hosts in the managed part of
 JASMIN where users have SSH login access (for example `login`, `nx-login`,
 `sci`, `xfer` and `hpxfer` machines). In other words, the **use of`su` or
@@ -63,5 +63,5 @@ JASMIN where users have SSH login access (for example `login`, `nx-login`,
 particularly if you have multiple terminal windows open on your own computer,
 that you do not accidentally attempt `sudo`on a JASMIN machine: expect some
 follow-up from the JASMIN team if you do!
-
+{{% /notice %}}
 
