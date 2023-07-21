@@ -10,10 +10,7 @@ title: CentOS7 Login, Sci and Xfer servers
 ---
 
 This article describes briefly the new CentOS7 versions of the 3 familiar
-types of JASMIN server which **are available to users and should now be used
-instead of the older jasmin-*.ceda.ac.uk servers which have now been retired**
-, as part of [the CentOS7 migration plan](http://www.jasmin.ac.uk/articles/vm-
-migration/). There are now:
+types of JASMIN server. These are:
 
   * CentOS7 Login servers
   * CentOS7 Scientific analysis (sci) servers
@@ -28,24 +25,22 @@ can access the following servers using SSH:
 **Table 1** : Centos7 Login servers
 
 Login server name  
----  
-`login1.jasmin.ac.uk` |  |  
-`login2.jasmin.ac.uk` |  
-`login3.jasmin.ac.uk` |  |  
+|---|  
+`login1.jasmin.ac.uk` |
+`login2.jasmin.ac.uk` | 
+`login3.jasmin.ac.uk` |  
 `login4.jasmin.ac.uk` |  
   
 See also NX login servers which are part of the [graphical linux desktop]({{<
 ref "graphical-linux-desktop-access-using-nx" >}}) service.
 
-The above servers are functionally the same as their  predecessors `jasmin-
-login1.ceda.ac.uk` ,  `cems-login1.cems.rl.ac.uk` which have now been retired.
-You should now use as the new servers as your default route into JASMIN.
+You should use these servers as your default route into JASMIN.
 Additional servers in this series will follow in due course.  
-As before, these login servers provide a table displayed at login showing the
+These login servers provide a table displayed at login showing the
 list of available sci servers and their current load and number of logged-in
 users. Please make use of these to select the most appropriate sci server.
 
-[Further details of the login servers can be found here.]({{< ref "login-servers" >}})
+[Further details of the login servers]({{< ref "login-servers" >}})
 
 # Scientific analysis servers
 
@@ -61,16 +56,16 @@ workflows/tasks that:
 **Table 2:** List of CentOS7 Scientific analysis servers
 
 Server name  
----  
-`sci1.jasmin.ac.uk`  
-`sci2.jasmin.ac.uk`  
-`sci3.jasmin.ac.uk`  
-`sci4.jasmin.ac.uk`  
-`sci5.jasmin.ac.uk`  
-`sci6.jasmin.ac.uk`  
-`sci8.jasmin.ac.uk`  
+--- |
+`sci1.jasmin.ac.uk`  |
+`sci2.jasmin.ac.uk`  |
+`sci3.jasmin.ac.uk`  |
+`sci4.jasmin.ac.uk`  |
+`sci5.jasmin.ac.uk`  |
+`sci6.jasmin.ac.uk`  |
+`sci8.jasmin.ac.uk`  |
   
-[Further details of the sci servers can be found here.]({{< ref "sci-servers" >}})
+[Further details of the sci servers]({{< ref "sci-servers" >}}).
 
 # Transfer servers
 
@@ -80,16 +75,13 @@ same as their predecessors.
 
 **Table 3:** Centos7 xfer servers
 
-Transfer server name  
----  
-`xfer1.jasmin.ac.uk`  
-`xfer2.jasmin.ac.uk`  
-`xfer3.jasmin.ac.uk` (special access rules similar to `login2`, but requires
-additional access role, apply
-[here](https://accounts.jasmin.ac.uk/services/additional_services/xfer-sp))  
-`hpxfer[12].jasmin.ac.uk` (physical, high-performance transfer servers,
-require `hpxfer` access role)  
+Transfer server name  | Details
+---  | --- |
+`xfer1.jasmin.ac.uk`  |
+`xfer2.jasmin.ac.uk`  |
+`xfer3.jasmin.ac.uk` | (special access rules similar to `login2`, but requires additional access role, apply [here](https://accounts.jasmin.ac.uk/services/additional_services/xfer-sp))  
+`hpxfer[12].jasmin.ac.uk` | (physical, high-performance transfer servers,require `hpxfer` access role)  |
   
-[Further details of the xfer servers can be found here.]({{< ref "transfer-servers" >}})
+[Further details of the xfer servers]({{< ref "transfer-servers" >}})
 
 
