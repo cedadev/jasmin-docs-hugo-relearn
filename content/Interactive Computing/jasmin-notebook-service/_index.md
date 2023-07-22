@@ -189,9 +189,10 @@ Other Notebooks can be found within the repository, under:
 
 ## Webinar / video tutorial
 
-A video tutorial explaining how to use the service was provided via [a webinar
-on 16th June 2020](https://www.ceda.ac.uk/events/demo-of-the-jasmin-notebook-
-service-webinar/). A YouTube video of the event is available:
+A [CEDA webinar on 16th June 2020](https://www.ceda.ac.uk/events/demo-of-the-jasmin-notebook-
+service-webinar/) demonstrated how to use the service. A recording of the event is available:
+
+{{< youtube nle9teGLAb0 >}}
 
 ## Further info
 
