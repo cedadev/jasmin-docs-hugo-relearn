@@ -34,62 +34,54 @@ commands so there are no issues with picking up dependencies from elsewhere.
 
 **And this is how it looks**
 
-****Log in to jasmin-sci1 server:
+Log in to jasmin-sci1 server:
 
-    
-    
-    $ ssh -A <username>@sci1.jasmin.ac.uk
-    
+```
+ssh -A <username>@sci1.jasmin.ac.uk
+```
 
 Split the big file
 
-    
-    
-    $ split -l 10000 -d file_list.txt # Produces 22 files called "x00"..."x21"
-    
+```
+split -l 10000 -d file_list.txt # Produces 22 files called "x00"..."x21"
+```
 
 Create the template file: `scan_files_template.sh`
 
-    
-    
-    #!/bin/bash
-    #SBATCH -e %J.e  
-    
-    infile=/home/users/astephen/sst_cci/to_scan/__INSERT_FILE__  
-    
-    while read f ; do         
-    
-      /usr/bin/md5sum $f >> /home/users/astephen/sst_cci/output/scanned___INSERT_FILE__.log
-    
-    done < $infile
-    
+```bash
+#!/bin/bash
+#SBATCH -e %J.e
+
+infile=/home/users/astephen/sst_cci/to_scan/__INSERT_FILE__  
+
+while read f ; do         
+
+    /usr/bin/md5sum $f >> /home/users/astephen/sst_cci/output/scanned___INSERT_FILE__.log
+
+done < $infile
+```
 
 Run a script to generate all the script files:
 
-    
-    
-    for i in `ls /home/users/astephen/sst_cci/to_scan/` ; do
-            cp scan_files_template.txt bin/scan_files_${i}.sh 
-            perl -p -i -w -e 's/__INSERT_FILE__/'${i}'/g;' bin/scan_files_${i}.sh 
-    done
-    
+```bash
+for i in `ls /home/users/astephen/sst_cci/to_scan/` ; do
+    cp scan_files_template.txt bin/scan_files_${i}.sh 
+    perl -p -i -w -e 's/__INSERT_FILE__/'${i}'/g;' bin/scan_files_${i}.sh 
+done
+```
 
 Submit all 22 jobs to LOTUS:
 
-    
-    
-    for i in `ls /home/users/astephen/sst_cci/to_scan/` ; do      
-        echo $i     
-        sbatch -p short-serial -o /home/users/astephen/sst_cci/output/$i /home/users/astephen/sst_cci/bin/scan_files_${i}.sh  
-    done
-    
+```
+for i in `ls /home/users/astephen/sst_cci/to_scan/` ; do      
+    echo $i     
+    sbatch -p short-serial -o /home/users/astephen/sst_cci/output/$i /home/users/astephen/sst_cci/bin/scan_files_${i}.sh  
+done
+```
 
 Watch the jobs running:
 
-    
-    
-    $ squeue -u <username>
-    
+squeue -u <username>
 
 **And the result**
 
@@ -103,60 +95,58 @@ generate a checksums file and error log. Each dataset is submitted as a
 separate bsub job.
 
     
+```python
+""" 
+Checksum a CMIP5 dataset
+usage: checksum_dataset.py dataset_id ...
+    where dataset_id is a full drs id including version 
+    e.g. cmip5.output1.MOHC.HadGEM2-ES.historical.6hr.atmos.6hrLev.r1i1p1.v20110921
+"""
+import os
+import os.path as op
+import sys
+import optparse
+
+DRS_ROOT = '/badc/cmip5/data'
+
+def submit_job(dataset):
+    # Assume version is in the dataset-id for now
+    parts = dataset.split('.')
+    path = op.join(DRS_ROOT, '/'.join(parts))
+
+
+    if not op.exists(path):
+        raise Exception('%s does not exist' % path)
+    job_name = dataset
+    cmd = ('bsub -q lotus -J {job_name} '
+            '-o {job_name}.checksums -e {job_name}.err '
+            "/usr/bin/md5sum '{path}/*/*.nc'").format(job_name=job_name,
+                                                    path=path)
     
-    """ 
-    Checksum a CMIP5 dataset
-    usage: checksum_dataset.py dataset_id ...
-        where dataset_id is a full drs id including version 
-        e.g. cmip5.output1.MOHC.HadGEM2-ES.historical.6hr.atmos.6hrLev.r1i1p1.v20110921
-    """
-    import os
-    import os.path as op
-    import sys
-    import optparse
-    
-    DRS_ROOT = '/badc/cmip5/data'
-    
-    def submit_job(dataset):
-        # Assume version is in the dataset-id for now
-        parts = dataset.split('.')
-        path = op.join(DRS_ROOT, '/'.join(parts))
-    
-    
-        if not op.exists(path):
-            raise Exception('%s does not exist' % path)
-        job_name = dataset
-        cmd = ('bsub -q lotus -J {job_name} '
-               '-o {job_name}.checksums -e {job_name}.err '
-               "/usr/bin/md5sum '{path}/*/*.nc'").format(job_name=job_name,
-                                                       path=path)
-        
-        print(cmd)
-        os.system(cmd)
-    
-    def main():
-        parser = optparse.OptionParser(description='Checksum DRS datasets')
-        (options, args) = parser.parse_args()
-    
-        datasets = args
-        for dataset in datasets:
-            submit_job(dataset)
-    
-    if __name__ == '__main__':
-        main()
-    <br>
-    	
+    print(cmd)
+    os.system(cmd)
+
+def main():
+    parser = optparse.OptionParser(description='Checksum DRS datasets')
+    (options, args) = parser.parse_args()
+
+    datasets = args
+    for dataset in datasets:
+        submit_job(dataset)
+
+if __name__ == '__main__':
+    main()
+```
 
 If you have a file containing a list of dataset ids you can submit each as a
 separate job by invoking the above script as follows:
 
-    
-    
-    $ ./checksum_dataset.py $(cat datasets_to_checksum.dat) 
-    
-    sbatch-q short-serial -J cmip5.output1.MOHC.HadGEM2-ES.rcp85.day.seaIce.day.r1i1p1.v20111128 -o cmip5.output1.MOHC.HadGEM2-ES.rcp85.day.seaIce.day.r1i1p1.v20111128.checksums -e cmip5.output1.MOHC.HadGEM2-ES.rcp85.day.seaIce.day.r1i1p1.v20111128.err /usr/bin/md5sum '/badc/cmip5/data/cmip5/output1/MOHC/HadGEM2-ES/rcp85/day/seaIce/day/r1i1p1/v20111128/*/*.nc' 
-    
-    Job <745307> is submitted to queue <lotus>.  ...
-    
+```console
+./checksum_dataset.py $(cat datasets_to_checksum.dat) 
+
+sbatch-q short-serial -J cmip5.output1.MOHC.HadGEM2-ES.rcp85.day.seaIce.day.r1i1p1.v20111128 -o cmip5.output1.MOHC.HadGEM2-ES.rcp85.day.seaIce.day.r1i1p1.v20111128.checksums -e cmip5.output1.MOHC.HadGEM2-ES.rcp85.day.seaIce.day.r1i1p1.v20111128.err /usr/bin/md5sum '/badc/cmip5/data/cmip5/output1/MOHC/HadGEM2-ES/rcp85/day/seaIce/day/r1i1p1/v20111128/*/*.nc' 
+
+Job <745307> is submitted to queue <lotus>.  ...
+``` 
 
 
