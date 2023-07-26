@@ -42,8 +42,7 @@ shown below in Table 1.
 
 Queues represent a set of pending jobs, lined up in a defined order, and
 waiting for their opportunity to use resources. The queue is specified in the
-job script file using SLURM scheduler directive `#SBATCH -p
-<partition=queue_name>` where `<queue_name>` is the name of the
+job script file using SLURM scheduler directive `#SBATCH -p <partition=queue_name>` where `<queue_name>` is the name of the
 queue/partition (Table 1. column 1)
 
 Table 1 summarises important specifications for each queue such as run time
@@ -82,25 +81,26 @@ The SLURM command `sinfo `reports the state of queues/partitions and nodes
 managed by SLURM. It has a wide variety of filtering, sorting, and formatting
 options.
 
-    
-    
-    $ sinfo   
-    PARTITION     AVAIL  TIMELIMIT  NODES  STATE NODELIST
-    test             up    4:00:00     48   idle host[146-193]
-    short-serial*    up 1-00:00:00     48   idle host[146-193]
-    long-serial      up 7-00:00:00     48   idle host[146-193]
-    par-single       up 2-00:00:00     48   idle host[146-193]
-    par-multi        up 2-00:00:00     48   idle host[146-193]
-    high-mem         up 2-00:00:00     48   idle host[146-193]
-    lotus_gpu        up 7-00:00:00     48   idle host[146-193]
-    copy             up 7-00:00:00     48   idle host[146-193]
-    cpom-comet       up 7-00:00:00     48   idle host[146-193]
-    ...
-    
+```
+sinfo   
+PARTITION     AVAIL  TIMELIMIT  NODES  STATE NODELIST
+test             up    4:00:00     48   idle host[146-193]
+short-serial*    up 1-00:00:00     48   idle host[146-193]
+long-serial      up 7-00:00:00     48   idle host[146-193]
+par-single       up 2-00:00:00     48   idle host[146-193]
+par-multi        up 2-00:00:00     48   idle host[146-193]
+high-mem         up 2-00:00:00     48   idle host[146-193]
+lotus_gpu        up 7-00:00:00     48   idle host[146-193]
+copy             up 7-00:00:00     48   idle host[146-193]
+cpom-comet       up 7-00:00:00     48   idle host[146-193]
+...
+```
 
-**Note:** Queues other than the standard queues`test` , `short-serial` ,
-`long-serial` ,  `par-single` ,  `par-multi` and `high-mem` should  be ignored
+{{% notice style="info" %}}
+Queues other than the standard queues `test` , `short-serial` ,
+`long-serial`, `par-single`, `par-multi` and `high-mem` should be ignored
 as they implement different job scheduling and control policies.
+{{% /notice %}}
 
 ## 'sinfo' Output field description:
 
@@ -113,15 +113,15 @@ By default, the SLURM command 'sinfo' displays the following information:
   * **STATE** : State of the nodes. Possible states include: allocated, down, drained, and idle. For example, the state "idle" means that the node is not allocated to any jobs and is available for use.
   * **NODELIST** List of node names associated with this queue/partition
 
-The 'sinfo' example below, reports more complete information about the
+The `sinfo` example below, reports more complete information about the
 partition/queue short-serial
 
-    
-    
-    $ sinfo --long --partition=short-serial
-    Tue May 12 18:04:54 2020
-    PARTITION    AVAIL TIMELIMIT JOB_SIZE  ROOT  OVERSUBS  GROUPS NODES    STATE NODELIST
-    short-serial* up  1-00:00:00  1-infinite  no  NO    all     48  idle host[146-193]
+```
+sinfo --long --partition=short-serial
+Tue May 12 18:04:54 2020
+PARTITION    AVAIL TIMELIMIT JOB_SIZE  ROOT  OVERSUBS  GROUPS NODES    STATE NODELIST
+short-serial* up  1-00:00:00  1-infinite  no  NO    all     48  idle host[146-193]
+``````
     
 
 ## How to choose a SLURM queue/partition
@@ -182,10 +182,9 @@ submission command line `sbatch -n <number of CPU cores>` or  by adding the
 SLURM directive `#SBATCH -n <number of CPU cores>`in the job script file. An
 example is shown below:
 
-    
-    
-    $ sbatch --ntasks=4 --partition=par-single < myjobscript
-    
+```
+sbatch --ntasks=4 --partition=par-single < myjobscript
+```
 
 Note: Jobs submitted with a number of CPU cores greater than 16 will be
 terminated (killed) by the SLURM scheduler with the following statement in the
@@ -200,10 +199,9 @@ specified via the SLURM submission command  flag `sbatch -n <number of CPU
 cores>` or  by adding the SLURM directive `#SBATCH -n <number of CPU cores>`
 to  the job script file. An example is shown below:
 
-    
-    
-    $ sbatch --ntasks=4 --partition=par-multi < myjobscript<br>
-    
+```
+sbatch --ntasks=4 --partition=par-multi < myjobscript<br>
+```
 
 Note 1: The number of CPU cores gets passed from SLURM submission  flag `-n` .
 Do not add  the `-np` flag  to `mpirun` command  .
