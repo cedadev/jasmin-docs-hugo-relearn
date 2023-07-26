@@ -21,47 +21,50 @@ cores) per host is listed in Table 1 with the corresponding processor model
 and the size of the physical memory RAM available per node/host.
 
 To select a node/host with a specific processor model and memory, add the
-following SLURM directive to your job script ` #SBATCH --constraint="<host-
-group-name>"`
+following SLURM directive to your job script 
 
-For example ` #SBATCH --constraint="skylake348G"`
+```
+#SBATCH --constraint="<host-group-name>"
+```
 
-**IMPORTANT:** ‘intel’ and **‘** amd’ **** node types are **** defined in the
-SLURM configuration as a feature:
+For example 
 
-  * For any Intel node type use **`#SBATCH --constraint="intel"`** while for a specific Intel CPU model then use the host group name (Table 1) e.g. **`#SBATCH --constraint="skylake348G"`**
-  * For AMD use **` #SBATCH --constraint="amd"`**
+```
+#SBATCH --constraint="skylake348G"
+```
+
+{{% notice style="info" %}}
+`intel` and `amd` node types are defined in the SLURM configuration as a feature:
+
+  * For any Intel node type use `#SBATCH --constraint="intel"`
+  * For a specific Intel CPU model use the host group name (see Table 1)
+    * e.g. `#SBATCH --constraint="skylake348G"`
+  * For AMD use ` #SBATCH --constraint="amd"`
+{{% /notice %}}
+
 
 **Table 1**. LOTUS cluster specification
 
-**Host group name** |  **Number  
-of nodes/hosts ** |  **Processor model** |  **CPUs  
-per host ** |  **RAM**  
+**Current** host groups
+
+Host group name |  Number of nodes/hosts  |  Processor model |  CPUs per host |  RAM 
 ---|---|---|---|---  
-|  |  
-|  |  
-  
-haswell256G -retired  |  7  |  Intel Xeon E5-2650-v3 "Haswell"  |  20  |  256
-GB  
 broadwell256G  |  37  |  Intel Xeon E5-2640-v4 "Broadwell"  |  20  |  256 GB  
-  
-|  |  
-|  
-|  
-  
-ivybridge2000G -retired  |  3  |  Intel Xeon E7-4860-v2 "Ivy Bridge"  |  48  |
-2048 GB  
 skylake348G  |  151  |  Intel Xeon Gold-5118 "Skylake"  |  24  |  348 GB  
-epyctwo1024G  | 200  |  AMD  |  48  |  1024 GB  
-|  
-  
-|  
-  
+epyctwo1024G  | 200  |  AMD  |  48  |  1024 GB |  
+
+**Retired** host groups: no longer in use
+
+Host group name |  Number of nodes/hosts |  Processor model |  CPUs per host |  RAM  
+---|---|---|---|---  
+~~haswell256G~~ |  ~~7~~ retired |  ~~Intel Xeon E5-2650-v3 "Haswell"~~  |  ~~20~~  | ~~256 GB~~
+~~ivybridge2000G~~  |  ~~3~~  -retired |  ~~Intel Xeon E7-4860-v2 "Ivy Bridge"~~  |  ~~48~~  | ~~2048 GB~~
+
 **Notes**
 
   * There are 10 nodes of node type `skylake348G` with SSD disk mounted on /tmp 
+  * LOTUS nodes of node type `epyctwo1024` are not available yet on the `par-multi` queue
 
-  * LOTUS nodes of node type `epyctwo1024` are not available yet on the `par-multi `queue
-  * If you choose to compile code for specific architectures, then it may not run elsewhere in the system
-
-
+{{% notice style="warning" %}}
+If you choose to compile code for specific architectures, do not expect it to run elsewhere in the system.
+{{% /notice %}}
