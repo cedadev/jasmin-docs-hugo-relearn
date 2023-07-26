@@ -37,43 +37,40 @@ Both options are described below.
 
 Jobs can be submitted to SLURM from the following Sci machines:
 
-    
-    
-    sci1.jasmin.ac.uk 
-    sci2.jasmin.ac.uk 
-    sci3.jasmin.ac.uk 
-    sci4.jasmin.ac.uk 
-    sci5.jasmin.ac.uk 
-    sci6.jasmin.ac.uk 
-    sci8.jasmin.ac.uk
-    
+```
+sci1.jasmin.ac.uk 
+sci2.jasmin.ac.uk 
+sci3.jasmin.ac.uk 
+sci4.jasmin.ac.uk 
+sci5.jasmin.ac.uk 
+sci6.jasmin.ac.uk 
+sci8.jasmin.ac.uk
+```
 
 ## Method 1: Submit via a SLURM job script
 
 The SLURM job submission command is:
 
-    
-    
-    $ sbatch myjobscript
-    
+```
+sbatch myjobscript
+```
 
 The job script is a Bash script of user's application and includes a list of
 SLURM directives, prefixed with `#SBATCH` as shown in this example:
 
-    
-    
-    #!/bin/bash 
-    #SBATCH --partition=short-serial 
-    #SBATCH -o %j.out 
-    #SBATCH -e %j.err
-    #SBATCH --time=05:00
-    
-    # executable 
-    sleep 5m
-    
+```
+#!/bin/bash 
+#SBATCH --partition=short-serial 
+#SBATCH -o %j.out 
+#SBATCH -e %j.err
+#SBATCH --time=05:00
+
+# executable 
+sleep 5m
+```
 
 For job specification of resources please refer to Table 2 of the help article
-[LSF to SLURM quick reference](lsf-to-slurm-quick-reference)
+[LSF to SLURM quick reference]({{< ref "lsf-to-slurm-quick-reference" >}})
 
 ## Method 2: Submit via command-line options
 
@@ -82,10 +79,9 @@ submit to LOTUS then you can do so by providing SLURM directives as command-
 line arguments. For example, if you have a script "my-script.py" that takes a
 single argument "-f <filepath>", you can submit it using "sbatch" as follows:
 
-    
-    
-    sbatch -p short-serial -t 03:00 -o job01.out -e job01.err my-script.py -f myfile.txt
-    
+```
+sbatch -p short-serial -t 03:00 -o job01.out -e job01.err my-script.py -f myfile.txt
+```
 
 This approach allows you to submit jobs without writing additional job scripts
 to wrap your existing code.
@@ -98,39 +94,34 @@ command `salloc` . The code/application is executed and the allocation are
 released after a specific time -default 1 hour - when the testing is finished.
 There are two ways:
 
-#### Interactive execution with pseudo-shell terminal on the compute LOTUS
-node
+#### Interactive execution with pseudo-shell terminal on the compute LOTUS node
 
 The job is executed on the LOTUS compute node by invoking the SLURM command
-srun after allocating resources with salloc. See example below.
+srun after allocating resources with `salloc`. See example below.
 
-    
-    
-    @sci4 ~]$ salloc -p par-single --ntasks-per-node=2
-    salloc: Pending job allocation 23506
-    salloc: job 23506 queued and waiting for resources
-    salloc: job 23506 has been allocated resources
-    salloc: Granted job allocation 23506
-    
+```console
+salloc -p par-single --ntasks-per-node=2
+salloc: Pending job allocation 23506
+salloc: job 23506 queued and waiting for resources
+salloc: job 23506 has been allocated resources
+salloc: Granted job allocation 23506
+```
 
 The job allocation ID 23506 has 2 CPUs on the compute node host580 as shown
 below:
 
-    
-    
-    @sci4 ~]$ squeue -u train001-o"%.18i %.9P %.11j %.8u %.2t %.10M %.6D %.6C %R"
-    JOBID PARTITION        NAME        USER   ST       TIME  NODES   CPUS NODELIST(REASON)
-    23506 par-singl    interactive   usertest  R       1:32      1      2 host580
-    
+```squeue -u train001-o"%.18i %.9P %.11j %.8u %.2t %.10M %.6D %.6C %R"
+JOBID PARTITION        NAME        USER   ST       TIME  NODES   CPUS NODELIST(REASON)
+23506 par-singl    interactive   usertest  R       1:32      1      2 host580
+```
 
 To launch an interactive shell session on the compute node host580, use the
-following srun command.
+following srun command (from a sci server).
 
-    
-    
-    sci4 ~]srun --pty /bin/bash
-    @host580 ~]$
-    
+```
+srun --pty /bin/bash
+@host580 ~]$
+```
 
 ####  Interactive execution with no shell
 
@@ -138,14 +129,11 @@ A code/application can be executed on the LOTUS compute node without a shell
 session on the node itself. For example the command 'hostname' is executed
 twice as there are 2 CPUs and this outputs the name of the node
 
-    
-    
-    sci4 ~] srun hostname
-    host580.jc.rl.ac.uk
-    host580.jc.rl.ac.uk
-    
-
-Note : tba
+```
+srun hostname
+host580.jc.rl.ac.uk
+host580.jc.rl.ac.uk
+```
 
 ## Job array submission
 
@@ -165,39 +153,34 @@ message: "Job array index too large. Job not submitted."
 
 Taking a simple R submission script as an example:
 
-    
-    
-    #!/bin/bash 
-    #SBATCH --partition=short-serial 
-    #SBATCH --job-name=myRtest
-    #SBATCH -o %j.out 
-    #SBATCH -e %j.err 
-    #SBATCH --time=30:00
-    
-    module add jasr
-    Rscript TestRFile.R dataset1.csv
-    
+```
+#!/bin/bash 
+#SBATCH --partition=short-serial 
+#SBATCH --job-name=myRtest
+#SBATCH -o %j.out 
+#SBATCH -e %j.err 
+#SBATCH --time=30:00
 
-If you want to run the same  script `TestRFile.R ` with  input  file
-`dataset2.csv` through  to `dataset10.csv` ,  you could create and submit a
-job script for each dataset. However, by setting up an array job, you could
-create and submit a single job script.
+module add jasr
+Rscript TestRFile.R dataset1.csv
+```
+
+If you want to run the same script `TestRFile.R ` with input file `dataset2.csv` through  to `dataset10.csv`, you could create and submit a job script for each dataset. However, by setting up an array job, you could create and submit a single job script.
 
 The corresponding job array script to process 10 input files in a single job
 submission would look something like this:
 
-    
-    
-    #!/bin/bash 
-    #SBATCH --partition=short-serial 
-    #SBATCH --job-name=myRarray
-    #SBATCH -o %A_%a.out
-    #SBATCH -e %A_%a.err
-    #SBATCH --time=30:00
-    #SBATCH --array=1-10
-    module add jasr
-    Rscript TestRFile.R datset${SLURM_ARRAY_TASK_ID}.csv
-    
+```
+#!/bin/bash 
+#SBATCH --partition=short-serial 
+#SBATCH --job-name=myRarray
+#SBATCH -o %A_%a.out
+#SBATCH -e %A_%a.err
+#SBATCH --time=30:00
+#SBATCH --array=1-10
+module add jasr
+Rscript TestRFile.R datset${SLURM_ARRAY_TASK_ID}.csv
+``` 
 
 Here the important differences are :
 
@@ -208,14 +191,11 @@ Here the important differences are :
 When the job is submitted, SLURM will create 10 tasks under  the single  job
 ID. The job array script is submitted in the usual way:
 
-    
-    
-    $ sbatch myRarray.sbatch
-    
+```
+sbatch myRarray.sbatch
+```
 
 If you use  the `squeue -u <username>` command  to list your active jobs, you
 will see 10 tasks with the same Job ID. The tasks can be distinguished by  the
 `[index] ` e.g. jobID_index. Note that individual tasks may be allocated to a
 range of different hosts on LOTUS.
-
-

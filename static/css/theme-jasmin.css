@@ -53,3 +53,13 @@ h1 {
   text-align: inherit;
   text-transform: inherit;
 }
+
+/* disable annoying button alongside inline code */
+span > .copy-to-clipboard-button {
+  display: none;
+}
+code.copy-to-clipboard-code {
+  border-end-end-radius: 0;
+  border-start-end-radius: 0;
+  border-inline-end-width: 1px;
+}

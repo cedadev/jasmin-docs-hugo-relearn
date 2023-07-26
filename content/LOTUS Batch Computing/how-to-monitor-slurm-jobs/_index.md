@@ -23,14 +23,13 @@ obtained from the SLURM command`squeue`. Note that information on completed
 jobs is only retained for a limited period. Information on jobs that ran in
 the past is via.`sacct`An example of the output `squeue`is shown below.
 
-    
-    
-    $ squeue 
-          JOBID PARTITION     NAME   USER ST       TIME  NODES NODELIST(REASON)
-          18957 short-ser     mean   user1  R       0:01      1 host147
-          18956 short-ser     calc   user2  R      48:38      1 host146
-          18967      test     wrap   user1  R      14:25      1 host146
-    
+```
+squeue 
+JOBID PARTITION     NAME   USER ST       TIME  NODES NODELIST(REASON)
+18957 short-ser     mean   user1  R       0:01      1 host147
+18956 short-ser     calc   user2  R      48:38      1 host146
+18967      test     wrap   user1  R      14:25      1 host146
+```
 
 where the field 'ST' is the job state and the 'TIME' is the time used by the
 job.
@@ -52,7 +51,6 @@ S  |  Suspended  |  A running job has been stopped with its resources released
 to other jobs  
 ST  |  Stopped  |  A running job has been stopped with its resources retained  
   
-|  |  
   
 # SLURM commands for monitoring jobs
 
@@ -64,79 +62,67 @@ jobs
 
 SLURM Command  |  Description  
 ---|---  
-`squeue ` |  To view information for all jobs running and pending on the
-cluster  
-  
-`squeue --user=username` |  Displays running and pending jobs per individual
-user  
-`squeue --states=PD` |  Displays information for pending jobs (PD state) and
-their reasons  
-`squeues --states=all` |  Shows a summary of the number of jobs in different
-states  
-`scontrol show job JOBID ` |  Shows detailed information about your job (JOBID
-= job number) by searching the current event log file  
-`sacct -b` |  Shows a brief listing of past jobs  
-`sacct -l -j JOBID ` |  Shows detailed historical job information of a past
-job with jobID  
-`------ ` |  
+`squeue ` |  To view information for all jobs running and pending on the cluster  
+`squeue --user=username` |  Displays running and pending jobs per individual user  
+`squeue --states=PD` |  Displays information for pending jobs (PD state) and their reasons  
+`squeues --states=all` |  Shows a summary of the number of jobs in different states  
+`scontrol show job JOBID ` |  Shows detailed information about your job (JOBID = job number) by searching the current event log file  
+`sacct -b` |  Shows a brief listing of past jobs
+`sacct -l -j JOBID ` |  Shows detailed historical job information of a past job with jobID  
   
   
 ## Inspection of job output files
 
 An example of the job output file from a simple job submitted to SLURM:
 
-    
-    
-    $ sbatch -p test  --wrap="sleep 2m"
-    Submitted batch job 18973  
-    
-    
-    
-    $ scontrol show job 18973
-    JobId=18973 JobName=wrap
-       UserId=fchami(26458) GroupId=users(26030) MCS_label=N/A
-       Priority=1 Nice=0 Account=jasmin QOS=normal
-       JobState=RUNNING Reason=None Dependency=(null)
-       Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
-       RunTime=00:00:08 TimeLimit=01:00:00 TimeMin=N/A
-       SubmitTime=2020-05-20T14:10:28 EligibleTime=2020-05-20T14:10:28
-       AccrueTime=2020-05-20T14:10:28
-       StartTime=2020-05-20T14:10:32 EndTime=2020-05-20T15:10:32 Deadline=N/A
-       SuspendTime=None SecsPreSuspend=0 LastSchedEval=2020-05-20T14:10:32
-       Partition=test AllocNode:Sid=sci2-test:18286
-       ReqNodeList=(null) ExcNodeList=(null)
-       NodeList=host147
-       BatchHost=host147
-       NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
-       TRES=cpu=1,mem=128890M,node=1,billing=1
-       Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
-       MinCPUsNode=1 MinMemoryNode=128890M MinTmpDiskNode=0
-       Features=(null) DelayBoot=00:00:00
-       OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
-       Command=(null)
-       WorkDir=/home/users/fchami
-       StdErr=/home/users/fchami/slurm-18973.out
-       StdIn=/dev/null
-       StdOut=/home/users/fchami/slurm-18973.out
-       Power=
-      
-    
+```
+sbatch -p test  --wrap="sleep 2m"
+Submitted batch job 18973  
+```
+
+```
+scontrol show job 18973
+JobId=18973 JobName=wrap
+   UserId=fchami(26458) GroupId=users(26030) MCS_label=N/A
+   Priority=1 Nice=0 Account=jasmin QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:08 TimeLimit=01:00:00 TimeMin=N/A
+   SubmitTime=2020-05-20T14:10:28 EligibleTime=2020-05-20T14:10:28
+   AccrueTime=2020-05-20T14:10:28
+   StartTime=2020-05-20T14:10:32 EndTime=2020-05-20T15:10:32 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2020-05-20T14:10:32
+   Partition=test AllocNode:Sid=sci2-test:18286
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=host147
+   BatchHost=host147
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,mem=128890M,node=1,billing=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=128890M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=(null)
+   WorkDir=/home/users/fchami
+   StdErr=/home/users/fchami/slurm-18973.out
+   StdIn=/dev/null
+   StdOut=/home/users/fchami/slurm-18973.out
+   Power=
+```    
 
 ##
 
 ## History of jobs
 
     
-    
-    sacct
-           JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
-    ------------ ---------- ---------- ---------- ---------- ---------- -------- 
-    18963              wrap par-single     jasmin          1  COMPLETED      0:0 
-    18964              wrap short-ser+     jasmin          1  COMPLETED      0:0 
-    18965              wrap par-single     jasmin          1  COMPLETED      0:0 
-    18966              wrap short-ser+     jasmin          1  COMPLETED      0:0 
-    	
-
-`sacct`
+```
+sacct
+        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode 
+------------ ---------- ---------- ---------- ---------- ---------- -------- 
+18963              wrap par-single     jasmin          1  COMPLETED      0:0 
+18964              wrap short-ser+     jasmin          1  COMPLETED      0:0 
+18965              wrap par-single     jasmin          1  COMPLETED      0:0 
+18966              wrap short-ser+     jasmin          1  COMPLETED      0:0 
+```
 
 
