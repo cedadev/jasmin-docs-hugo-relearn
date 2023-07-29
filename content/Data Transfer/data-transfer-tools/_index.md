@@ -61,7 +61,7 @@ environment on the transfer servers.
 on JASMIN. Enables extractions from the Met Office MASS Archive directly on to  
 OPeNDAP  |  A transfer protocol for extracting subsets of files from a remote
 server (over HTTP)  
-[bcopy]({{< ref "copy-service" >}})  
+[bcopy]({{< ref "data-transfer-tools-copy-service" >}})  
 |  A parallel transfer tool (specific to JASMIN) that uses the LOTUS batch
 cluster to copy data efficiently between disk areas within JASMIN.  
 [rclone]({{< ref "data-transfer-tools-rclone" >}})  

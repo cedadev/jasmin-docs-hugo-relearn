@@ -15,7 +15,7 @@ This article explains:
 
 **Note:** this only applies to sharing with other users with JASMIN login
 accounts. If you need to share data with users outside JASMIN please consider
-the [HTTP option](share-gws-data-via-http).
+the [HTTP option]({{< ref "share-gws-data-via-http" >}}).
 
 ## How to share specific directories
 
@@ -53,3 +53,12 @@ you may wish to re-add execute permission on that directory, e.g.:
 `$ chmod o+x /group_workspaces/jasmin/superproj/public`
 
 
+{{% notice style="warning" %}}
+Do not set open permissions on files or directories.
+By this we mean permissions where data are "world-writable" by anyone, for example
+
+`-rw-rw-rw-` for a file, or
+`drwxrwxrwx` for a directory. **<< DON'T USE THESE!!**
+
+We provide a UNIX a group corresponding to each group workspace, which all members of that GWS belong to: this enables sharing within the group if you set permissions appropriately using that group. If you are unsure about setting permissions, please ask the helpdesk.
+{{% /notice %}}

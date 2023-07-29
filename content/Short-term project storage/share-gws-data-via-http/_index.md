@@ -24,8 +24,9 @@ HTTP, so that:
   * common clients such as `wget`, `curl`, client libraries and web browsers can be used to access the data via a commonly-supported protocol.
 
 In this respect, the service should be regarded as another [data transfer
-tool](data-transfer-tools). However it must be arranged in advance between the
-Group Workspace manager and the JASMIN Helpdesk. It involves:
+tool]({{< ref "data-transfer-tools" >}}). However it must be arranged in
+advance between the Group Workspace manager and the JASMIN Helpdesk. It
+involves:
 
   1. A member of the workspace creating a `public` directory and placing data inside it
   2. The **GWS manager** making a request to the [JASMIN Helpdesk](mailto:support@jasmin.ac.uk) to request that this specific GWS is configured to be shared via HTTP.
@@ -44,7 +45,8 @@ configuration permits this (now deprecated) means of restricting access.
 Future revisions of the service may remove or change the way access
 restrictions can be imposed].
 
-This facility is **not to be used** **for hosting project websites.** It is
+{{% notice style="warning"%}}
+This facility is **not to be used for hosting project websites**. It is
 provided as a simple means for specific data files to be made available to a
 wider audience than members of a Group Workspace, using a convenient data
 transfer protocol (HTTP). Likewise, it is not recommended to build tools or
@@ -57,9 +59,10 @@ the network or other parts of the service infrastructure.
 Projects considering web-based solutions for showcasing or disseminating their
 data via more complex tools or with specific availability requirements should
 consider requesting an external tenancy in the JASMIN Community Cloud, or
-indeed other service providers if more appropriate, but should be prepared to
+indeed external service providers if more appropriate, but should be prepared to
 do the necessary design, development, operation and maintenance of those
 services themselves.
+{{% /notice %}}
 
 ## Public access set up
 
@@ -69,28 +72,26 @@ membership of the GWS) can access the data via a web browser or other HTTP-
 based tools. This can be done by creating a `public` directory in the top-
 level directory of the GWS, for example:
 
-    
-    
-    $ cd /group_workspace/jasmin/foobaa/ 
-    $ mkdir public 
-    $ chmod -Rf 755 public
-    
+```
+cd /group_workspace/jasmin/foobaa/ 
+mkdir public 
+chmod -Rf 755 public
+``` 
 
 You should then contact [JASMIN Support](mailto:support@jasmin.ac.uk) and ask
 for this directory to be made visible via the `gws-access` server. The JASMIN
 team will configure this change and your `public` directory will then be
 visible from:
 
-    
-    
-    https://gws-access.jasmin.ac.uk/public/foobaa/
-    
+https://gws-access.jasmin.ac.uk/public/foobaa/
 
-**Note:** The URL of this service has recently changed (June 2020). A redirect
-is in place from the old URL of `https://gws-access.ceda.ac.uk`, so the change
+{{% notice style="note" %}}
+The URL of this service changed in June 2020. A redirect
+is in place from the old URL of `https://gws-access.ceda.ac.uk/`, so the change
 should be transparent to existing users, but **please use the new URLs**
-beginning with <https://gws-access.jasmin.ac.uk/> to avoid any problems for
+beginning with `https://gws-access.jasmin.ac.uk/` to avoid any problems for
 example with HTTP clients that are unable to handle redirects.
+{{% /notice %}}
 
 Please see the section below if you wish to control who can access the content
 of one or more of the sub-directories within your `public` directory.
@@ -116,41 +117,37 @@ xfer[12].jasmin.ac.uk
 You can then create the ".htpasswd" file as follows (using the example of a
 Group Workspace called "foobaa"):
 
-    
-    
-    $ export GWS=/group_workspaces/jasmin/foobaa/ 
-    $ cd $GWS
-    $ mkdir -p public 
-    $ cd public
-    $ htpasswd -b -m -c $GWS/public/.htpasswd i_am_a_user i_am_a_password
-    
+
+```
+export GWS=/group_workspaces/jasmin/foobaa/ 
+cd $GWS
+mkdir -p public 
+cd public
+htpasswd -b -m -c $GWS/public/.htpasswd i_am_a_user i_am_a_password
+``` 
 
 Before this will work, you also need to create a ".htaccess" file which you
 could do as follows
 
-    
-    
-    $ cat >.htaccess <<EOL 
-    AuthType Basic 
-    AuthName "Password Required" 
-    AuthUserFile /group_workspaces/jasmin/foobaa/public/.htpasswd 
-    Require valid-user
-    EOL
-    
+```
+cat >.htaccess <<EOL 
+AuthType Basic 
+AuthName "Password Required" 
+AuthUserFile /group_workspaces/jasmin/foobaa/public/.htpasswd 
+Require valid-user
+EOL
+```
 
 Finally, change the permissions on these files:
 
-    
-    
-    $ chmod 644 .htaccess .htpasswd
-    
+```
+chmod 644 .htaccess .htpasswd
+```    
 
 Now, you can test that you get prompted for the username and password by
 visiting
 
-    
-    
-    https://gws-access.jasmin.ac.uk/public/foobaa/
+https://gws-access.jasmin.ac.uk/public/foobaa/
     
 
 

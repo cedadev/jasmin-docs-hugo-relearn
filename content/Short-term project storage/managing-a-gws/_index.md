@@ -27,9 +27,9 @@ a duty to:
   * Ensure that GWS is being used appropriately: this may include enforcement of limits on particular users.
   * Advertise the URL for requesting access to the GWS.
   * Respond to e-mail authorisation requests from CEDA.
-  * Manage disk and tape effectively: specifically the use of the [Elastic Tape system](secondary-copy-using-elastic-tape) to back-up or migrate data.
-  * Communicate [GWS etiquette](gws-etiquette) to the project scientists.
-  * Manage additional services such as [sharing of GWS data via HTTP server](share-gws-data-via-http).
+  * Manage disk and tape effectively: specifically the use of the [Elastic Tape system]({{< ref "secondary-copy-using-elastic-tape" >}}) to back-up or migrate data.
+  * Communicate [GWS etiquette]({{< ref "gws-etiquette" >}}) to the project scientists.
+  * Manage additional services such as [sharing of GWS data via HTTP server]({{< ref "share-gws-data-via-http" >}}).
   * Manage the closing down of the GWS effectively: all GWSs have a termination date and data may be lost if not managed effectively.
   * Communicate any issues to the CEDA Helpdesk.
 
@@ -57,25 +57,23 @@ account](https://accounts.jasmin.ac.uk/account/ceda_claim/confirm/)
 
 File system access to a GWS is managed using a Unix group that begins with
 "gws_". You should apply for access yourself and you may wish to set up a
-directory structure as recommended in the [GWS introductory
-article](introduction-to-group-workspaces).
+directory structure as recommended in the [GWS introductory article]({{< ref
+"introduction-to-group-workspaces" >}}).
 
 A list of the user IDs that have access to a given GWS can be found by using
 the "getent group" command and piping it through "grep" to select only your
 GWS. For example:
 
-    
-    
-    $ getent group | grep gws_cedaproc<br>gws_cedaproc:*:26015:fchami,kleanthis,hearnsha,vbennett,iwi,sdonegan,jrainnie,amwaterfall,lawrence,astephens,mpritcha,mjuckes,gparton,astephen,pjkersha,rpetrie,archread,alisonp,eaconway,spepler,et_jasmin,sventour,scallagh,rsmith013,coan,wgarland
-    	
+```
+getent group | grep gws_cedaproc<br>gws_cedaproc:*:26015:fbloggs,jdoe
+```    	
 
 You can lookup a specific user ID with the following:
 
-    
-    
-    $ getent passwd | grep astephen
-    astephen:*:29775:26030:Ag Stephens:/home/users/astephen:/bin/bash
-    	
+```
+getent passwd | grep fbloggs
+fbloggs:*:29775:26030:Fred Bloggs:/home/users/fbloggs:/bin/bash
+```
 
 ### Maintaining group permissions throughout the GWS
 
@@ -94,76 +92,69 @@ they can follow the procedure here using the "umask" command:
 Make a directory (and set it the permission so that the group can read/write
 to it):
 
-    
-    
-    $ mkdir --mode=u+rwx,g+rws,o-rwx testdir
-    $ ls -l testdir
-    drwxrws--- 2 mpritcha gws_cedaproc 4096 Jan 26 14:36 testdir
-    
+```command
+mkdir --mode=u+rwx,g+rws,o-rwx testdir
+ls -l testdir
+drwxrws--- 2 jdoe gws_cedaproc 4096 Jan 26 14:36 testdir
+```    
 
 Check the umask:
 
-    
-    
-    $ umask
-    0022
-    
+```command
+umask
+0022
+```    
 
 Modify the "umask" so that any new file or directory that you create will be
 writable anyone with the group permission:
 
-    
-    
-    $ umask 002
-    $ touch testdir/newfile
-    $ ls -l testdir
-    -rw-rw-r-- 1 mpritcha gws_cedaproc 0 Jan 26 14:39 newfile
-    
+```command
+umask 002
+touch testdir/newfile
+ls -l testdir
+-rw-rw-r-- 1 jdoe gws_cedaproc 0 Jan 26 14:39 newfile
+```
 
 ### Quota, resource allocation and GWS lifetime
 
 The overall usage of a GWS can be determined with the `df` (SOF) or `pan_df`
 (PFS) command:
 
-    
-    
-    $ pan_df -H /gws/pw/j05/workshop/
-    Filesystem             				Size   Used  Avail Use% Mounted on
-    panfs://panmanager03.jc.rl.ac.uk/gws/pw/j05     2.6T    16G   2.6T   1% /gws/pw/j05/workshop/
-    
-    $ df -H  /gws/nopw/j04/ncas_generic
-    Filesystem                                      Size   Used  Avail Use% Mounted on
-    quobyte@sds.jc.rl.ac.uk/gws_ncas_generic        83T    80T   3.4T  96% /gws/nopw/j04/ncas_generic
-    
+```command
+pan_df -H /gws/pw/j07/workshop/
+Filesystem             				Size   Used  Avail Use% Mounted on
+panfs://panmanager03.jc.rl.ac.uk/gws/pw/j07     2.6T    16G   2.6T   1% /gws/pw/j07/workshop/
 
-For PFS (/gws/pw/j05), the raw capacity of the GWS is 2.6TB (measured in TB,
+$ df -H  /gws/nopw/j04/ncas_generic
+Filesystem                                      Size   Used  Avail Use% Mounted on
+quobyte@sds.jc.rl.ac.uk/gws_ncas_generic        83T    80T   3.4T  96% /gws/nopw/j04/ncas_generic
+```
+
+For PFS (`/gws/pw/j07`), the raw capacity of the GWS is 2.6TB (measured in TB,
 defined using powers of 10), but to obtain space available to users this
 should be divided by roughly 1.3, resulting in around 2TB of free space. Of
 this, 16GB is currently in use. The factor of 1.3 can depend on the number of
 small files stored in the GWS because lots of small files take up more space
 than expected. For SOF, the value reported by `df` is the usable size.
 
-A summary of specific sections of a GWS can be determined using `pan_du -sh
-dir` (PFS), and `du -sh --si --apparent-size dir` (SOF). It's particularly
+A summary of specific sections of a GWS can be determined using `pan_du -sh \<di\r>` (PFS), and `du -sh --si --apparent-size \<dir\>` (SOF). Set the
 `--apparent-size` flag to get an accurate size.
 
-There is also a live view of GWSs and the available space left on the [JASMIN
-Dashboard](https://mon.jasmin.ac.uk). The “JASMIN Storage” tab shows many
+There is also a live view of GWSs and the available space left on the [JASMIN Dashboard](https://mon.jasmin.ac.uk). The “JASMIN Storage” tab shows many
 JASMIN storage volumes with information about current usage.
 
-You can use the “find” command together with “-atime” or “-mtime” to select
+You can use the `find` command together with `-atime` or `-mtime` to locate
 files accessed or modified more than a certain length of time ago. For
 example, to find files which were accessed more than 1 year ago:
 
-    
-    
-    $ find /group_workspaces/jasmin/upscale/cache -type f -atime +365
-    
+```command
+find /gws/nopw/j04/upscale/cache -type f -atime +365
+```
 
-CEDA runs a fortnightly check of the contents of all GWSs. As a GWS Manager
+However, the JASMIN team runs a fortnightly check of the contents of all GWSs, so please don't run large `find` jobs yourself, as this will be duplicating something already run in the background. As a GWS Manager
 you will receive e-mails summarising the usage and contents of the GWS. If you
 wish for additional directories to be scanned and summarised please add these
-to the [GWS scanner configuration](gws-scanner).
+to the [GWS scanner configuration]({{< ref "gws-scanner" >}}).
 
 The typical lifetime of a GWS is 3 years. All GWS managers are expected to
 actively manage the space during its lifetime and plan for the eventual
@@ -178,7 +169,7 @@ that you should discuss the requirements with the CEDA Archive team via the
 Proactive data management is an important part of providing an effective GWS.
 We recommend that the GWS Manager discusses use of the space with the project
 team to ensure that the use of disk and tape are being optimised. This may
-involve use of the [Elastic Tape system](secondary-copy-using-elastic-tape)
+involve use of the [Elastic Tape system]({{< ref "secondary-copy-using-elastic-tape" >}}) 
 for backup or data migration (from disk to tape).
 
 ### Requesting a change to the GWS size
@@ -193,10 +184,10 @@ requested.
 
 Requests for an increase in GWS size will be considered by the Consortium
 Manager with responsibility for managing an overall allocation to that
-particular scientific community. See [Requesting Resources](requesting-
-resources). Depending on available resources and competing demand, it may not
-always be possible to increase the allocation, and you may be asked to move
-data to Elastic Tape to free up disk space.
+particular scientific community. See 
+[Requesting Resources]({{< ref "requesting-resources" >}}). Depending on available resources and competing
+demand, it may not always be possible to increase the allocation, and you may
+be asked to move data to Elastic Tape to free up disk space.
 
 ## Security
 
@@ -211,6 +202,16 @@ these rules by users of your GWS. Any infringements may be dealt with swiftly
 by removal of user access. No offensive, obscene or otherwise unauthorised
 data may be stored in the GWS or anywhere else within JASMIN. Users should not
 store any data of a personal or sensitive nature in the GWS.
+
+{{% notice style="warning" %}}
+Do not set, or allow your users to set, open permissions on files or directories.
+By this we mean permissions where data are "world-writable" by anyone, for example
+
+`-rw-rw-rw-` for a file, or
+`drwxrwxrwx` for a directory. **<< DON'T USE THESE!!**
+
+We provide a UNIX a group corresponding to each group workspace, which all members of that GWS belong to: this enables sharing within the group if you set permissions appropriately using that group. If you are unsure about setting permissions, please ask the helpdesk.
+{{% /notice %}}
 
 ## Keeping informed
 

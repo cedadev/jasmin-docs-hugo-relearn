@@ -14,15 +14,15 @@ title: Secondary copy using Elastic Tape
 Elastic Tape is a system developed for use with JASMIN Group Workspaces
 (GWSs), enabling the Group Workspace Manager to:
 
-  * Optimise their use of high-performance online disk by moving data to and from cheaper near-line storage
-  * Create and manage secondary copies of GWS data
+  - Optimise their use of high-performance online disk by moving data to and from cheaper near-line storage
+  - Create and manage secondary copies of GWS data
 
 At present, the system is designed only to be used by GWS Managers, rather
 than individual members of a GWS. It is the responsibility of a GWS Manager to
 create and manage backups or additional copies of data in a GWS.  
   
-**T** **he servers used to access Elastic Tape changed in January 2021.
-Previous users should note that the server to use now is**`et.jasmin.ac.uk`
+The servers used to access Elastic Tape changed in January 2021.
+Previous users should note that the server to use now is `et.jasmin.ac.uk`
 
 ### Who can use ET?
 
@@ -37,7 +37,7 @@ backup.** **It is also NOT long-term archive storage** : some data in GWSs may
 need to be earmarked for longer-term archive storage and wider availability
 via the CEDA Archive, but this is a **separate process** for which data
 management plans, ingest processes and metadata need to be put in place.
-Please contact the CEDA / JASMIN helpdesk (`support@jasmin.ac.uk`) if this is
+Please contact the **CEDA** (rather than the JASMIN) helpdesk (`support@ceda.ac.uk`) if this is
 the case.
 
 Each GWS has a quota of online disk space (agreed at the time of its creation)
@@ -392,35 +392,28 @@ workspace.)
 
 The system provides real-time status messages on the progress of operations
 requested. **These services are now available only inside the RAL firewall** ,
-so JASMIN users outside of RAL should use the [NX graphical desktop
-service](graphical-linux-desktop-access-using-nx) to open a firefox browser on
-one of the nx-login servers, to access these URLs
+so JASMIN users outside of RAL should use the 
+[NX graphical desktop service]({{< ref "graphical-linux-desktop-access-using-nx" >}}) to open a
+firefox browser on one of the nx-login servers, to access these URLs
 
-**Alerts Dashboard** <http://et-
-monitor.fds.rl.ac.uk/et_user/ET_AlertWatch.php>
+**Alerts Dashboard** <http://et-monitor.fds.rl.ac.uk/et_user/ET_AlertWatch.php>
 
-**RSS Feed** <http://et-
-monitor.fds.rl.ac.uk/et_rss/ET_RSS_AlertWatch_atom.php>
+**RSS Feed** <http://et-monitor.fds.rl.ac.uk/et_rss/ET_RSS_AlertWatch_atom.php>
 
 In both cases these can be customised to display only alerts from the
 workspace of interest to the GWS manager.
 
-**Alerts Dashboard** <http://et-
-monitor.fds.rl.ac.uk/et_user/ET_AlertWatch.php?workspace=WORKSPACE>
+**Alerts Dashboard** <http://et-monitor.fds.rl.ac.uk/et_user/ET_AlertWatch.php?workspace=WORKSPACE>
 
-**RSS Feed** <http://et-
-monitor.fds.rl.ac.uk/et_rss/ET_RSS_AlertWatch_atom.php?workspace=WORKSPACE>
+**RSS Feed** <http://et-monitor.fds.rl.ac.uk/et_rss/ET_RSS_AlertWatch_atom.php?workspace=WORKSPACE>
 
 (replace `WORKSPACE` with your workspace name in the above URLs)
 
 **Further views**
 
-**ET Home** <http://et-
-monitor.fds.rl.ac.uk/et_user/ET_Home.php?caller=USERNAME>
+**ET Home** <http://et-monitor.fds.rl.ac.uk/et_user/ET_Home.php?caller=USERNAME>
 
-**Holdings summary**[http://et-
-monitor.fds.rl.ac.uk/et_user/ET_Holdings_Summary.php?caller=USERNAME&workspace=WORKSPACE](http://et-
-monitor.fds.rl.ac.uk/et_user/ET_Holdings_Summary.php?caller=USERNAME&workspace=WORKSPACE)
+**Holdings summary**[http://et-monitor.fds.rl.ac.uk/et_user/ET_Holdings_Summary.php?caller=USERNAME&workspace=WORKSPACE](http://et-monitor.fds.rl.ac.uk/et_user/ET_Holdings_Summary.php?caller=USERNAME&workspace=WORKSPACE)
 
 (replace `USERNAME` with your username, `WORKSPACE` with your workspace name
 in the above URLs)

@@ -24,7 +24,7 @@ automatically.
 
 Users interact with the XFC in two ways:
 
-  1. to initialise their user area, and to get information about their quota, a [command-line client](install-jasmin-xfc-client) is used.
+  1. to initialise their user area, and to get information about their quota, a [command-line client]({{< ref "install-jasmin-xfc-client" >}}) is used.
   2. to move data in and out of their user area, the standard UNIX command-line tools (cp, mkdir, rm, mv, rsync, etc.) are used.
 
 ## Quotas
@@ -96,10 +96,10 @@ has been designed to discourage long term storage of files on it.
 
 JASMIN provides access to XFC via a command-line client: `xfc`
 
-Once [installed](install-jasmin-xfc-client) into your `$HOME` directory (using
-one of the `sci` servers), the `xfc` client can be run on either the `sci`
-(`sci[1-8].jasmin.ac.uk`) or `xfer` (`xfer[12].jasmin.ac.uk`) servers, but
-should NOT be run on the high-performance transfer servers
+Once [installed]({{< ref "install-jasmin-xfc-client" >}}) into your `$HOME`
+directory (using one of the `sci` servers), the `xfc` client can be run on
+either the `sci` (`sci[1-8].jasmin.ac.uk`) or `xfer` (`xfer[12].jasmin.ac.uk`)
+servers, but should NOT be run on the high-performance transfer servers
 `hpxfer[12].jasmin.ac.uk`.
 
 The client is used only for interacting with the service, but is not needed
@@ -107,23 +107,25 @@ for accessing the storage it provides. The storage provided is mounted in most
 places across JASMIN: the path to your XFC volume is returned by the client in
 one of the steps shown below.
 
-Users are expected to use the [xfer servers](transfer-servers) or a high-
-performance data transfer service to do any data transfers either within or
-in/out of JASMIN. This reduces the load on the `sci` servers which are for
-general-purpose interactive computing.
+Users are expected to use the [xfer servers]({{< ref "transfer-servers" >}})
+or a high-performance data transfer service to do any data transfers either
+within or in/out of JASMIN. This reduces the load on the `sci` servers which
+are for general-purpose interactive computing.
 
 The `xfc` client is used to initialise and then query the status (quota,
 scheduled deletions etc) of a user's XFC storage volume:
 
   1. To see all the available options: `xfc -h`
   2. To initialise your user area: `xfc init`
-    
-        ** SUCCESS ** - user initiliazed with:  
-    username: username  
-    email: user.name@stfc.ac.uk  
-    quota: 300TB  
-    path: /work/xfc/vol1/user_cache/username
-    	
+
+```
+xfc init
+** SUCCESS ** - user initiliazed with:  
+username: username  
+email: user.name@stfc.ac.uk  
+quota: 300TB  
+path: /work/xfc/vol1/user_cache/username
+```
 
 The `path` is the path on the JASMIN system to the user area. Data can be
 copied here using standard UNIX command-line tools cp, mv, rsync.
@@ -132,40 +134,40 @@ the directories and files using `chmod`, etc. The user area is just a standard
 POSIX directory and so any POSIX commands can be used on it.
 
   3. To get the user area path again: ` xfc path `
-    
-        /work/xfc/vol1/user_cache/username
-    	
+
+```
+/work/xfc/vol1/user_cache/username
+```    	
 
   4. To set the user email for notifications: ` xfc email --email=user.name@stfc.ac.uk `
-    
-        ** SUCCESS ** - user email updated to: user.name@stfc.ac.uk
-    	
+```
+** SUCCESS ** - user email updated to: user.name@stfc.ac.uk
+```
 
   5. To query the email set for the user: `xfc email `
-    
-        user.name@stfc.ac.uk
-    	
-
+```
+user.name@stfc.ac.uk
+```
   6. To switch deletion notifications on / off: ` xfc notify `
-    
-        ** SUCCESS ** - user notifcations updated to: on
-    	
+```
+** SUCCESS ** - user notifcations updated to: on
+```    	
 
   7. To see remaining quota: ` xfc quota `
-    
-        ------------------------
-    Quota for user: username 
-    ------------------------
-      Temporal Quota (TQ)
-        Used : 1.7 TB  
-        Allocated : 300.0 TB
-        Remaining : 298.3 TB
-    ------------------------  
-      Hard Quota (HQ)
-        Used      : 444.9 GB  
-        Allocated : 40.0 TB  
-        Remaining : 39.6 TB
-    	
+```    
+------------------------
+Quota for user: username 
+------------------------
+Temporal Quota (TQ)
+  Used : 1.7 TB  
+  Allocated : 300.0 TB
+  Remaining : 298.3 TB
+------------------------  
+Hard Quota (HQ)
+  Used      : 444.9 GB  
+  Allocated : 40.0 TB  
+  Remaining : 39.6 TB
+```
 
   8. To see which files are scheduled for deletion: ` xfc schedule `
     
@@ -174,7 +176,7 @@ POSIX directory and so any POSIX commands can be used on it.
 
   9. To list the files in your user area: ` xfc list`
     
-        user_cache/username/historical/.ftpaccess 
+    user_cache/username/historical/.ftpaccess 
     user_cache/username/historical/00README_catalogue_and_licence.txt 
     user_cache/username/historical/day/atmos/day/r1i1p1/COPY_CURRENT_20150326.txt
     	
@@ -182,18 +184,18 @@ POSIX directory and so any POSIX commands can be used on it.
 Pattern matching can be used to search for a file. This is just a simple
 substring search, e.g. ` xfc list -m r1i1p1_19500101-19541231.nc `
 
-    
-        user_cache/username/historical/day/atmos/day/r1i1p1/v20120907/va/va_day_CMCC-CESM_historical_r1i1p1_19500101-19541231.nc
-    user_cache/username/historical/day/atmos/day/r1i1p1/v20120907/rsds/rsds_day_CMCC-CESM_historical_r1i1p1_19500101-19541231.nc 
-    user_cache/username/historical/day/atmos/day/r1i1p1/v20120907/prc/prc_day_CMCC-CESM_historical_r1i1p1_19500101-19541231.nc
-    	
+```
+user_cache/username/historical/day/atmos/day/r1i1p1/v20120907/va/va_day_CMCC-CESM_historical_r1i1p1_19500101-19541231.nc
+user_cache/username/historical/day/atmos/day/r1i1p1/v20120907/rsds/rsds_day_CMCC-CESM_historical_r1i1p1_19500101-19541231.nc 
+user_cache/username/historical/day/atmos/day/r1i1p1/v20120907/prc/prc_day_CMCC-CESM_historical_r1i1p1_19500101-19541231.nc
+```    	
 
 File names are given relative to the `user_cache/ ` directory. To list the
 full file path use the `-f ` list option: `xfc list -f`
 
   10. To predict when the files will be deleted, if no other files are added to the user area, and none of the current files are removed: ` xfc predict`
     
-        Quota is predicted to be exceeded on 21 Aug 2019 14:58 by 252.1 GB 
+    Quota is predicted to be exceeded on 21 Aug 2019 14:58 by 252.1 GB 
     Files predicted to be deleted  
     user_cache/username/historical/.ftpaccess
     user_cache/username/historical/00README_catalogue_and_licence.txt
@@ -208,7 +210,7 @@ XFC.
 ### initial setup
 
     
-        xfc init 
+    xfc init 
     xfc path
     xfc email --email=user.name@email.com
     xfc notify
@@ -217,14 +219,14 @@ XFC.
 ### copy data
 
     
-        mkdir /subdir
+    mkdir /subdir
     cp /some/data/path /subdir
     	
 
 ### query the quota
 
     
-        xfc quota 
+    xfc quota 
     xfc predict 
     xfc schedule
     	

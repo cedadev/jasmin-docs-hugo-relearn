@@ -21,8 +21,8 @@ channels:
   * Email alerts from the system when the GWS reaches >83% full
   * Email from the CEDA/JASMIN team
   * News articles on the CEDA or JASMIN websites and by monitoring CEDA social media feeds which may be used to post messages regarding system status or security. 
-    * [CEDA Website](http://www.ceda.ac.uk/)
-    * [CEDA News RSS feed](http://www.ceda.ac.uk//blog/feeds/rss/)
+    * [CEDA Website](https://www.ceda.ac.uk/)
+    * [CEDA News RSS feed](https://www.ceda.ac.uk//blog/feeds/rss/)
     * [CEDA on Twitter](https://twitter.com/cedanews)
 
 If you are aware that a user who has access to your GWS leaves your project,
