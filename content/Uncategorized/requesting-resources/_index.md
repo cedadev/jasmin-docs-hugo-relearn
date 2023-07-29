@@ -1,5 +1,5 @@
 ---
-aliases: /article/5022-requesting-resources
+aliases: ["/article/5022-requesting-resources", "/article/4467-request-gws"]
 categories:
 - Uncategorized
 collection: jasmin-documentation

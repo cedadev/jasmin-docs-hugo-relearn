@@ -18,7 +18,7 @@ As a GWS Manager you will receive e-mails summarising the usage and contents
 of the GWS. By default this is a simple volume level summary of the GWS.
 
 If you wish for additional directories to be scanned and summarised please add
-these to the {GWS_PATH}/.gws_scan/config.ini, where {GWS_PATH} is the path to
+these to the `{GWS_PATH}/.gws_scan/config.ini`, where {GWS_PATH} is the path to
 your group workspace (the directory and the file may need to be created).
 Directories can also be excluded from the scan in the same way. This can be
 useful for speeding up the run time of a scan. Here is an example of a
@@ -28,40 +28,40 @@ config.ini file.
 latter is from the previous incarnation of the scanner, and are being removed
 in due course)
 
-    
-    
-    [general]
-    # GWS fullness threshold for which the daily scan will send a warning email (default 83) (in %)
-    volume_warning_threshold = 83
-    # Directories to check for largest sub-dir and filetypes below (comma separated list), these paths must be relative to the group workspace path i.e. path/to/dir, not /group/workspace/path/to/dir
-      # Defaults to all top level directories inside volume
-    dirs = dir1,path/to/dir2
-    # Directories to exclude from the scan. This can be useful to speed up the scan if there are know directories with a large number of files, for which the scan information is not very useful
-    excl_dirs = path/to/excl, large_dir
-    # Filetype extensions to count inside directories above (comma separated list)
-      # Defaults to none
-    exts = html,py,js
-    
+```ini
+[general]
+# GWS fullness threshold for which the daily scan will send a warning email (default 83) (in %)
+volume_warning_threshold = 83
+# Directories to check for largest sub-dir and filetypes below (comma separated list), these paths must be relative to the group workspace path i.e. path/to/dir, not /group/workspace/path/to/dir
+  # Defaults to all top level directories inside volume
+dirs = dir1,path/to/dir2
+# Directories to exclude from the scan. This can be useful to speed up the scan if there are know directories with a large number of files, for which the scan information is not very useful
+excl_dirs = path/to/excl, large_dir
+# Filetype extensions to count inside directories above (comma separated list)
+  # Defaults to none
+exts = html,py,js
+``` 
 
-dirs and excl_dirs can have the * wildcard anywhere in the directory path.
-From the config above for example: path/to/*, and p*h/to/dir2 would pick up
-the directory /path/to/dir2, and any other directories which matched the
+`dirs` and `excl_dirs` can have the `*` wildcard anywhere in the directory path.
+From the config above for example: `path/to/*`, and `p*h/to/dir2` would pick up
+the directory `/path/to/dir2`, and any other directories which matched the
 pattern.  
   
-Please don't comment out the arguments. If you don't want to us one just leave
+Please don't comment out the arguments. If you don't want to use one just leave
 it blank, this will then just use the internal defaults. E.g.
 
-    
-    
-    [general]	
-    volume_warning_threshold =
-    dirs = 
-    excl_dirs =
-    exts =
-    
+```ini 
+[general]	
+volume_warning_threshold =
+dirs = 
+excl_dirs =
+exts =
+```    
 
 When the fortnightly scan runs it sends the output to the GWS manager as an
 email, which looks like this:
+
+---
 
 ### Group Workspace Report for: {GWS_PATH}
 
@@ -84,7 +84,8 @@ Usage: 42%
 
 To get information about specific directories within this volume, please add
 the relative paths to the volume config file (.gws_scan/config.ini) - see
-[https://help.jasmin.ac.uk/article/4499-gws-scanner](gws-scanner)
+[https://help.jasmin.ac.uk/article/4499-gws-scanner]({{< ref "gws-scanner"
+>}})
 
 **Directory** |  **Total Files** |  **Total Size** |  **Sub-directory with
 most files** |  **Files in this Sub-directory**  
@@ -99,7 +100,8 @@ dir1
 To get information on the quantity and size of specific filetypes under the
 directories above, please add the relevant file extensions to the volume
 config file (.gws_scan/config.ini) - see
-[https://help.jasmin.ac.uk/article/4499-gws-scanner](gws-scanner)
+[https://help.jasmin.ac.uk/article/4499-gws-scanner]({{< ref "gws-scanner"
+>}})
 
 _No filetypes requested_
 
