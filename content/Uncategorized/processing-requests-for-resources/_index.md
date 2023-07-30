@@ -24,8 +24,8 @@ This article **is for consortium managers** and explains:
 
 ## Introduction
 
-Please make sure you have read the article ["Requesting
-resources"](requesting-resources) to understand how the process works from the
+Please make sure you have read the article ["Requesting resources"]({{< ref
+"requesting-resources" >}}) to understand how the process works from the
 requester's point of view.
 
 This article will show you how to process requests for resources, but also

@@ -37,9 +37,7 @@ Getting started with rose/cylc
 The tools are installed under the following common directory which is visible
 on all LOTUS nodes and the dedicated cylc server:
 
-##### # Add the location of the rose/cylc executables to $PATH
-
-#####
+## Add the location of the rose/cylc executables to $PATH
 
     
     
@@ -57,7 +55,7 @@ information about authentication to the repositories see:
 Following these instructions will give you access to FCM.
 
 If you would like to run the cylc GUI then please login through the [NoMachine
-servers](graphical-linux-desktop-access-using-nx).
+servers]({{< ref "graphical-linux-desktop-access-using-nx" >}}).
 
 ## Example rose/cylc suite
 

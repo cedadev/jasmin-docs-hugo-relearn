@@ -14,8 +14,9 @@ title: 'JASMIN Accounts Portal: Approving requests for access'
 ---
 
 Managers of JASMIN resources will also be set up to approve applications from
-those wishing to use the resource from members of the JASMIN user community.
+members of the JASMIN user community wishing to use particular resources.
 The following video tutorial explains the approval process using the JASMIN
 Accounts Portal.
 
+{{< youtube uZq04XgB-pQ >}}
 
