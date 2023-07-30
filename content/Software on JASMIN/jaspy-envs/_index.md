@@ -62,8 +62,8 @@ If you want a particular script to activate a Jaspy environment then add the
 ### Setting your profile to always use a Jaspy environment
 
 If you want all your JASMIN sessions to use a particular Jaspy environment
-then you can add the "module load jaspy" command to your ".bashrc" file at:
-$HOME/.bashrc . In order to avoid issues with using "module load" on
+then you can add the `module load jaspy` command to your `$HOME/.bashrc` file.
+In order to avoid issues with using "module load" on
 unsupported servers, please wrap the call in an "if" clause, such as:
 
     
@@ -95,74 +95,33 @@ GitHub repository where the Conda environment files are defined. This table
 lists all the Jaspy Python 3.7+ environments provided on JASMIN and specifies
 the current (default) version.
 
-**Jaspy Python 3.7 Environment** |  |  **Versioned list of software packages**
-|  **Default?** |  **Comments / Issues**  
----|---|---|---|---  
-jaspy/3.10/r20220721  |  |  [List of packages including
-versions](https://github.com/cedadev/ceda-jaspy-
-envs/blob/main/environments/py3.10/m3-4.9.2/jaspy3.10-m3-4.9.2-r20220721/final-
-spec.yml) |  Yes (from: 18/10/2022)  |  NCO and NCL have now been moved to the
-["jasmin-sci" packages](jasmin-sci-software) installation.  
-jaspy/3.8/r20211105  |  |  [List of packages including
-versions](https://github.com/cedadev/ceda-jaspy-
-envs/blob/master/environments/py3.8/m3-4.9.2/jaspy3.8-m3-4.9.2-r20211105/final-
-spec.yml) |  No (was default: 16/11/2021 - 17/10/2022)  |  Known problem with
-NCL rendering Shapefiles (see [issue](https://github.com/cedadev/ceda-jaspy-
-envs/issues/56)). Some packages were removed in this release due to dependency
-problems: theano, pymc3, pystan, pyngl, pyferret (see
-[issue](https://github.com/cedadev/ceda-jaspy-envs/issues/81)).  
-jaspy/3.7/r20210320  |  |  [List of packages including
-versions](https://github.com/cedadev/ceda-jaspy-
-envs/blob/master/environments/py3.7/m3-4.9.2/jaspy3.7-m3-4.9.2-r20210320/final-
-spec.yml)  
-|  No (was default:  
-20/05/2021 - 16/11/2021)  |  Known problem with NCL rendering Shapefiles (see
-[issue](https://github.com/cedadev/ceda-jaspy-envs/issues/56))  
-jaspy/3.7/r20200606  |  |  [List of packages including
-versions](https://github.com/cedadev/ceda-jaspy-
-envs/blob/master/environments/py3.7/m3-4.6.14/jaspy3.7-m3-4.6.14-r20200606/packages.txt)
-|  No  |  
-jaspy/3.7/r20181219  
-|  |  [List of packages including versions](https://github.com/cedadev/ceda-
-jaspy-
-envs/blob/master/environments/py3.7/m3-4.5.11/jaspy3.7-m3-4.5.11-r20181219/packages.txt)
-|  No  |  
+**Jaspy Python 3.7 Environment** |  **Versioned list of software packages** |  **Default?** |  **Comments / Issues**  
+---|---|---|---
+jaspy/3.10/r20220721  |  [List of packages including versions](https://github.com/cedadev/ceda-jaspy-envs/blob/main/environments/py3.10/m3-4.9.2/jaspy3.10-m3-4.9.2-r20220721/final-spec.yml) |  Yes (from: 18/10/2022)  |  NCO and NCL have now been moved to the ["jasmin-sci" packages]({{< ref "jasmin-sci-software" >}}) installation.  
+jaspy/3.8/r20211105  |  [List of packages including versions](https://github.com/cedadev/ceda-jaspy-envs/blob/master/environments/py3.8/m3-4.9.2/jaspy3.8-m3-4.9.2-r20211105/final-spec.yml) |  No (was default: 16/11/2021 - 17/102022)  |  Known problem with NCL rendering Shapefiles (see [issue](https://github.com/cedadev/ceda-jaspy-envs/issues/56)). Some packages were removed in this release due to dependency problems: theano, pymc3, pystan, pyngl,pyferret (see[issue](https://github.com/cedadev/ceda-jaspy-envs/issues/81)).  
+jaspy/3.7/r20210320  |  [List of packages including versions](https://github.com/cedadev/ceda-jaspy-envs/blob/master/environments/py3.7/m3-4.9.2/jaspy3.7-m3-4.9.2-r20210320/final-spec.yml)  |  No (was default:  20/05/2021 - 16/11/2021)  |  Known problem with NCL rendering Shapefiles (see [issue](https://github.com/cedadev/ceda-jaspy-envs/issues/56))  
+jaspy/3.7/r20200606  |  [List of packages including versions](https://github.com/cedadev/ceda-jaspy-envs/blob/master/environments/py3.7/m3-4.6.14/jaspy3.7-m3-4.6.14-r20200606/packages.txt)|  No  |  |
+jaspy/3.7/r20181219  |  [List of packages including versions](https://github.com/cedadev/ceda-jaspy-envs/blob/master/environments/py3.7/m3-4.5.11/jaspy3.7-m3-4.5.11-r20181219/packages.txt)|  No  |  |
   
 ### Jaspy Python 2.7 (plus other tools) environments
 
 This table lists all the Jaspy Python 2.7 environments provided on JASMIN and
 specifies the current (default) version.
 
-**Jaspy Python 2.7 Environment** |  **** |  **Versioned list of software
-packages** |  **Default?**  
----|---|---|---  
-jaspy/2.7/r20190715  |  |  [List of packages including
-versions](https://github.com/cedadev/ceda-jaspy-
-envs/blob/master/environments/py2.7/m2-4.6.14/jaspy2.7-m2-4.6.14-r20190715/packages.txt)  
-|  Yes  
-|  
+**Jaspy Python 2.7 Environment** |  **Versioned list of software packages** |  **Default?**  
+---|---|---
+jaspy/2.7/r20190715 |  [List of packages including versions](https://github.com/cedadev/ceda-jaspy-envs/blob/master/environments/py2.7/m2-4.6.14/jaspy2.7-m2-4.6.14-r20190715/packages.txt)  |  Yes    
   
-JasrR environments (Jasr)  
+**Jasr R environments** 
 
 Environments for the "R" programming language are packaged into separate
 software environments, known as "Jasr". This table lists all the Jaspy R
 environments provided on JASMIN and specifies the current (default) version.
 
-**Jaspy R Environment ("Jasr")** |  |  **Versioned list of software packages**
-|  **Default?**  
----|---|---|---  
-jasr/4.0/r20220729  |  |  [List of packages including
-versions](https://github.com/cedadev/ceda-jaspy-
-envs/blob/main/environments/r4.0/m3-4.9.2/jasr4.0-m3-4.9.2-r20220729/final-
-spec.yml)  
-|  Yes (from: 18/10/2022)  
-  
-jasr/4.0/r20211110  |  |  [List of packages including
-versions](https://github.com/cedadev/ceda-jaspy-
-envs/blob/master/environments/r4.0/m3-4.9.2/jasr4.0-m3-4.9.2-r20211110/packages.txt)
-|  No  
-(was default: 16/11/2021 - 17/10/2022)  
-|  
+**Jaspy R Environment ("Jasr")** |  **Versioned list of software packages**|  **Default?**  
+---|---|---
+jasr/4.0/r20220729  |  [List of packages including versions](https://github.com/cedadev/ceda-jaspy-envs/blob/main/environments/r4.0/m3-4.9.2/jasr4.0-m3-4.9.2-r20220729/final-spec.yml)  |  Yes (from: 18/10/2022)  
+jasr/4.0/r20211110  |  [List of packages including versions](https://github.com/cedadev/ceda-jaspy-envs/blob/master/environments/r4.0/m3-4.9.2/jasr4.0-m3-4.9.2-r20211110/packages.txt)|  No  (was default: 16/11/2021 - 17/10/2022)  
   
 The available R environments can be listed with:
 
@@ -197,10 +156,12 @@ And if you just want the most up-to-date Python you can even omit the
     module load jaspy
     	
 
-**Please note: if you choose to omit the " <release>" and "<python_version>"
+{{% notice style="note" %}}
+If you choose to omit the "\<release\>" and "\<python_version\>"
 components then it is important to be aware that the resulting environment may
-differ over time. **For continuity, you may wish to specify the full
-environment specification.  
+differ over time. For continuity, you ay wish to use the full
+environment specification.
+{{% /notice %}}
 
 ## How Jaspy works: managing Python and non-Python packages using conda
 
@@ -208,48 +169,12 @@ environment specification.
 multiple Python (and other) environments simultaneously on a single platform.
 It was created in order to meet the requirements tabulated below.
 
-**Requirement** |  **Details** |  **Jaspy solution** |  **Further info** |  |  
----|---|---|---|---|---  
-Reproducibility  |
-
-  1. Generate a specific set of packages and versions from a generic set of requirements.
-
-|
-
-  1. Conda has a powerful package-management workflow: 
-    1. Begin with a minimal set of package/version requirements.
-    2. Generate a consistent environment.
-    3. Provide a detailed description of all exact packages/versions in the environment.
-
-|  Conda: [https://docs.conda.io](https://docs.conda.io/)  
-jaspy-manager: <https://github.com/cedadev/jaspy-
-manager/blob/master/README.md>  
-CEDA jaspy environments: <https://github.com/cedadev/ceda-jaspy-envs> |  |  
-Documentation  |  Provide an appropriate level of documentation detailing
-which software packages exist in each release.  |  We use Conda "environment
-files" to build the environments. These list the packages and versions and are
-stored in public GitHub repositories, so each environment is documented as a
-collection of packages/versions.  |  See: <https://github.com/cedadev/jaspy-
-manager/blob/master/README.md>  
-Example package list: <https://github.com/cedadev/ceda-jaspy-
-envs/blob/master/environments/py3.7/m3-4.5.11/jaspy3.7-m3-4.5.11-r20181219/packages.txt>
-|  |  
-Multiple simultaneous environments  |  Allow multiple, but separate, software
-environments to co-exist on a single operating system.  |  Conda is designed
-to allow multiple environments to co-exist. Within jaspy it is possible to
-document each environment. Therefore, multiple environments can be deployed on
-one system. Key advantages are:  
-
-  * Supporting multiple versions of Python and side-by-side.
-  * Releasing an update to an environment as a "pre-release" so that users can adapt their code and test it whilst still having access to the "current" (production) environment.
-
-|  |  |  
-Manageability  |  Provide tools to easily construct, test, deploy, document
-and reproduce software environments.  |  Jaspy builds upon a set of excellent
-Conda command-line tools that simplify the package management process. Jaspy
-wraps the Conda functionality so that command-line tools can be used to build,
-test, deploy and distribute Conda environments for use by our community.  |  |
-|  
+**Requirement** |  **Details** |  **Jaspy solution** |  **Further info**
+---|---|---|---
+Reproducibility  | 1. Generate a specific set of packages and versions from a generic set of requirements. | 1. Conda has a powerful package-management workflow: 1. Begin with a minimal set of package/version requirements. 2. Generate a consistent environment. 3. Provide a detailed description of all exact packages/versions in the environment.|  Conda: [https://docs.conda.io](https://docs.conda.io/)  jaspy-manager: <https://github.com/cedadev/jaspy-manager/blob/master/README.md>  CEDA jaspy environments: <https://github.com/cedadev/ceda-jaspy-envs>
+Documentation  |  Provide an appropriate level of documentation detailing which software packages exist in each release.  |  We use Conda "environment files" to build the environments. These list the packages and versions and are stored in public GitHub repositories, so each environment is documented as a collection of packages/versions.  |  See: <https://github.com/cedadev/jaspy-manager/blob/master/README.md>  Example package list: <https://github.com/cedadev/ceda-jaspy-envs/blob/master/environments/py3.7/m3-4.5.11/jaspy3.7-m3-4.5.11-r20181219/packages.txt>
+Multiple simultaneous environments  |  Allow multiple, but separate, software environments to co-exist on a single operating system.  |  Conda is designed to allow multiple environments to co-exist. Within jaspy it is possible to document each environment. Therefore, multiple environments can be deployed on one system. Key advantages are:  * Supporting multiple versions of Python and side-by-side. * Releasing an update to an environment as a "pre-release" so that users can adapt their code and test it whilst still having access to the "current" (production) environment.| 
+Manageability  |  Provide tools to easily construct, test, deploy, document and reproduce software environments.  |  Jaspy builds upon a set of excellent Conda command-line tools that simplify the package management process. Jaspy wraps the Conda functionality so that command-line tools can be used to build, test, deploy and distribute Conda environments for use by our community.  |
   
 ## Updates and tracking of Jaspy/Jasr environments
 

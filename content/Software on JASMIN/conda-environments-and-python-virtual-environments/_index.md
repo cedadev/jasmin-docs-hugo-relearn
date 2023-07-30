@@ -13,15 +13,15 @@ title: Conda environments and Python virtual environments
 
 This article describes two types of software environments that you can create
 in order to install packages for your own use on JASMIN. Typical examples why
-you may wish to do this is if you have asked us to add packages to
-[Jaspy](jaspy-envs) but wish to make use of them before the next release, or
+you may wish to do this is if you have asked us to add packages to [Jaspy]({{<
+ref "jaspy-envs" >}}) but wish to make use of them before the next release, or
 if they are not likely to be relevant to other users.
 
 Separate pages explain the details of how to create and install [Python
-virtual environments](python-virtual-environments) and [Conda
-environments](creating-and-using-miniconda-environments). This page gives an
-overview of what they are, and how to choose which one is most suitable for
-your needs.
+virtual environments]({{< ref "python-virtual-environments" >}}) and [Conda
+environments]({{< ref "creating-and-using-miniconda-environments" >}}). This
+page gives an overview of what they are, and how to choose which one is most
+suitable for your needs.
 
 ###  Description of Python virtual environments and Conda environments
 
@@ -55,13 +55,13 @@ install zsh".
 
 ###  Combining environments
 
-We already provide a wide range of packages via [Jaspy](jaspy-envs). This is
-in itself a conda environment, and it is important to note that although you
-can use a Python virtual environment to install additional packages when using
-a conda environment, you cannot have more than one conda environment activated
-at the same time.
+We already provide a wide range of packages via [Jaspy]({{< ref "jaspy-envs"
+>}}). This is in itself a conda environment, and it is important to note that
+although you can use a Python virtual environment to install additional
+packages when using a conda environment, you cannot have more than one conda
+environment activated at the same time.
 
-  * When using Python virtual environments, you are advised to start by activating a Jaspy environment, as this will ensure that you are using a version of Python that we support, as well as significantly increasing the range of compiled libraries available during the "pip install" process. You can also use the "--system-site-packages" option to access the Python packages provided by Jaspy itself, as described in more detail on the [virtual environments](python-virtual-environments) help page.
+  * When using Python virtual environments, you are advised to start by activating a Jaspy environment, as this will ensure that you are using a version of Python that we support, as well as significantly increasing the range of compiled libraries available during the "pip install" process. You can also use the "--system-site-packages" option to access the Python packages provided by Jaspy itself, as described in more detail on the [virtual environments]({{< ref "python-virtual-environments" >}}) help page.
   * However, if you choose to use your own conda environment, then you will activate it _instead_ of Jaspy, and you will need to install into it _everything_ that you will need to accompany the package which you wish to use.
 
 Note that because you can install "pip" packages into conda environment, it is

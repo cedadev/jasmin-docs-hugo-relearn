@@ -11,14 +11,14 @@ title: Python Virtual Environments
 
 This article describes how you can use "virtual environments" to install
 Python packages that are not provided in the [common software environments on
-JASMIN](software-on-jasmin). You might wish to do this if you want to use
-different packages/versions from those installed on the system, or if you have
-requested for a package to be installed system-wide but wish to start using it
-before this request can be acted upon.
+JASMIN]({{< ref path="Software on JASMIN/software-on-jasmin" >}}). You might wish to do this if you
+want to use different packages/versions from those installed on the system, or
+if you have requested for a package to be installed system-wide but wish to
+start using it before this request can be acted upon.
 
 To decide whether you should use a _Python virtual environment_ or a _Conda
-environment_ for this purpose, see: [overview of software environments](conda-
-environments-and-python-virtual-environments).
+environment_ for this purpose, see: [overview of software environments]({{<
+ref "conda-environments-and-python-virtual-environments" >}}).
 
 ## What is a "virtual environment"?
 
@@ -31,8 +31,8 @@ different applications.
 ## Creating a virtual environment
 
 **As a pre-requisite, when using any modern Python (i.e. Python2.7 onwards),
-you should[activate a Jaspy environment](quickstart-software-envs) before
-following the instructions below.**
+you should[activate a Jaspy environment]({{< ref "quickstart-software-envs"
+>}}) before following the instructions below.**
 
 Python allows you to create a directory containing a private virtual
 environment, into which you can install your packages of choice. This is done

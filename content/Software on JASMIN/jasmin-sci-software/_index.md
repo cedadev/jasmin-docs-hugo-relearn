@@ -18,8 +18,8 @@ covers the following topics:
 
 ## Overview of the "jasmin-sci" software environment
 
-The jasmin-sci software environment is intended as a supplement to
-[Jaspy](jaspy-envs) and contains extra software packages for use with
+The jasmin-sci software environment is intended as a supplement to [Jaspy]({{<
+ref "jaspy-envs" >}}) and contains extra software packages for use with
 scientific data analysis which, for various reasons, are not provided as part
 of Jaspy itself. These packages are generally installed on the same CentOS7
 machines where Jaspy is available, so, for example, this will include the new
@@ -35,7 +35,7 @@ dependencies.
 The packages fall into two categories:
 
   * Packages provided by standard RPM repositories (example "gnuplot") - these are installed into ordinary system paths (such as /usr/bin/gnuplot for the gnuplot program) and require no special setup in order to run. So if you are on a relevant machine, you should just be able to type "gnuplot".
-  * Packages which we have built locally for use on JASMIN (although most are third-party software). To avoid any potential later conflicts with standard packages, they are installed under the path /opt/rh/jasmin-sci/ rather than in system paths. Also, the RPM package names, as can be seen in the above "rpm -qR jasmin-sci" command, are prefixed with "jasmin-sci-". So for example, the local build of "nccmp" (a program to compare netCDF files) is a package called jasmin-sci-nccmp, and the executable is at /opt/rh/jasmin-sci/root/usr/bin/nccmp. Before these packages can be conveniently used, it is necessary to "activate" the environment as described below, so that when you type e.g. "nccmp" the relevant files can be found.
+  * Packages which we have built locally for use on JASMIN (although most are third-party software). To avoid any potential later conflicts with standard packages, they are installed under the path /opt/rh/jasmin-sci/ rather than in system paths. Also, the RPM package names, as can be seen in the above `rpm -qR jasmin-sci` command, are prefixed with "jasmin-sci-". So for example, the local build of "nccmp" (a program to compare netCDF files) is a package called jasmin-sci-nccmp, and the executable is at /opt/rh/jasmin-sci/root/usr/bin/nccmp. Before these packages can be conveniently used, it is necessary to "activate" the environment as described below, so that when you type e.g. "nccmp" the relevant files can be found.
 
 Unlike the Jaspy environments, jasmin-sci can only provide one version of each
 package at a time, so the versions are subject to change when updates are
@@ -79,8 +79,7 @@ and to **deactivate** it, use the command:
 
 ("add" and "purge" can also be used).
 
-The "module load" command must be done in each session, or added to your
-$HOME/.bashrc file.
+The "module load" command must be done in each session, or added to your `$HOME/.bashrc` file.
 
 As mentioned above, this is only required for a subset of packages in jasmin-
 sci. The majority of packages do not require it, but for example, those which
@@ -102,8 +101,8 @@ following order:
     
 
 This will ensure that in the unlikely event of an executable in Jaspy also
-existing under /opt/rh/jasmin-sci/, then one in Jaspy will take priority.
+existing under `/opt/rh/jasmin-sci/`, then one in Jaspy will take priority.
 
-The corresponding "module unload" commands can be done in either order.
+The corresponding `module unload` commands can be done in either order.
 
 

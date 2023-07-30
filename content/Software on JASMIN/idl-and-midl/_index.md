@@ -24,8 +24,9 @@ available on JASMIN.
 
 ### Availability of IDL on JASMIN
 
-IDL is available on all [scientific analysis servers](sci-servers) and
-[LOTUS](http://help.ceda.ac.uk/category/107-batch-computing-on-lotus).
+IDL is available on all [scientific analysis servers]({{< ref "sci-servers"
+>}}) and [LOTUS](http://help.ceda.ac.uk/category/107-batch-computing-on-
+lotus).
 
 To get started with **IDL** , login on one of scientific analysis servers and
 run the commands:

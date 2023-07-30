@@ -15,10 +15,9 @@ This article provides details of additional packages that exist under the
 servers and on the LOTUS batch cluster on JASMIN.
 
 The `/apps/jasmin/` directory has been provided as a home for additional
-software packages that are not installed within either [Jaspy](jaspy-envs) or
-["jasmin-sci"](jasmin-sci-software) environments. This page details which
-packages are available along with details of how they are managed and
-accessed.
+software packages that are not installed within either [Jaspy]({{< ref "jaspy-envs" >}}) or ["jasmin-sci"]({{< ref "jasmin-sci-software" >}}) environments.
+This page details which packages are available along with details of how they
+are managed and accessed.
 
 ## Community packages under: /apps/jasmin/
 
@@ -33,6 +32,6 @@ The Earth System Model Evaluation Tool (ESMValTool) is a community diagnostics
 and performance metrics tool for the evaluation of Earth System Models (ESMs)
 that allows for routine comparison of single or multiple models, either
 against predecessor versions or against observations. See the [ESMValTool on
-JASMIN page](community-software-esmvaltool) for more info.
+JASMIN page]({{< ref "community-software-esmvaltool" >}}) for more info.
 
 
