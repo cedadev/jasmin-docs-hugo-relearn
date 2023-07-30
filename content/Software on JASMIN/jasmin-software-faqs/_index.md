@@ -11,19 +11,19 @@ tags:
 title: JASMIN software FAQs
 ---
 
-### Why do I have to load/activate a software environment?
-
+{{% expand title="Why do I have to load/activate a software environment?" %}}
 We have a range of different users on JASMIN who work on many different
 projects. Each project has its own software requirements and timeline. By
 providing multiple software environments (such as Python2.7 and Python3.7) we
 can support a wider range of users on the same platform. Since we do not
 assume a "standard" environment it is up to the user to "load" (or "activate")
 a software environment before usage. This is typically done by using: "module
-load <environment>". See the [overview](software-on-jasmin) page for more
-details.
+load <environment>". See the [overview]({{< ref path="Software on JASMIN/software-on-jasmin" >}}) page
+for more details.
+{{% /expand %}}
 
-### How do I set the Jaspy environment as my default?
 
+{{% expand title="How do I set the Jaspy environment as my default?" %}}
 If you want your JASMIN sessions to automatically use the default "jaspy"
 environment then append this line to the end of your "$HOME/.bashrc" file:
 
@@ -32,20 +32,21 @@ environment then append this line to the end of your "$HOME/.bashrc" file:
     module load jaspy
     
 
-### How do I set the "jasmin-sci" environment as my default?
+{{% /expand %}}
+
+{{% expand title="How do I set the `jasmin-sci` environment as my default?" %}}
 
 If you want your JASMIN sessions to automatically know about the packages in
 the "jasmin-sci" environment then add this line to the end of your
 "$HOME/.bashrc" file:
 
     
-    
     module load jasmin-sci
+
+{{% /expand %}}
+
     
-
-### How do I activate a combination of Jaspy and "jasmin-sci" environments
-together?
-
+{{% expand title="How do I activate a combination of Jaspy and `jasmin-sci` environments together?" %}}
 If you want to activate (or load) both the current Jaspy and the "jasmin-sci"
 environments at the same time, use:
 
@@ -54,36 +55,36 @@ environments at the same time, use:
     module load jasmin-sci
     module load jaspy
     
+{{% /expand %}}
 
-### What is the plan for the future of Jaspy and "jasmin-sci" environments?
-
+{{% expand title="What is the plan for the future of Jaspy and `jasmin-sci` environments?" %}}
 We have moved over to using [Conda](https://docs.conda.io/en/latest/) as the
-primary tool for building and deploying software environments. The
-[Jaspy](jaspy-envs) environments are all Conda-based and make use of the
+primary tool for building and deploying software environments. The [Jaspy]({{<
+ref "jaspy-envs" >}}) environments are all Conda-based and make use of the
 significant community efforts supporting scientific computing such as the
 "[conda-forge](https://conda-forge.org/)" repositories. For some packages, not
 available through Conda, we have also created the "jasmin-sci" environment.
 Ideally, we would like to move to a Conda-only solution in order to simplify
 both the management and user perspectives.
+{{% /expand %}}
 
-### Can I install my own Conda environment?
-
+{{% expand title="Can I install my own Conda environment?" %}}
 If you need to install a set of packages that are not provided in Jaspy or the
 "jasmin-sci" environment then you can create your own Conda installation. It
 is important to note that this **will not be compatible** with the Jaspy
 environments and please take note of the FAQ below: "Where should I install
 software environments on JASMIN?".
+{{% /expand %}}
 
-### Where should I install software environments on JASMIN?
-
+{{% expand title="Where should I install software environments on JASMIN?" %}}
 If you need to install your own software environment(s) on JASMIN then we
 strongly advise that you install it on one of the SSD file systems:
 
   * Under your $HOME directory - if you are the only user who needs access.
   * Within a "small files" Group Workspace - if you wish to share the environment with other JASMIN users.
+{{% /expand %}}
 
-### Is MATLAB available on JASMIN?
-
+{{% expand title="Is MATLAB available on JASMIN?" %}}
 No, MATLAB is not one of our supported software packages and is not installed
 on JASMIN for general use. As a result, we are not able to provide support for
 MATLAB-related issues.
@@ -107,9 +108,9 @@ There are 2 places where it would be OK to install MATLAB in this case:
   * Within a group workspace, with access restricted to members of the group, but available for use on one of the shared sci machines (but see note below)
   * On a tenancy sci machine: this is a special type of sci server deployed within a JASMIN Cloud tenancy, for exclusive use by members of that tenancy. The manager of the tenancy should do the installation.
 
-#### Safe use of temporary directories if using MATLAB on JASMIN
+**Safe use of temporary directories if using MATLAB on JASMIN**
 
-**NOTE** : by default, Matlab makes use of the local `/tmp` area on the
+By default, Matlab makes use of the local `/tmp` area on the
 machine where it is being used, so if this is on a shared machine, it can fill
 up the `/tmp` area and cause issues for all other users of the machine. You
 are therefore advised to create and use a subdirectory of a group workspace
@@ -140,5 +141,7 @@ Create the directory if needed
 
 But please note that we are not able to help with MATLAB queries beyond the
 information provided here.
+
+{{% /expand %}}
 
 

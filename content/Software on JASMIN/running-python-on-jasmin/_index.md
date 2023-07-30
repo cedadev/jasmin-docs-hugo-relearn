@@ -17,7 +17,7 @@ title: Running python on JASMIN
 ---
 
 On the JASMIN analysis machines and on Lotus, we support Python2.7 and
-Python3.7 through [Jaspy](jaspy-envs).
+Python3.7 through [Jaspy]({{< ref "jaspy-envs" >}}).
 
 When you log in, the default version of Python is 2.7.5, which is used by the
 operating system. If you require any packages other than the standard Python

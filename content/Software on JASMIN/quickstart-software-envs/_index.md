@@ -9,8 +9,7 @@ slug: quickstart-software-envs
 title: Quickstart for activating/deactivating software environments
 ---
 
-## This article provides a minimum quick-start guide for working with software
-environments on JASMIN.
+This article provides a minimum quick-start guide for working with software environments on JASMIN.
 
 ### Activate (load) an environment
 
@@ -47,6 +46,7 @@ Where "<env-id>" is the name used when you activated the environment.
 ### Which environment(s) should you use?
 
 If you are not sure which environment(s) to use please see details on the
-[overview](software-on-jasmin) of Jaspy and "jasmin-sci" environments page.
+[overview]({{< ref path="Software on JASMIN/software-on-jasmin" >}}) of Jaspy and "jasmin-sci"
+environments page.
 
 

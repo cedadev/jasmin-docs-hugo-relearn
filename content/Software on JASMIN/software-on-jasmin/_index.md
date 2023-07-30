@@ -64,7 +64,7 @@ analyse, process and visualise data then take a look at these options:
   * Creating your own software environments
 
 **NOTE** : If you are using Matplotlib to visualise data please refer to the
-advice on our [Matplotlib help page](matplotlib).
+advice on our [Matplotlib help page]({{< ref "matplotlib" >}}).
 
 #### Jaspy Software Environments (Python, R and other tools)
 
@@ -72,7 +72,7 @@ Jaspy is a toolkit for managing and deploying Conda environments that include
 both Python and non-Python packages. Jaspy environments, along with the
 "jasmin-sci" environment (see below), provide the main software on the
 scientific analysis servers and LOTUS cluster on JASMIN. Details of the Jaspy
-environments and packages are available on the [Jaspy page](jaspy-envs).
+environments and packages are available on the [Jaspy page]({{< ref "jaspy-envs" >}}).
 
 #### The "jasmin-sci" Software Environment
 
@@ -80,30 +80,29 @@ The "jasmin-sci" software environment is intended as a supplement to Jaspy
 (see above). It contains extra software packages for use with scientific data
 analysis which, for various reasons, are not provided as part of Jaspy itself.
 Details of this environment are provided on the ["jasmin-sci" software
-page](jasmin-sci-software).
+page]({{< ref "jasmin-sci-software" >}}).
 
 #### Additional packages
 
 A number of additional packages are available under the "/apps/jasmin/"
 directory scientific analysis servers and LOTUS cluster. Details of these
-packages are provided on the [additional sofware packages page](contrib-
-software).
+packages are provided on the [additional sofware packages page]({{< ref "additional-software" >}}).
 
-#### IDL (and MIDL)
+#### IDL
 
 [IDL](https://www.harrisgeospatial.com/Software-Technology/IDL) stands for
 Interactive Data Language. It is a licensed data manipulation toolkit made
-available on JASMIN. IDL and MIDL are available on the JASMIN scientific
+available on JASMIN. IDL is available on the JASMIN scientific
 analysis servers and LOTUS cluster. Details of these packages are provided on
-the [ IDL and MIDL page](idl-and-midl).
+the [ IDL and MIDL page]({{< ref "idl-and-midl" >}}).
 
 #### Creating your own software environments
 
 If you intend to create your own software environments then please take a look
 at the following pages:
 
-  * [Building virtual environments on top of Jaspy environments](python-virtual-environments)
-  * [Sharing your JASMIN software environments with other users](share-software-envs)
+  * [Building virtual environments on top of Jaspy environments]({{< ref "python-virtual-environments" >}})
+  * [Sharing your JASMIN software environments with other users]({{< ref "share-software-envs" >}})
   * Compilers on JASMIN
 
 ## Restricted software
@@ -113,21 +112,20 @@ at the following pages:
 #### Workflow Management with Rose and Cylc
 
 Rose and Cylc provide a suite of tools available for managing sophisticated
-multi-step workflows. See full details on the [Rose and Cylc page](cylc-rose-
-on-jasmin).
+multi-step workflows. See full details on the [Rose and Cylc page]({{< ref
+"cylc-rose-on-jasmin" >}}).
 
 #### Graphical Linux desktop access using NoMachine NX
 
 NoMachine NX is a tool that allows users to run a virtual graphical Linux
-desktop on JASMIN. See details on the [NX page](graphical-linux-desktop-
-access-using-nx).
+desktop on JASMIN. See details on the [NX page]({{< ref "graphical-linux-desktop-access-using-nx" >}}).
 
 ## Data movement software
 
 ### Data transfer
 
 There are numerous tools for transferring data to/from JASMIN. Please consult
-the [Data Transfer Tools page](data-transfer-tools) for details.
+the [Data Transfer Tools page]({{< ref "data-transfer-tools" >}}) for details.
 
 ### Data migration (disk, tape, object store etc): Joint-storage Data
 Migration App (JDMA)
@@ -135,10 +133,10 @@ Migration App (JDMA)
 The Joint-storage Data Migration App, or JDMA, is a flexible tool for managing
 large migrations of data between a range of storage media. On JASMIN, it can
 be used for migrating data to/from tape, disk and object-store. See more
-details on the [JDMA page](jdma).
+details on the [JDMA page]({{< ref "jdma" >}}).
 
 ### Still have a question?
 
-Please consult the [JASMIN software FAQs](jasmin-software-faqs).
+Please consult the [JASMIN software FAQs]({{< ref "jasmin-software-faqs" >}}).
 
 

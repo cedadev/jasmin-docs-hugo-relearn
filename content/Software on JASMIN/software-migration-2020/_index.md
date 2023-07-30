@@ -49,8 +49,8 @@ cluster. These include:
 
 The reason for moving away from the JAP was to provide a system that could
 support multiple versions of software packages, and environments, on a single
-platform. From the perspective of reproducible science, the [Jaspy](jaspy-
-envs) approach is more useful because it:
+platform. From the perspective of reproducible science, the [Jaspy]({{< ref
+"jaspy-envs" >}}) approach is more useful because it:
 
   * keeps previous environments on the system when a new version of an environment is launched
   * includes a listing of all packages (and their versions) that are provided in each date-stamped software environment
@@ -102,9 +102,7 @@ In the summary column:
   * **CR** \- package is provided both via Jaspy and via an RPM. The version in Jaspy is recommended for use with user code; the RPM version is also installed in order to satisfy an RPM dependency only, and may be subject to change.
   * **N** \- not provided (mostly these have been deprecated by the third-party sources)
 
-**NAME (in JAP)** | **Version in Jaspy 3.7 (conda)** | **Version in Jaspy 2.7
-(conda)** | **Version in RPMs (base or jasmin-sci SCL)** | **Summary:**
-**(C)onda/** **(R)PM /** **(N)one** | **Comments**  
+**NAME (in JAP)** | **Version in Jaspy 3.7 (conda)** | **Version in Jaspy 2.7 (conda)** | **Version in RPMs (base or jasmin-sci SCL)** | **Summary:** **(C)onda/** **(R)PM /** **(N)one** | **Comments**  
 ---|---|---|---|---|---  
 arpack  |  3.6.3  |  3.6.3  |  |  C  |  
 atlas  |  |  3.8.4  |  3.10.1  |  R  |  
@@ -132,10 +130,7 @@ emacs-ess-el  |  |  |  |  N  |  might provide later
 emacs-gnuplot  |  |  |  4.6.2  |  R  |  
 emos  |  |  |  |  N  |  deprecated  
 esmf  |  7.1.0r  |  7.1.0r  |  |  C  |  
-esmf-doc  |  |  |  |  N  |
-<http://www.earthsystemmodeling.org/esmf_releases/public/last/ESMF_usrdoc/>
-and ESMF_refdoc  
-  
+esmf-doc  |  |  |  |  N  | <http://www.earthsystemmodeling.org/esmf_releases/public/last/ESMF_usrdoc/> and ESMF_refdoc  
 esmf-python27  |  7.1.0r  |  7.1.0r  |  |  C  |  
 ferret  |  |  |  7.5.0  |  R  |  
 fftw  |  3.3.8  |  3.3.8  |  |  C  |  

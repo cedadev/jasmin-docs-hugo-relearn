@@ -9,14 +9,13 @@ slug: creating-and-using-miniconda-environments
 title: Creating and using miniconda environments
 ---
 
-On JASMIN, we provide a wide range of packages via the [Jaspy](jaspy-envs)
-environment (which is itself a Conda environment). This page gives detail on
-how to create and use your own personal Conda environments via the miniconda
-installer, as an alternative to the use of Jaspy.
+On JASMIN, we provide a wide range of packages via the [Jaspy]({{< ref "jaspy-envs" >}}) environment (which is itself a Conda environment). This page gives
+detail on how to create and use your own personal Conda environments via the
+miniconda installer, as an alternative to the use of Jaspy.
 
 To decide whether you should use a _Python virtual enviro_ _nment_ or a _Conda
-environment_ , first see the page: [overview of software environments](conda-
-environments-and-python-virtual-environments).
+environment_ , first see the page: [overview of software environments]({{< ref
+"conda-environments-and-python-virtual-environments" >}}).
 
 ###  Obtaining miniconda
 
@@ -30,7 +29,9 @@ miniconda.
 
 This can be downloaded using:
 
-` wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh `
+``` 
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+```
 
 ###  Deactivating Jaspy
 
@@ -38,7 +39,9 @@ You cannot have your own conda environment activated at the same time as
 Jaspy, so it is recommended that if you have loaded the jaspy module, then you
 start by typing:
 
-` module unload jaspy `
+```
+module unload jaspy
+```
 
 ###  Creating a base environment
 
@@ -63,7 +66,9 @@ Assuming that you made the choices recommended above when running the
 installer, you should type the following in order to activate the base
 environment:
 
-` source ~/miniconda3/bin/activate `
+```
+source ~/miniconda3/bin/activate
+```
 
 (You may encounter documentation elsewhere which suggests "conda activate"
 instead, but the above command is a workaround for the fact that you have not
@@ -73,7 +78,9 @@ Your command prompt will then change to include "(base) " at the start, in
 order to remind you that this environment is activated. You can deactivate the
 environment by typing:
 
-` conda deactivate `
+```
+conda deactivate
+```
 
 ###  Creating and activating a sub-environment
 
@@ -89,7 +96,9 @@ To create a named environment (for example, called "myenv"), ensure that the
 base environment is activated (the command prompt should start with "(base)
 "), and type:
 
-` conda create -n myenv `  
+```
+conda create -n myenv
+```
   
 It will show the proposed installation location, and once you answer the
 prompt to proceed, will do the installation. If you have followed these
@@ -101,20 +110,27 @@ give it a different location using the option `-p <path>` instead of `-n
 Once you have created your sub-environment, you can activate it using `conda
 activate <name>` for example:
 
-`conda activate myenv`
+```
+conda activate myenv
+```
 
 The command prompt will then change (e.g. to start with "(myenv) ") to reflect
 this. Typing `conda deactivate` once will return you to the base environment;
 typing it a second time will deactivate conda completely (as above).
 
-`conda env list` will list your environments.
+```
+conda env list
+```
+ will list your environments.
 
 ###  Installing conda packages
 
 Once you have activated a named environment, you can install packages with the
 `conda install` command, for example:
 
-` conda install gcc `
+```
+conda install gcc
+```
 
 You can also force particular versions to be installed. See the [conda cheat
 sheet](https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-
@@ -131,11 +147,11 @@ that you are using. This means repeating some of the commands typed above. Of
 course, you will not need to repeat the steps to create the environment or
 install the software, but the following may be needed again:
 
-`module unload jaspy`
-
-`source ~/miniconda3/bin/activate`
-
-`conda activate myenv`
+```
+module unload jaspy
+source ~/miniconda3/bin/activate`
+conda activate myenv`
+```
 
 ###  Installing pip packages
 
@@ -146,11 +162,15 @@ install" as above.
 Nonetheless, you can also install pip packages (as opposed to conda packages)
 into your conda environment. However, first you should type:
 
-` conda install pip `
+```
+conda install pip
+```
 
 before typing the desired commands such as
 
-` pip install numpy `
+```
+pip install numpy
+```
 
 If you do not install pip into your sub-environment, then either:
 
@@ -198,12 +218,20 @@ to create the new environment -- as follows:
 
   * first activate the conda environment that you wish to clone (for Jaspy, load the jaspy module)
   * export a list of contents to a YAML file (for example "environment.yml") by typing  
-` conda env export > environment.yml `
+
+```
+conda env export > environment.yml
+```
 
   * deactivate this environment (or as the case may be, unload the jaspy module)
   * ensure that the relevant base environment is activated
   * create the new environment (for example "my_new_env") by using:  
-` conda env create -n my_new_env -f environment.yml `  
+
+
+```
+conda env create -n my_new_env -f environment.yml
+```  
+
 Note the use of "conda env create", rather than "conda create" as above.  
 (As above, if you have installed mamba, you can also use "mamba" in place of
 "conda" at this stage.)
@@ -227,8 +255,8 @@ location under your home directory. It is possible to change this, but note
 that a conda environment can have tens of thousands of files and that group
 workspaces on JASMIN will generally perform poorly for this use case. If you
 need to make a conda environment which is shared with collaborators, you may
-need to request a [small files GWS](share-software-envs) as these will give
-better performance.
+need to request a [small files GWS]({{< ref "share-software-envs" >}}) as
+these will give better performance.
 
 If you are creating a conda environment for very short-term testing only, you
 may find best performance using `/tmp` due to the large number of files.
