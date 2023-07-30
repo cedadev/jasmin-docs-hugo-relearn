@@ -6,14 +6,12 @@ collection: jasmin-documentation
 date: 2020-01-20 12:39:02
 description: working with many Linux groups
 slug: working-with-many-linux-groups
-title: working with many Linux groups
+title: Working with many Linux groups
 ---
 
-# Working with many Linux groups:
 
-## the number of groups limitation - and how to work around it
+The number-of-groups limitation - and how to work around it
 
-##
 
 ## Description
 
@@ -45,10 +43,7 @@ affect for example access to the NAG library licence file for NERC users. The
 is also affected in principle, but it has a limit of 32 groups, which is less
 likely to affect users.
 
-##  **  
-**
-
-## **Workarounds**
+## Workarounds
 
 ### newgrp
 

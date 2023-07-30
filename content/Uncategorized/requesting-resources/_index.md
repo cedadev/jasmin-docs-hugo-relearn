@@ -1,5 +1,5 @@
 ---
-aliases: ["/article/5022-requesting-resources", "/article/4467-request-gws"]
+aliases: /article/5022-requesting-resources
 categories:
 - Uncategorized
 collection: jasmin-documentation
@@ -72,8 +72,8 @@ account (this is the same process used to access the JASMIN notebook service).
 Once you have logged in, you are presented with a view of the projects where
 you are named as owner or collaborator (or, for consortium managers, where you
 are the relevant consortium manager. [A further guide for consortium managers
-about how to process requests for resources is available here](processing-
-requests-for-resources)).
+about how to process requests for resources is available here]({{< ref
+"processing-requests-for-resources" >}})).
 
 ![](file-CFe92vMRQV.png)
 
@@ -128,9 +128,9 @@ It is assumed that you've considered carefully how you will do your work on
 JASMIN, with some knowledge of its services and components. You may find the
 following helpful:
 
-  * Article: [Understanding new JASMIN storage](understanding-new-jasmin-storage)
+  * Article: [Understanding new JASMIN storage]({{< ref "understanding-new-jasmin-storage" >}})
   * [JASMIN workshop](https://github.com/cedadev/jasmin-workshop) overview talk, explaining the main services offered by JASMIN
-  * how your request will be [scrutinised](processing-requests-for-resources) by the relevant consortium manager.
+  * how your request will be [scrutinised]({{< ref "processing-requests-for-resources" >}}) by the relevant consortium manager.
 
 Once created, the requirements appear in the list, along with their start and
 end dates and status. This one is "REQUESTED".
@@ -234,6 +234,7 @@ workspaces](https://accounts.jasmin.ac.uk/account/login/?next=/services/group_wo
 for other options.
 
 Another alternative, for easily accessible short-term storage for an
-individual user is the [JASMIN Transfer Cache (XFC) service](xfc).
+individual user is the [JASMIN Transfer Cache (XFC) service]({{< ref "xfc"
+>}}).
 
 

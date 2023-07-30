@@ -166,7 +166,7 @@ MobaXterm is a comprehensive application that enables many useful features
 such as:
 
   * Saved session configurations
-  * X-forwarding / X11 / X server ( **Not recommended on JASMIN** : see [NoMachine NX for graphical linux desktop](graphical-linux-desktop-access-using-nx) instead)
+  * X-forwarding / X11 / X server ( **Not recommended on JASMIN** : see [NoMachine NX for graphical linux desktop]({{< ref "graphical-linux-desktop-access-using-nx" >}}) instead)
   * SSH agent forwarding
   * SFTP access (with graphical drag-n-drop)
   * Split-tab mode

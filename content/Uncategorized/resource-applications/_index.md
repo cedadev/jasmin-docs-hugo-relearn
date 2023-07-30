@@ -18,4 +18,5 @@ those wishing to use the resource from members of the JASMIN user community.
 The following video tutorial explains the approval process using the JASMIN
 Accounts Portal.
 
+{{< youtube uZq04XgB-pQ >}}
 
