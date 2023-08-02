@@ -36,3 +36,8 @@ url = "/categories"
 
   # If set to true, the menu in the sidebar will be displayed in a collapsible tree view. Although the functionality works with old browsers (IE11), the display of the expander icons is limited to modern browsers
   collapsibleMenu = false
+
+ # Prefix URL to edit current page. Will display an "Edit" button on top right hand corner of every page.
+  # Useful to give opportunity to people to create merge request for your doc.
+  # See the config.toml file from this documentation site to have an example.
+  editURL = "https://github.com/cedadev/jasmin-docs-hugo-relearn/edit/main/content/"

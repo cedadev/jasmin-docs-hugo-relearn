@@ -1,8 +1,22 @@
 ---
 title: "JASMIN Help Documentation"
+subtitle: "Help docs"
 archetype: "home"
-date: 2023-06-14T11:58:40+01:00
+date: 2023-08-01
 draft: false
 ---
 
-New docs site under construction
+Welcome to the help documentation site for JASMIN, the UK's data analysis facility for environmental science.
+
+## This site
+
+**We hope you like our new-look help docs** which make use of richer formatting to make the articles easier to read. We've also changed the way we manage the source content so it's easier for us to maintain. Some of the articles will 
+This site should redirect you from any previous URLs you may have stored, but please use the **search**, **category** or **tag** features to help find what you're looking for.
+If you spot any broken links or incorrect information, please let us know by using the
+help beacon (bottom right) to contact the JASMIN helpdesk - please include the page URL if you do.
+
+If you have developer access, you can even edit a page with your suggested changes using GitHub: just use the edit icon {{% icon style="tip" icon="pen" %}}, top right on each page. Please create a new branch and submit a pull request.
+
+
+
+
